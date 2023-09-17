@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#mainContainer {
+    width: 100%;
+    margin: 10em auto 15em auto;
+    text-align: center;
+    flex: 1;
+}
+
+
+
+footer {
+    background-color: #333; /* Cambia el color de fondo según tus preferencias */
+    color: #fff; /* Cambia el color del texto según tus preferencias */
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
