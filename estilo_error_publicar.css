@@ -1,0 +1,27 @@
+#mainContainer {
+    text-align: center;
+    width: 100%;
+    margin: 10em auto 10em auto;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#mainContainer p {
+    width: 100%;
+    padding: 0;
+    margin: 0.5em;
+}
+
+#mainContainer a {
+    width: 20em;
+    height: 4em;
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    margin: 0 auto 0 auto;
+    gap: 2em;
+}

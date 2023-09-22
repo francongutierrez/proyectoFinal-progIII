@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.navbar img {
+    border: #0c6a01 0.1em solid;
+    border-radius: 50%;
+}
+
+footer {
+    background-color: #000000; /* Cambia el color de fondo según tus preferencias */
+    color: #fff; /* Cambia el color del texto según tus preferencias */
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/**/
+
+
+/* Estilo para el botón de menú */
+.menu-button {
+    background-color: transparent;
+    border: #0c6a01 0.1em solid;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Estilo para la imagen de perfil redonda */
+.profile-image {
+    width: 40px; /* Ajusta el tamaño de la imagen según tus preferencias */
+    height: 40px; /* Ajusta el tamaño de la imagen según tus preferencias */
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Estilo para el contenido del menú desplegable */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+    top: 100%;
+}
+
+/* Estilo para los enlaces dentro del menú desplegable */
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #333;
+}
+
+/* Cambiar el color del enlace cuando se pasa el ratón por encima */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Mostrar el menú desplegable al hacer clic en la foto de perfil */
+.menu-button:hover + .dropdown-content,
+.dropdown-content:hover {
+    display: block;
+}
+
+.dropdown {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/**/
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.navbar-brand p {
+    margin: 0;
+    padding: 0;
+}
+
+/**/
+
+@keyframes aparecerDesdeArriba {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-text {
+    animation: aparecerDesdeArriba 1s ease-in-out;
+}
+
+.cerrarSesion {
+    color: red;
+}

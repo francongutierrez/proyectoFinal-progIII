@@ -7,7 +7,8 @@
     <link rel="stylesheet" type="text/css" href="estilo_general.css" >
     <link rel="stylesheet" type="text/css" href="estilo_publicar_oferta.css" >
     <script src="funciones_publicar_oferta.js"></script>
-    <title>RapiBnB - Publicar oferta</title>
+    <script src="funciones_buscar_oferta.js"></script>
+    <title>RappiBnB - Buscar oferta</title>
 
 </head>
 <body>
@@ -38,25 +39,14 @@
         <form action="">
             <div class="container" id="mainContainer">
                 <div class="row">
-                    <div class="col mt-3 animate-text">
-                        <h1>Publicar oferta de alquiler</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col mt-3 mb-3 animate-text">
-                        <h5>Ingrese los datos a continuacion:</h5>
+                    <div class="col mt-3">
+                        <h1>Buscar oferta de alquiler</h1>
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-3">
                         <label for="titulo" class="form-label">Titulo</label>
                         <input type="text" class="form-control" id="tituloInput" placeholder="Ingrese el titulo de su publicacion aqui">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mb-3">
-                        <label for="descipcion" class="form-label">Descripcion</label>
-                        <textarea class="form-control" id="descipcionInput" rows="3" placeholder="Ingrese la descripcion del alquiler aqui"></textarea>
                     </div>
                 </div>
                 <div class="row">
@@ -73,7 +63,7 @@
                 </div>
                 <div class="row">
                     <div class="mb-3">
-                        <button type="button" class="btn btn-outline-success" id="botonAgregarEtiquetas" onclick="agregarEtiqueta()">Agregar etiquetas</button>
+                        <button class="btn btn-primary" id="agregarEtiqueta" onclick="agregarEtiqueta()">Agregar Etiqueta</button>
                     </div>
                 </div>
                 <div class="row">
@@ -84,17 +74,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="mb-3">
-                        <label for="fotos" class="form-label">Ingrese las fotos</label>
-                        <input class="form-control" type="file" id="fotos" multiple>
-                    </div>
-                </div>
-                <div class="row">
                     <div class="col">
                         <label for="serviciosIncluidos" class="form-label">Ingrese los servicios incluidos</label>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="form-check form-check-inline">
@@ -136,22 +119,24 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="mt-3 mb-3">
+                    <div class="mt-3">
                         <label for="titulo" class="form-label">Costo por dia</label>
-                        <input type="number" class="form-control" id="costoInput" placeholder="Ingrese el costo por dia aqui">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mb-3">
+                        <input type="range" class="form-range" min="0" max="100" value="50" id="miControlDeslizante" onchange="cambiarValor()">
+                        <p>Valor actual: <span id="valorActual">50</span></p>
                     </div>
                 </div>
                 <div class="row">
                     <div>
-                        <label for="titulo" class="form-label">Tiempo de permanencia (en dias)</label>
+                        <label for="titulo" class="form-label">Maximo tiempo de permanencia (en dias)</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-6 mb-3">
-                        <input type="number" class="form-control" id="tiempoMinimoInput" placeholder="Minimo" min="1" max="90">
-                    </div>
-                    <div class="col-sm-6 mb-3">
-                        <input type="number" class="form-control" id="tiempoMaximoInput" placeholder="Maximo" min="1" max="90">
+                    <div class="col mb-3">
+                        <input type="number" class="form-control" id="tiempoMinimoInput" placeholder="Maximo" min="1" max="90">
                     </div>
                 </div>
                 <div class="row">
@@ -161,28 +146,9 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="mt-3">
-                        <label for="titulo" class="form-label">(Campos opcionales)</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mt-3">
-                        <label for="titulo" class="form-label">Tiempo de vigencia de la oferta</label>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label for="titulo" class="form-label">Inicio: </label>
-                        <input type="date" class="form-control" id="costoInput" placeholder="Ingrese el maximo de personas">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="titulo" class="form-label">Fin:</label>
-                        <input type="date" class="form-control" id="costoInput" placeholder="Ingrese el maximo de personas">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col" id="colSubmit">
-                        <button type="submit" class="btn btn-success" id="botonPublicar">Publicar oferta</button>
+                    <div class="col-md-6" id="colSubmit">
+                        <button type="submit" class="btn btn-primary">Buscar oferta</button>
+                        <button type="submit" class="btn btn-primary">Mostrar todos</button>
                     </div>
                 </div>
 

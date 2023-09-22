@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilo_general.css" type="text/css">
-    <link rel="stylesheet" href="estilo_inicio.css" type="text/css">
-    <title>RapiBnB - Inicio</title>
+    <link rel="stylesheet" type="text/css" href="estilo_general.css" >
+    <link rel="stylesheet" type="text/css" href="estilo_verificar_cuenta.css" >
+    <script src="funciones_publicar_oferta.js"></script>
+    <title>RappiBnB - Verificar cuenta</title>
+
 </head>
 <body>
     <header>
@@ -25,7 +27,7 @@
                         </button>
                         <div class="dropdown-content">
                             <a href="#">Mis alquileres</a>
-                            <a href="#"><span class="cerrarSesion">Cerrar sesion</span></a>
+                            <a href="#">Cerrrar sesion</a>
                         </div>
                     </div>
                 </div>
@@ -33,29 +35,27 @@
         </nav>
     </header>
     <section>
-        <div class="container" id="mainContainer">
-            <div class="row">
-                <div class="col mb-3 animate-text">
-                    <h1>Bienvenido a <img src="logo2.png" width="300" alt=""></h1>
+        <form action="">
+            <div class="container" id="mainContainer">
+                <div class="row">
+                    <div class="col mt-3 animate-text">
+                        <h1>Verificar mi cuenta</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mt-3 mb-3">
+                        <label for="fotos" class="form-label">Ingrese la foto del frente y la foto de su documento</label>
+                        <input class="form-control" type="file" id="fotos" multiple>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" id="colSubmit">
+                        <button type="submit" class="btn btn-success">Enviar</button>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col mb-3 animate-text">
-                    <p>Que desea hacer?</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <a href="buscar_oferta.php" class="btn btn-outline-success">Alquilar una propiedad</a>
-                </div>
-                <div class="col-lg-4">
-                    <a href="publicar_oferta.php" class="btn btn-outline-success">Publicar una oferta de alquiler</a>
-                </div>
-                <div class="col-lg-4">
-                    <a href="verificar_cuenta.php" class="btn btn-outline-success">Verificar mi cuenta</a>
-                </div>
-            </div>
-        </div>
+        </form>
+
     </section>
     <footer>
         <p>2023 - Gutierrez Franco</p>

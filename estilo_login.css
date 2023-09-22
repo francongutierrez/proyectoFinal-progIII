@@ -4,11 +4,12 @@ body {
     align-items: center; /* Centrar verticalmente */
     height: 100vh; /* 100% del alto de la ventana */
     margin: 0; /* Eliminar márgenes predeterminados del cuerpo */
+    background-color: #cfcfcf;
 }
 
 #mainContainer {
     text-align: center; /* Centrar el contenido dentro del div horizontalmente */
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     width: 28em;
     height: 28em;
     padding: 2em;
@@ -16,13 +17,13 @@ body {
 }
 
 input {
-    margin: 1em 0 1em 0;
+    margin: 0.5em 0 0.5em 0;
     width: 30em;
     border-radius: 0.5em;
 }
 
 #subContainer {
-    margin-top: 2em;
+    margin-top: 1em;
     display: flex;
     justify-content: center;
     align-items: center;

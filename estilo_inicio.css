@@ -1,13 +1,7 @@
-body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
 #mainContainer {
     text-align: center;
     width: 100%;
-    margin: 10em auto 17.7em auto;
+    margin: 10em auto 12.1em auto;
     text-align: center;
     flex: 1;
     display: flex;
@@ -32,12 +26,10 @@ body {
     gap: 2em;
 }
 
-footer {
-    background-color: #333; /* Cambia el color de fondo según tus preferencias */
-    color: #fff; /* Cambia el color del texto según tus preferencias */
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
+
+/**/
+
+
+
+/**/
+

@@ -1,4 +1,8 @@
-#mainContainer #botonPublicar {
+#mainContainer {
+    margin: 1em auto 16em;
+}
+
+#mainContainer button {
     margin: 1em auto 1em;
     text-align: center;
     width: 10em;
@@ -9,8 +13,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#agregarEtiqueta {
-    width: 10em;
 }
