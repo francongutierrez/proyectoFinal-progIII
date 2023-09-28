@@ -50,25 +50,25 @@
                 <div class="row">
                     <div class="mb-3">
                         <label for="titulo" class="form-label">Titulo</label>
-                        <input type="text" class="form-control" id="tituloInput" placeholder="Ingrese el titulo de su publicacion aqui">
+                        <input type="text" class="form-control" id="tituloInput" placeholder="Ingrese el titulo de su publicacion aqui" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-3">
                         <label for="descipcion" class="form-label">Descripcion</label>
-                        <textarea class="form-control" id="descipcionInput" rows="3" placeholder="Ingrese la descripcion del alquiler aqui"></textarea>
+                        <textarea class="form-control" id="descipcionInput" rows="3" placeholder="Ingrese la descripcion del alquiler aqui" required></textarea>
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-3">
                         <label for="titulo" class="form-label">Ubicacion</label>
-                        <input type="text" class="form-control" id="ubicacionInput" placeholder="Ingrese la ubicacion aqui">
+                        <input type="text" class="form-control" id="ubicacionInput" placeholder="Ingrese la ubicacion aqui" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-3">
                         <label for="etiquetas" class="form-label">Etiquetas</label>
-                        <input type="text" class="form-control" id="etiquetasInput" placeholder="Ingrese las etiquetas aquí">
+                        <input type="text" class="form-control" id="etiquetasInput" placeholder="Ingrese las etiquetas aquí" required>
                     </div>
                 </div>
                 <div class="row">
@@ -86,7 +86,7 @@
                 <div class="row">
                     <div class="mb-3">
                         <label for="fotos" class="form-label">Ingrese las fotos</label>
-                        <input class="form-control" type="file" id="fotos" multiple>
+                        <input class="form-control" type="file" id="fotos" multiple required>
                     </div>
                 </div>
                 <div class="row">
@@ -138,7 +138,7 @@
                 <div class="row">
                     <div class="mt-3 mb-3">
                         <label for="titulo" class="form-label">Costo por dia</label>
-                        <input type="number" class="form-control" id="costoInput" placeholder="Ingrese el costo por dia aqui">
+                        <input type="number" class="form-control" id="costoInput" placeholder="Ingrese el costo por dia aqui" required>
                     </div>
                 </div>
                 <div class="row">
@@ -148,16 +148,16 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-6 mb-3">
-                        <input type="number" class="form-control" id="tiempoMinimoInput" placeholder="Minimo" min="1" max="90">
+                        <input type="number" class="form-control" id="tiempoMinimoInput" placeholder="Minimo" min="1" max="90" required>
                     </div>
                     <div class="col-sm-6 mb-3">
-                        <input type="number" class="form-control" id="tiempoMaximoInput" placeholder="Maximo" min="1" max="90">
+                        <input type="number" class="form-control" id="tiempoMaximoInput" placeholder="Maximo" min="1" max="90" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-3">
                         <label for="titulo" class="form-label">Cupo de personas</label>
-                        <input type="number" class="form-control" id="costoInput" placeholder="Ingrese el maximo de personas">
+                        <input type="number" class="form-control" id="costoInput" placeholder="Ingrese el maximo de personas" required>
                     </div>
                 </div>
                 <div class="row">

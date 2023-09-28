@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="estilo_general.css" >
-    <link rel="stylesheet" type="text/css" href="estilo_publicar_oferta.css" >
+    <link rel="stylesheet" type="text/css" href="estilo_buscar_oferta.css" >
     <script src="funciones_publicar_oferta.js"></script>
     <script src="funciones_buscar_oferta.js"></script>
     <title>RappiBnB - Buscar oferta</title>
@@ -39,8 +39,13 @@
         <form action="">
             <div class="container" id="mainContainer">
                 <div class="row">
-                    <div class="col mt-3">
+                    <div class="col mt-3 mb-3 animate-text">
                         <h1>Buscar oferta de alquiler</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mb-3 animate-text">
+                        <h4>Ingrese las especificaciones de su alquiler:</h4>
                     </div>
                 </div>
                 <div class="row">
@@ -63,7 +68,7 @@
                 </div>
                 <div class="row">
                     <div class="mb-3">
-                        <button class="btn btn-primary" id="agregarEtiqueta" onclick="agregarEtiqueta()">Agregar Etiqueta</button>
+                        <button class="btn btn-outline-success" id="agregarEtiqueta" onclick="agregarEtiqueta()">Agregar Etiqueta</button>
                     </div>
                 </div>
                 <div class="row">
@@ -146,9 +151,9 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6" id="colSubmit">
-                        <button type="submit" class="btn btn-primary">Buscar oferta</button>
-                        <button type="submit" class="btn btn-primary">Mostrar todos</button>
+                    <div class="col-md-6 mb-3 mt-3" id="colSubmit">
+                        <button type="submit" class="btn btn-success">Buscar oferta</button>
+                        <button type="submit" class="btn btn-success">Mostrar todos</button>
                     </div>
                 </div>
 

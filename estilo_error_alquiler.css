@@ -1,0 +1,27 @@
+#mainContainer {
+    margin: 1em auto 16em;
+}
+
+#mainContainer button {
+    margin: 1em auto 1em;
+    text-align: center;
+    width: 10em;
+    height: 3em;
+}
+
+.colMensaje {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 0.1em;
+}
+
+.colMensaje img {
+    width: 4em;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}

@@ -1,0 +1,15 @@
+#mainContainer #botonPublicar {
+    margin: 1em auto 1em;
+    text-align: center;
+    width: 10em;
+    height: 3em;
+}
+
+#colSubmit {
+    display: flex;
+    gap: 1em;
+}
+
+#agregarEtiqueta {
+    width: 10em;
+}
