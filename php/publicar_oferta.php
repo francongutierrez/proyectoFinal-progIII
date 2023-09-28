@@ -11,6 +11,8 @@
 
 </head>
 <body>
+    
+    <!-- NAVBAR -->
     <header>
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
@@ -34,6 +36,8 @@
             </div>
         </nav>
     </header>
+
+    <!-- CONTAINER PRINCIPAL -->
     <section>
         <form action="">
             <div class="container" id="mainContainer">
@@ -157,7 +161,7 @@
                 <div class="row">
                     <div class="mb-3">
                         <label for="titulo" class="form-label">Cupo de personas</label>
-                        <input type="number" class="form-control" id="costoInput" placeholder="Ingrese el maximo de personas" required>
+                        <input type="number" class="form-control" id="costoInput" placeholder="Ingrese el maximo de personas" min="1" max="10" required>
                     </div>
                 </div>
                 <div class="row">
@@ -191,6 +195,8 @@
         </form>
 
     </section>
+
+    <!-- FOOTER -->
     <footer>
         <p>2023 - Gutierrez Franco</p>
     </footer>
