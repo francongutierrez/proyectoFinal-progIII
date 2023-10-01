@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="estilo_general.css" >
-    <link rel="stylesheet" type="text/css" href="estilo_buscar_oferta.css" >
-    <script src="funciones_publicar_oferta.js"></script>
-    <script src="funciones_buscar_oferta.js"></script>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_buscar_oferta.css" >
+    <script src="../js/funciones_publicar_oferta.js"></script>
+    <script src="../js/funciones_buscar_oferta.js"></script>
     <title>RappiBnB - Buscar oferta</title>
 
 </head>
@@ -16,15 +16,15 @@
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <div class="col-md-6">
-                    <a class="navbar-brand" href="inicio.php">
-                        <img src="RapiBnB.png" alt="Logo" width="50" class="d-inline-block align-text-top">
+                    <a class="navbar-brand" href="../php/inicio.php">
+                        <img src="../img/RapiBnB.png" alt="Logo" width="50" class="d-inline-block align-text-top">
                         <p>RapiBnB</p>
                     </a>
                 </div>
                 <div class="col-md-6">
                     <div class="dropdown">
                         <button class="menu-button">
-                            <img src="test_image.jpg" alt="Foto de perfil" class="profile-image">
+                            <img src="../img/test_image.jpg" alt="Foto de perfil" class="profile-image">
                         </button>
                         <div class="dropdown-content">
                             <a href="#">Mis alquileres</a>
