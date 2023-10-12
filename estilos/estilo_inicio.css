@@ -17,7 +17,7 @@
 }
 
 #mainContainer a {
-    width: 20em;
+    width: 16em;
     height: 4em;
     display: flex;
     align-items: center; /* Centra verticalmente */
@@ -25,6 +25,8 @@
     margin: 0 auto 0 auto;
     gap: 2em;
 }
+
+
 
 
 /**/

@@ -10,15 +10,13 @@ body {
 #mainContainer {
     text-align: center; /* Centrar el contenido dentro del div horizontalmente */
     background-color: #ffffff;
-    width: 28em;
-    height: 28em;
     padding: 2em;
     border-radius: 1.5em;
 }
 
 input {
     margin: 0.5em 0 0.5em 0;
-    width: 30em;
+    width: 25em;
     border-radius: 0.5em;
 }
 
@@ -31,4 +29,8 @@ input {
 
 button {
     margin-top: 2em;
+}
+
+.errorInicio {
+    color: red;
 }

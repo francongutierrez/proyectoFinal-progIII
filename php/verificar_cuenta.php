@@ -1,5 +1,12 @@
+<?php
+
+    include 'scripts/verificacion.php';
+    include 'scripts/comprobar_verificacion_en_proceso.php';    
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +19,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar bg-body-tertiary">
+    <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <div class="col-md-6">
                     <a class="navbar-brand" href="../php/inicio.php">
@@ -23,11 +30,33 @@
                 <div class="col-md-6">
                     <div class="dropdown">
                         <button class="menu-button">
-                            <img src="../img/test_image.jpg" alt="Foto de perfil" class="profile-image">
+                            <!-- <img src="../img/test_image.jpg" alt="Foto de perfil" class="profile-image"> -->
+
+
+                            <?php
+
+                            if ($_SESSION['foto_usuario']) {
+                                // Codifica la imagen en Base64
+                                $imagen_codificada = base64_encode($_SESSION['foto_usuario']);
+                                // Muestra la imagen en el documento HTML
+                                echo '<img src="data:image/jpeg;base64,' . $imagen_codificada . '" alt="Foto de perfil" class="profile-image">';
+                            } else {
+                                echo "Imagen no encontrada";
+                            }
+
+                            ?>
+
+
                         </button>
                         <div class="dropdown-content">
-                            <a href="#">Mis alquileres</a>
-                            <a href="#">Cerrrar sesion</a>
+                            <a href="mi_perfil.php">Mi perfil</a>
+                            <a href="mis_alquileres.php">Mis alquileres</a>
+                            <form action="" method="POST">
+                                <button type="submit" id="cerrar-sesion-button" name="cerrar-sesion">
+                                    <a href="#"><span class="cerrarSesion">Cerrar sesión</span></a>
+                                </button>
+                            </form>
+                            
                         </div>
                     </div>
                 </div>
@@ -35,7 +64,7 @@
         </nav>
     </header>
     <section>
-        <form action="">
+        <form action="" method="POST" enctype="multipart/form-data">
             <div class="container" id="mainContainer">
                 <div class="row">
                     <div class="col mt-3 animate-text">
@@ -44,17 +73,23 @@
                 </div>
                 <div class="row">
                     <div class="mt-3 mb-3">
-                        <label for="fotos" class="form-label">Ingrese la foto del frente y la foto de su documento</label>
-                        <input class="form-control" type="file" id="fotos" multiple>
+                        <label for="fotos" class="form-label">Ingrese la documentacion adjunta necesaria para la verificacion</label>
+                        <input class="form-control" type="file" id="documentacion" name="documentacion" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col" id="colSubmit">
-                        <button type="submit" class="btn btn-success">Enviar</button>
+                        <button type="submit" class="btn btn-success" name="enviarSolicitud">Enviar</button>
                     </div>
                 </div>
             </div>
         </form>
+
+        <?php
+
+        include 'scripts/enviar_solicitud_de_verificacion.php';
+
+        ?>
 
     </section>
     <footer>

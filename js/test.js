@@ -14,6 +14,7 @@ form.addEventListener('submit', function(event) {
   const costo = document.getElementById('costoInput').value;
   const tiempoMinimo = document.getElementById('tiempoMinimoInput').value;
   const tiempoMaximo = document.getElementById('tiempoMaximoInput').value;
+  const fotos = document.getElementById('fotos');
   const cupo = document.getElementById('cupoInput').value;
 
   let enviar = true;
@@ -23,8 +24,8 @@ form.addEventListener('submit', function(event) {
     errorMessage += '- El titulo debe tener entre 5 y 25 caracteres.<br>';
     enviar = false;
   }
-  if (descripcion.length < 5 || descripcion.length > 25) {
-    errorMessage += '- La descripción debe tener entre 5 y 25 caracteres.<br>';
+  if (descripcion.length < 5 || descripcion.length > 499) {
+    errorMessage += '- La descripción debe tener entre 5 y 500 caracteres.<br>';
     enviar = false;
   }
   if (ubicacion.length < 5 || ubicacion.length > 25) {
@@ -53,13 +54,32 @@ form.addEventListener('submit', function(event) {
     enviar = false;
   }
 
-  
-  console.log(errorMessage);
+  if (fotos.files.length === 0) {
+    errorMessage += '- No ha seleccionado ninguna foto.<br>';
+    enviar = false;
+  }
+  if (fotos.files.length > 10) {
+    errorMessage += '- Puede subir 10 fotos como maximo.<br>';
+    enviar = false;
+  }
+
+  for (let i = 0; i < fotos.files.length; i++) {
+    let file = fotos.files[i];
+    if (file.type.startsWith('image/')) {
+      
+    } else {
+      errorMessage += '- Ha subido un archivo que no es una imagen<br>';
+      enviar = false;
+      break;
+    }
+  }
+
+
+
   errorText.innerHTML = errorMessage;
   
   if (enviar) {
     form.submit();
-    window.location.href = "http://localhost/ProgramacionIII/proyectoFinal/php/publicacion_exitosa.php";
   } else {
     errorModal.style.display = 'block';
   }
@@ -86,6 +106,7 @@ function validarForm() {
     let tiempoMinimoInput = document.getElementById('tiempoMinimoInput');
     let tiempoMaximoInput = document.getElementById('tiempoMaximoInput');
     let costoInput = document.getElementById('costoInput');
+    let fotosInput = document.getElementById('fotos');
     let cupoInput = document.getElementById('cupoInput');
 
 
@@ -111,7 +132,7 @@ function validarForm() {
     }
 
 
-    if (descripcion.length < 5 || descripcion.length > 25) {
+    if (descripcion.length < 5 || descripcion.length > 499) {
       descripcionInput.classList.add('is-invalid');
       descripcionInput.classList.remove('is-valid');
 
@@ -189,4 +210,30 @@ function validarForm() {
       cupoInput.classList.add('is-valid');
       cupoInput.classList.remove('is-invalid');
     }
+
+
+  
+    for (let i = 0; i < fotosInput.files.length; i++) {
+      let file = fotosInput.files[i];
+      var errorFile = 0;
+      if (file.type.startsWith('image/')) {
+        
+      } else {
+        errorFile = 1;
+        break;
+      }
+    }
+
+    if (fotosInput.files.length === 0 || fotosInput.files.length > 10 || errorFile == 1) {
+      fotosInput.classList.add('is-invalid');
+      fotosInput.classList.remove('is-valid');
+    } else {
+      fotosInput.classList.add('is-valid');
+      fotosInput.classList.remove('is-invalid');
+    }
+
+
+
 }
+
+

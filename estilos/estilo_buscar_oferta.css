@@ -13,3 +13,14 @@
 #agregarEtiqueta {
     width: 10em;
 }
+
+#colSubmit button a {
+    text-decoration: none;
+    width: 5em;
+    height: 6em;
+    color: #0c6a01;
+}
+
+#colSubmit button a:hover {
+    color:white
+}

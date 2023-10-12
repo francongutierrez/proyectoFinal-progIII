@@ -1,0 +1,14 @@
+.titular {
+    font-weight: bolder;
+}
+
+.foto-perfil-display {
+    width: 15em;
+    margin-left: 5em;
+    border-radius: 1em;
+}
+
+#actualizar-datos-button {
+    margin: 1em;
+    padding: 0;
+}

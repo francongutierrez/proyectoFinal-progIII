@@ -1,0 +1,29 @@
+#mainContainer {
+    margin: 1em auto;
+}
+
+#ver-mas-button {
+    border-radius: 0.5em;
+}
+
+.selectores-pagina {
+    font-size: x-large;
+    color: #0c6a01;
+    text-decoration: none;
+    padding: 0.5em;
+}
+.selectores-pagina:hover {
+    color: black;
+}
+
+@media print {
+    /* Estiliza los números de página en la parte inferior */
+
+    
+    /* Estiliza los números de página en la parte inferior */
+    .selectores-pagina::after {
+      content: counter(page); /* Muestra el número de página */
+      font-size: 12pt; /* Tamaño de fuente */
+      color: #333; /* Color del número de página */
+    }
+  }

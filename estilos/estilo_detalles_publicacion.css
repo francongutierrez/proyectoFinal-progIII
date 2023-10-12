@@ -1,0 +1,30 @@
+#resultados {
+    margin-top: 1em;
+}
+
+
+.btn {
+    margin-right: 1em;
+    margin-bottom: 2em;
+}
+
+a {
+    text-decoration: none;
+    color: #0c6a01;
+}
+
+a:hover {
+    color: white;
+}
+
+.reseñas {
+    margin-bottom: 2em;
+}
+
+.titular {
+    font-weight: bolder;
+}
+
+footer {
+    margin-top: 1em;
+}
