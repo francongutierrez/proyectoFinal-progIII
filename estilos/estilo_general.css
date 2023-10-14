@@ -129,4 +129,24 @@ footer {
     color: white;
 }
 
+#usuario-verificado-menu {
+    color:#0c6a01;
+}
+
+#ofertas {
+    display: flex;
+}
+
+
+
+#cantidad-ofertas {
+    text-align: center;
+    padding: 0.5;
+    margin-left: 1em;
+    border-radius: 2em;
+    width: 1em;
+    background-color: #5e5e5e;
+    color: white;
+}
+
 

@@ -13,7 +13,7 @@ if (isset($_POST['enviarSolicitud'])) {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $_SESSION['id_usuario'], $documentacion);
 
-    $sql2 = "INSERT INTO usuarios(certificacion_en_proceso) VALUES (?) WHERE id = ?";
+    $sql2 = "UPDATE usuarios SET certificacion_en_proceso = ? WHERE id = ?";
     $stmt2 = $conn->prepare($sql2);
     $stmt2->bind_param("ii", $true, $_SESSION['id_usuario']);
 

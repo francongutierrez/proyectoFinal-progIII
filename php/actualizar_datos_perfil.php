@@ -18,7 +18,7 @@
     
     <!-- NAVBAR -->
     <header>
-    <nav class="navbar bg-body-tertiary">
+        <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <div class="col-md-6">
                     <a class="navbar-brand" href="../php/inicio.php">
@@ -33,7 +33,7 @@
 
 
                             <?php
-
+                            // Mostrar la imagen de perfil del usuario
                             if ($_SESSION['foto_usuario']) {
                                 // Codifica la imagen en Base64
                                 $imagen_codificada = base64_encode($_SESSION['foto_usuario']);
@@ -48,11 +48,23 @@
 
                         </button>
                         <div class="dropdown-content">
+
+                            <?php
+                            
+                            if ($_SESSION['certificacion'] == 1) {
+                                echo "<a href='' onclick='return false;' id='usuario-verificado-menu'>Usuario verificado</a>";
+                            } else {}
+                            
+                            ?>
+
                             <a href="mi_perfil.php">Mi perfil</a>
                             <a href="mis_alquileres.php">Mis alquileres</a>
-                            <form action="" method="POST">
-                                <button type="submit" name="cerrar-sesion">
-                                    <a href="#"><span class="cerrarSesion">Cerrar sesion</span></a>
+                            <a href="mis_alquileres.php" id="ofertas">Ofertas de alquiler:
+                                <?php include "scripts/cantidad_ofertas_alquiler.php";?>
+                            </a>
+                            <form action="scripts/cerrar_sesion.php" method="POST">
+                                <button type="submit" id="cerrar-sesion-button" name="cerrar-sesion">
+                                    <a href="#"><span class="cerrarSesion">Cerrar sesión</span></a>
                                 </button>
                             </form>
                             
@@ -82,7 +94,7 @@
                 </div>
             </div>
 
-                <form action="" id="formularioRegistro" class="needs-validation" novalidate onsubmit="validarForm()" method="POST" enctype="multipart/form-data">
+                <form action="" id="formularioRegistro" class="needs-validation" method="POST" novalidate enctype="multipart/form-data">
                     <div class="row">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre</label>
@@ -145,7 +157,7 @@
                     </div>
                     <div class="row">
                         <div class="col" id="colSubmit">
-                            <button type="submit" class="btn btn-success" id="botonPublicar">Actualizar</button>
+                            <button type="submit" class="btn btn-success" id="botonPublicar" name="actualizar" value="actualizar">Actualizar</button>
                         </div>
                     </div>
                 </form>
@@ -173,7 +185,7 @@
     
 
     // Script de actualizacion
-    
+    include "../php/scripts/modificacion_datos_perfil.php";
     
     ?>
 
@@ -185,6 +197,6 @@
         <p>2023 - Gutierrez Franco</p>
     </footer>
 
-    <script src="../js/funciones_registro_usuario.js"></script>
+    <!-- <script src="../js/funciones_registro_usuario.js"></script> -->
 </body>
 </html>

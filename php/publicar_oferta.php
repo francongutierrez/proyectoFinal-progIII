@@ -21,7 +21,7 @@
     
     <!-- NAVBAR -->
     <header>
-    <nav class="navbar bg-body-tertiary">
+        <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <div class="col-md-6">
                     <a class="navbar-brand" href="../php/inicio.php">
@@ -36,7 +36,7 @@
 
 
                             <?php
-
+                            // Mostrar la imagen de perfil del usuario
                             if ($_SESSION['foto_usuario']) {
                                 // Codifica la imagen en Base64
                                 $imagen_codificada = base64_encode($_SESSION['foto_usuario']);
@@ -51,9 +51,21 @@
 
                         </button>
                         <div class="dropdown-content">
+
+                            <?php
+                            
+                            if ($_SESSION['certificacion'] == 1) {
+                                echo "<a href='' onclick='return false;' id='usuario-verificado-menu'>Usuario verificado</a>";
+                            } else {}
+                            
+                            ?>
+
                             <a href="mi_perfil.php">Mi perfil</a>
                             <a href="mis_alquileres.php">Mis alquileres</a>
-                            <form action="" method="POST">
+                            <a href="mis_alquileres.php" id="ofertas">Ofertas de alquiler:
+                                <?php include "scripts/cantidad_ofertas_alquiler.php";?>
+                            </a>
+                            <form action="scripts/cerrar_sesion.php" method="POST">
                                 <button type="submit" id="cerrar-sesion-button" name="cerrar-sesion">
                                     <a href="#"><span class="cerrarSesion">Cerrar sesión</span></a>
                                 </button>
@@ -98,6 +110,15 @@
                         <div class="mb-3">
                             <label for="titulo" class="form-label">Ubicacion</label>
                             <input type="text" class="form-control"  id="ubicacionInput" placeholder="Ingrese la ubicacion aqui" name="ubicacion" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3">
+                            <label for="titulo" class="form-label">Tipo de propiedad</label>
+                            <select name="tipo" id="tipoInput" class="form-select">
+                                <option value="Privada">Privada</option>
+                                <option value="Pública">Pública</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row">

@@ -3,7 +3,7 @@
 
 include 'scripts/conexion_db.php';
 
-$sql = "SELECT titulo, descripcion, ubicacion, etiquetas, tiempo_minimo, tiempo_maximo, costo, cupo FROM propiedades WHERE id = ?";
+$sql = "SELECT * FROM propiedades WHERE id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $_SESSION['selected_publicacion']);
 $stmt->execute();

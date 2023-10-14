@@ -21,9 +21,9 @@ if ($pagina != 1) {
 $inicio = ($pagina - 1) * $por_pagina;
 
 
-$sql = "SELECT id, titulo, descripcion, costo FROM propiedades LIMIT ?, ?";
+$sql = "SELECT id, titulo, descripcion, costo FROM propiedades WHERE id_dueno != ? AND activa = 1 LIMIT ?, ? ";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ii", $inicio, $por_pagina);
+$stmt->bind_param("iii", $_SESSION['id_usuario'], $inicio, $por_pagina);
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -39,11 +39,15 @@ if ($result->num_rows > 0) {
 
     }
 } else {
-    echo "<h3>Sin resultados</h3>";
+    echo "<div class='row'>";
+    echo "<div class='col mb-3' id='sin-resultados'>";
+    echo "<h3>Sin resultados</h3>";    
+    echo "<div class='row'>";
+    echo "<div class='col'>";
 }
 
 // Calcular la cantidad total de páginas para los resultados regulares
-$sql_total_regulares = "SELECT COUNT(*) as total FROM propiedades WHERE dueno_certificado = 0";
+$sql_total_regulares = "SELECT COUNT(*) as total FROM propiedades WHERE dueno_certificado = 0 AND id_dueno != $_SESSION[id_usuario]";
 $resultado_total_regulares = $conn->query($sql_total_regulares);
 $total_registros_regulares = $resultado_total_regulares->fetch_assoc()['total'];
 $total_paginas = ceil($total_registros_regulares / $por_pagina);

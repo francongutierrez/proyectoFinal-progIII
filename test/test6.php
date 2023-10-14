@@ -5,7 +5,6 @@
             extract($_POST);
         
             $actualizaciones = array();
-            $false = 0;
         
             // Validar campos
             if (!empty($nombre)) {
@@ -41,8 +40,8 @@
             }
         
             if (!empty($actualizaciones)) {
-                $actualizaciones[] = "certificacion = '$false'";
-                $actualizaciones[] = "certificacion_en_proceso = '$false'";
+                $actualizaciones[] = "certificacion = 0";
+                $actualizaciones[] = "certificacion_en_progreso = 0";
                 $query = "UPDATE usuarios SET " . implode(", ", $actualizaciones). "WHERE id = $_SESSION[id_usuario]";
         
                 if (mysqli_query($conn, $query)) {
@@ -57,7 +56,9 @@
             }
         
             mysqli_close($conn);
-        } else { }
+        } else {
+            echo "<h1>World</h1>";
+        }
 
 
 ?>

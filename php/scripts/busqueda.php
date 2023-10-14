@@ -9,10 +9,12 @@
         $sql = "SELECT * FROM propiedades WHERE 1";
 
         if (!empty($titulo)) {
-            $sql .= " AND titulo LIKE '%$titulo%'";
+            $titulo = strtolower($titulo);
+            $sql .= " AND LOWER(titulo) LIKE '%$titulo%'";
         }
         if (!empty($ubicacion)) {
-            $sql .= " AND ubicacion LIKE '%$ubicacion%'";
+            $ubicacion = strtolower($ubicacion);
+            $sql .= " AND LOWER(ubicacion) LIKE '%$ubicacion%'";
         }
         if (!empty($costo)) {
             $sql .= " AND costo <= $costo";
@@ -23,6 +25,8 @@
         if (!empty($cupo)) {
             $sql .= " AND cupo = $cupo";
         }
+
+        $sql .= " AND activa = 1 AND id_dueno != $_SESSION[id_usuario]";
 
         $result = $conn->query($sql);
 

@@ -34,7 +34,7 @@ if (!isset($_SESSION['id_usuario'])) {
 
 
                             <?php
-
+                            // Mostrar la imagen de perfil del usuario
                             if ($_SESSION['foto_usuario']) {
                                 // Codifica la imagen en Base64
                                 $imagen_codificada = base64_encode($_SESSION['foto_usuario']);
@@ -49,8 +49,20 @@ if (!isset($_SESSION['id_usuario'])) {
 
                         </button>
                         <div class="dropdown-content">
+
+                            <?php
+                            
+                            if ($_SESSION['certificacion'] == 1) {
+                                echo "<a href='' onclick='return false;' id='usuario-verificado-menu'>Usuario verificado</a>";
+                            } else {}
+                            
+                            ?>
+
                             <a href="mi_perfil.php">Mi perfil</a>
                             <a href="mis_alquileres.php">Mis alquileres</a>
+                            <a href="mis_alquileres.php" id="ofertas">Ofertas de alquiler:
+                                <?php include "scripts/cantidad_ofertas_alquiler.php";?>
+                            </a>
                             <form action="scripts/cerrar_sesion.php" method="POST">
                                 <button type="submit" id="cerrar-sesion-button" name="cerrar-sesion">
                                     <a href="#"><span class="cerrarSesion">Cerrar sesión</span></a>

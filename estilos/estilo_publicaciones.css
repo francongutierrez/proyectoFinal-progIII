@@ -16,6 +16,11 @@
     color: black;
 }
 
+#sin-resultados {
+    height: 25em;
+}
+
+
 @media print {
     /* Estiliza los números de página en la parte inferior */
 
@@ -27,3 +32,4 @@
       color: #333; /* Color del número de página */
     }
   }
+
