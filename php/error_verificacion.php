@@ -4,9 +4,8 @@
 
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_error_alquiler.css" >
     <script src="../js/funciones_publicar_oferta.js"></script>
-    <title>RappiBnB - Publicacion exitosa</title>
+    <title>RappiBnB - Error</title>
 
 </head>
 <body>
@@ -81,12 +80,12 @@
                 <div class="row">
                     <div class="col mt-3 animate-text colMensaje">
                         <img src="../img/valid.jpg" alt="">
-                        <h1>Publicacion exitosa</h1>
+                        <h1>No necesita verificar su cuenta</h1>
                     </div>
                 </div>
                 <div class="row">
                     <div class="mt-3">
-                        <p>Se ha publicado su oferta<p>
+                        <p>Su cuenta esta verificada o en proceso de verificación <p>
                         <p id="descripcionError">Desea volver al inicio?<p>
                     </div>
                 </div>

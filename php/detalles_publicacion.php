@@ -12,7 +12,6 @@ include 'scripts/verificacion.php'
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_detalles_publicacion.css" >
-    <script src="../js/funciones_publicar_oferta.js"></script>
     <title>RappiBnB - Publicaciones en oferta</title>
 
 </head>
@@ -86,7 +85,17 @@ include 'scripts/verificacion.php'
             ?>
         </div>
         <div class="container" id="reseñas">
-            <?php include 'scripts/mostrar_resenas.php'; ?>
+            <div class="row">
+                <div class="col">
+                    <h1>Reseñas de la publicación:</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <?php include 'scripts/mostrar_resenas.php'; ?>
+                </div>
+            </div>
+
         </div>
 
 
@@ -98,5 +107,7 @@ include 'scripts/verificacion.php'
         <p>2023 - Gutierrez Franco</p>
     </footer>
     <?php include 'scripts/cerrar_sesion.php' ?>
+
+    <script src="../js/funciones_detalles_publicacion.js"></script>
 </body>
 </html>

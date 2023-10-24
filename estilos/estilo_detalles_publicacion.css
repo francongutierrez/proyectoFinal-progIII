@@ -33,3 +33,34 @@ footer {
     display: flex;
     gap: 1em;
 }
+
+.imagenPropiedad {
+    width: 200px;
+    height: 150px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.enlarged {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(4); /* Amplía la imagen sin cambiar su tamaño */
+    z-index: 999; /* Asegura que la imagen ampliada esté por encima de otras imágenes */
+}
+
+.enlarged img {
+    width: auto; /* Ancho automático para mantener la relación de aspecto original */
+    height: auto; /* Altura automática para mantener la relación de aspecto original */
+    max-width: 90%; /* Limita el ancho de la imagen para evitar que se extienda demasiado */
+    max-height: 90%; /* Limita la altura de la imagen para evitar que se extienda demasiado */
+}
+
+#formularioRespuesta {
+    display: none;
+}
+
+#ofertas {
+    display: flex;
+    flex-direction: column;
+}

@@ -94,12 +94,7 @@ include 'scripts/verificacion.php'
         <?php
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            if (isset($_POST['id_publicacion'])) {
-                $_SESSION['selected_publicacion'] = $_POST['id_publicacion'];
-                echo "<script> window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/detalles_publicacion.php' </script>";
-            } else {
-                echo "No ha seleccionado ninguna publicacion";
-            }
+            include 'scripts/activar_desactivar_publicacion.php';
         }
 
         ?>

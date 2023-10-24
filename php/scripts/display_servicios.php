@@ -18,11 +18,11 @@
     $result2 = $prepara2->get_result();
 
     if ($result2->num_rows > 0) {
-        while ($row = $result2->fetch_assoc()) {
-            echo '<span>'.$row['nombre'].'</span>';
+        while ($row_servicios = $result2->fetch_assoc()) {
+            echo '<span class="serviciosNombre">'.$row_servicios['nombre'].'</span> / ';
         }
     } else {
-        echo "La publicacion no tiene servicios especificados.";
+        echo "<p>La publicacion no tiene servicios especificados.</p>";
     }
 
     $prepara2->close();

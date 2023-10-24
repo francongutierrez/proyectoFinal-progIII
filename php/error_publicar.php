@@ -1,12 +1,20 @@
+<?php
+
+    include 'scripts/verificacion.php';  
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../estilos/estilo_general.css" type="text/css">
-    <link rel="stylesheet" href="../estilos/estilo_error_publicar.css" type="text/css">
-    <title>RappiBnB - Inicio</title>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_error_alquiler.css" >
+    <script src="../js/funciones_publicar_oferta.js"></script>
+    <title>RappiBnB - Error</title>
+
 </head>
 <body>
     <header>
@@ -67,28 +75,28 @@
         </nav>
     </header>
     <section>
-        <div class="container" id="mainContainer">
-            <div class="row">
-                <div class="col">
-                    <h1>Error</h1>
+        <form action="">
+            <div class="container" id="mainContainer">
+                <div class="row">
+                    <div class="col mt-3 animate-text colMensaje">
+                        <img src="../img/error_img.jpg" alt="">
+                        <h1>Error</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mt-3">
+                        <p>No puede publicar mas de una oferta si su cuenta no está verificada<p>
+                        <p id="descripcionError">Desea verificar su cuenta?<p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" id="colSubmit">
+                    <a href="../php/verificar_cuenta.php"><button type="button" class="btn btn-success">Verificar mi cuenta</button></a>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <p>No puede publicar mas de una propiedad si no es un usuario verificado</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p>Desea verificar su cuenta?</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <a href="../php/verificar_cuenta.php" class="btn btn-outline-primary mt-3">Verificar mi cuenta</a>
-                </div>
-            </div>
-        </div>
+        </form>
+
     </section>
     <footer>
         <p>2023 - Gutierrez Franco</p>

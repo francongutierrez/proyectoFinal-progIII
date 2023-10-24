@@ -1,20 +1,18 @@
 <?php
 
-    include 'scripts/verificacion.php';  
+include 'scripts/verificacion.php'
 
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
-    <link rel="stylesheet" type="text/css" href="../estilos/estilo_error_alquiler.css" >
-    <script src="../js/funciones_publicar_oferta.js"></script>
-    <title>RappiBnB - Publicacion exitosa</title>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_detalles_publicacion.css" >
+    <title>RappiBnB - Publicaciones en oferta</title>
 
 </head>
 <body>
@@ -76,31 +74,54 @@
         </nav>
     </header>
     <section>
-        <form action="">
-            <div class="container" id="mainContainer">
-                <div class="row">
-                    <div class="col mt-3 animate-text colMensaje">
-                        <img src="../img/valid.jpg" alt="">
-                        <h1>Publicacion exitosa</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mt-3">
-                        <p>Se ha publicado su oferta<p>
-                        <p id="descripcionError">Desea volver al inicio?<p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col" id="colSubmit">
-                    <a href="../php/inicio.php"><button type="button" class="btn btn-success">Volver al inicio</button></a>
-                    </div>
+        
+
+
+        <div class="container" id="resultados">
+            <?php
+
+                include 'scripts/mostrar_detalles.php';
+            
+            ?>
+        </div>
+        <div class="container" id="reseñas">
+            <div class="row">
+                <div class="col">
+                    <h1>Reseñas de la publicación:</h1>
                 </div>
             </div>
-        </form>
+            <div class="row">
+                <div class="col">
+                <?php include 'scripts/mostrar_resenas.php'; ?>
+                </div>
+            </div>
+            
+        </div>
+        <div class="container" id="ofertas">
+            <div class="row col-ofertas-titulo">
+                <div class="col ">
+                    <h1>Ofertas de alquiler:</h1>
+                </div>
+            </div>
+            <div class="row col-ofertas">
+                <div class="col ">
+                    <?php include 'scripts/mostrar_ofertas.php'; ?>
+                    <?php include '../php/scripts/manejar_decision_dueno.php'; ?>
+                </div>
+            </div>
+            
+        </div>
+
+
+
+
 
     </section>
     <footer>
         <p>2023 - Gutierrez Franco</p>
     </footer>
+    <?php include 'scripts/cerrar_sesion.php' ?>
+
+    <script src="../js/funciones_detalles_publicacion.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 include 'scripts/conexion_db.php';
 
-$sql = "SELECT id, titulo, descripcion, costo FROM propiedades WHERE id_dueno = ?";
+$sql = "SELECT id, titulo, descripcion, costo, activa FROM propiedades WHERE id_dueno = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $_SESSION['id_usuario']);
 $stmt->execute();
@@ -12,7 +12,7 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
 
     // Script para manejar la estructura de las publicaciones
-    include 'estructura_publicaciones.php';
+    include 'estructura_mis_publicaciones.php';
 
 
     }
