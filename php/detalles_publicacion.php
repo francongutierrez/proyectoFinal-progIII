@@ -81,7 +81,7 @@ include 'scripts/verificacion.php'
             <?php
 
                 include 'scripts/mostrar_detalles.php';
-            
+                include 'scripts/postular_alquiler.php';
             ?>
         </div>
         <div class="container" id="reseñas">
@@ -92,13 +92,37 @@ include 'scripts/verificacion.php'
             </div>
             <div class="row">
                 <div class="col">
+                    <?php include 'scripts/editar_resena.php'; ?>
                     <?php include 'scripts/mostrar_resenas.php'; ?>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <?php include 'scripts/dejar_reseña.php'; ?>
+                    <?php include 'scripts/insertar_resena.php'; ?>
                 </div>
             </div>
 
         </div>
 
-
+        <div class="container">
+            <div id="errorModal" class="modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">  
+                        <div class="modal-header">
+                            <h4>Error</h4>
+                            <span class="close" id="closeModal">&times;</span>
+                        </div>   
+                        <div class="modal-body">
+                            <p id="errorText"></p>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 

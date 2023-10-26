@@ -1,0 +1,13 @@
+footer {
+    margin-top: 1em;
+}
+
+.selectores-pagina {
+    font-size: x-large;
+    color: #0c6a01;
+    text-decoration: none;
+    padding: 0.5em;
+}
+.selectores-pagina:hover {
+    color: black;
+}

@@ -76,7 +76,7 @@ include 'scripts/verificacion.php'
         </nav>
     </header>
     <section>
-        <form action="" method="POST">
+        <form action="" method="POST" id="formularioBuscar">
             <div class="container" id="mainContainer">
                 <div class="row">
                     <div class="col mt-3 mb-3 animate-text">
@@ -200,11 +200,30 @@ include 'scripts/verificacion.php'
             
 
         </form>
+        <div class="container">
+            <div id="errorModal" class="modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">  
+                        <div class="modal-header">
+                            <h4>Error</h4>
+                            <span class="close" id="closeModal">&times;</span>
+                        </div>   
+                        <div class="modal-body">
+                            <p id="errorText"></p>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <?php include 'scripts/busqueda.php' ?>
 
     </section>
     <footer>
         <p>2023 - Gutierrez Franco</p>
     </footer>
+
+    <script src="../js/funciones_buscar_oferta.php"></script>
 </body>
 </html>

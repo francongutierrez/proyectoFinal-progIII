@@ -1,5 +1,6 @@
 #mainContainer {
-    margin: 1em auto 16em;
+    margin: 1em auto;
+    height: 36em;
 }
 
 #mainContainer button {

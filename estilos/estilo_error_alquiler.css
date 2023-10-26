@@ -9,6 +9,10 @@
     height: 3em;
 }
 
+#mainContainer h1 {
+    margin-left: 0.5em;
+}
+
 .colMensaje {
     display: flex;
     align-items: center;

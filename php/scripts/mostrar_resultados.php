@@ -33,7 +33,7 @@
         echo '<div class="row">';
         echo '<div class="col text-center">';
         for ($i = 1; $i <= $total_paginas; $i++) {
-            echo "<a href='?pagina=$i'>$i</a> ";
+            echo "<a href='?pagina=$i' class='selectores-pagina'>$i</a> ";
         }
         '</div>';
         '</div>';

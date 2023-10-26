@@ -13,7 +13,7 @@
         while ($row = $result->fetch_assoc()) {
 
         // Script para manejar la estructura de las reseñass
-        include 'estructura_resena.php';
+        include 'estructura_resena_mi_publicacion.php';
 
         }
     } else {

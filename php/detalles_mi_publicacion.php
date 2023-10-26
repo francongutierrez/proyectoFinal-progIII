@@ -92,7 +92,8 @@ include 'scripts/verificacion.php'
             </div>
             <div class="row">
                 <div class="col">
-                <?php include 'scripts/mostrar_resenas.php'; ?>
+                <?php include 'scripts/editar_respuesta.php'; ?>
+                <?php include 'scripts/mostrar_resenas_mi_publicacion.php'; ?>
                 </div>
             </div>
             

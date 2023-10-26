@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
-    <link rel="stylesheet" type="text/css" href="../estilos/estilo_publicar_oferta.css" >
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_actualizar_datos_perfil.css" >
 
     <title>RapiBnB - Registrarse</title>
 
@@ -84,8 +84,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col mt-3 mb-3 animate-text">
-                    <h5>ATENCION: Los datos que no ingrese permaneceran tal como estaban. Si es un usuario verificado, una vez que modifique sus datos debera volver a adjuntar la documentacion de verificacion</h5>
+                <div class="col mt-3 mb-3 animate-text" id="mensajeAtencion">
+                    <h5>ATENCI&Oacute;N: Los datos que no ingrese en el siguiente formulario permanecerán tal como estaban. Si usted es un usuario verificado, una vez que modifique sus datos deberá volver a adjuntar la documentación de verificación</h5>
                 </div>
             </div>
             <div class="row">
@@ -157,7 +157,7 @@
                     </div>
                     <div class="row">
                         <div class="col" id="colSubmit">
-                            <button type="submit" class="btn btn-success" id="botonPublicar" name="actualizar" value="actualizar">Actualizar</button>
+                            <button type="submit" class="btn btn-success" id="botonActualizar" name="actualizar" value="actualizar">Actualizar</button>
                         </div>
                     </div>
                 </form>

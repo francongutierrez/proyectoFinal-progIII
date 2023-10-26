@@ -1,19 +1,20 @@
 <?php
 
-include 'scripts/verificacion.php'
+    include 'scripts/verificacion.php';  
 
 ?>
 
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
-    <link rel="stylesheet" type="text/css" href="../estilos/estilo_publicaciones.css" >
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_error_alquiler.css" >
     <script src="../js/funciones_publicar_oferta.js"></script>
-    <title>RappiBnB - Publicaciones en oferta</title>
+    <title>RappiBnB - Alquiler exitoso</title>
 
 </head>
 <body>
@@ -75,48 +76,30 @@ include 'scripts/verificacion.php'
         </nav>
     </header>
     <section>
-        
-        <div class="container" id="destacados">
-            <?php
-
-            include '../php/scripts/publicaciones_destacadas.php';
-
-            ?>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col mt-3 animate-text">
-                    <h1>Todas las publicaciones</h1>
+        <form action="">
+            <div class="container" id="mainContainer">
+                <div class="row">
+                    <div class="col mt-3 animate-text colMensaje">
+                        <img src="../img/valid.jpg" alt="">
+                        <h1>Alquiler exitoso</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mt-3">
+                        <p>Has alquilado la propiedad<p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" id="colSubmit">
+                    <a href="../php/inicio.php"><button type="button" class="btn btn-success">Volver al inicio</button></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="container" id="resultados">
-            <?php
-
-            include '../php/scripts/mostrar_publicaciones.php';
-
-            ?>
-        </div>
-
-        <?php
-
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            if (isset($_POST['id_publicacion'])) {
-                $_SESSION['selected_publicacion'] = $_POST['id_publicacion'];
-                echo "<script> window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/detalles_publicacion.php' </script>";
-            } else {
-                echo "No ha seleccionado ninguna publicacion";
-            }
-        }
-
-        ?>
-
-
+        </form>
 
     </section>
     <footer>
         <p>2023 - Gutierrez Franco</p>
     </footer>
-    <?php include 'scripts/cerrar_sesion.php' ?>
 </body>
 </html>

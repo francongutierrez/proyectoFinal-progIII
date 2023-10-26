@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_error_alquiler.css" >
     <script src="../js/funciones_publicar_oferta.js"></script>
-    <title>RappiBnB - Publicacion exitosa</title>
+    <title>RappiBnB - Publicación exitosa</title>
 
 </head>
 <body>
@@ -81,7 +81,7 @@
                 <div class="row">
                     <div class="col mt-3 animate-text colMensaje">
                         <img src="../img/valid.jpg" alt="">
-                        <h1>Publicacion exitosa</h1>
+                        <h1>Publicación exitosa</h1>
                     </div>
                 </div>
                 <div class="row">
