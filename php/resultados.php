@@ -18,7 +18,7 @@ include 'scripts/verificacion.php'
 </head>
 <body>
     <header>
-    <nav class="navbar bg-body-tertiary">
+        <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <div class="col-md-6">
                     <a class="navbar-brand" href="../php/inicio.php">
@@ -59,6 +59,9 @@ include 'scripts/verificacion.php'
 
                             <a href="mi_perfil.php">Mi perfil</a>
                             <a href="mis_alquileres.php">Mis alquileres</a>
+                            <a href="mis_postulaciones.php" id="ofertas">Alquileres activos/pendientes:
+                                <?php include "scripts/cantidad_postulaciones.php";?>
+                            </a>
                             <a href="mis_alquileres.php" id="ofertas">Ofertas de alquiler:
                                 <?php include "scripts/cantidad_ofertas_alquiler.php";?>
                             </a>
