@@ -8,7 +8,7 @@
             echo '<div class="container"><h6 class="mensajeError">Debe ingresar un tiempo máximo</h6></div>';
         }
         elseif (empty($inicioDisponibilidad) || empty($finDisponibilidad)) {
-            echo '<div class="container"><h6 class="mensajeError">Debe especificar las fechas de alquiler un tiempo máximo</h6></div>';
+            echo '<div class="container"><h6 class="mensajeError">Debe especificar las fechas de alquiler</h6></div>';
         } else {
             include 'scripts/conexion_db.php';
 
@@ -22,6 +22,10 @@
             if (!empty($ubicacion)) {
                 $ubicacion = strtolower($ubicacion);
                 $sql_busqueda .= " AND LOWER(ubicacion) LIKE '%$ubicacion%'";
+            }
+            if (!empty($etiquetas)) {
+                $etiquetas = strtolower($etiquetas);
+                $sql_busqueda .= " AND LOWER(etiquetas) LIKE '%$etiquetas%'";
             }
             if (!empty($costo)) {
                 $sql_busqueda .= " AND costo <= $costo";

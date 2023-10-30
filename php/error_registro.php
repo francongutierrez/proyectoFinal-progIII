@@ -28,19 +28,18 @@
             <div class="container" id="mainContainer">
                 <div class="row">
                     <div class="col mt-3 animate-text colMensaje">
-                        <img src="../img/valid.jpg" id="imgValid" alt="">
-                        <h1>Se ha registrado en RapiBnB</h1>
+                        <img src="../img/error.jpg" id="imgValid" alt="">
+                        <h1>Ocurrió un error en el registro</h1>
                     </div>
                 </div>
                 <div class="row">
                     <div class="mt-3">
-                        <p>Gracias por formar parte de RapiBnB<p>
-                        <p id="descripcionError">Desea iniciar sesion?<p>
+                        <p id="descripcionError">Desea volver a registrarse?<p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col" id="colSubmit">
-                    <a href="../php/login.php"><button type="button" class="btn btn-success">Iniciar sesion</button></a>
+                    <a href="../php/registro_usuario.php"><button type="button" class="btn btn-success">Volver al registro</button></a>
                     </div>
                 </div>
             </div>

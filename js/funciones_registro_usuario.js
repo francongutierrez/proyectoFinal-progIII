@@ -62,8 +62,8 @@ form.addEventListener('submit', function(event) {
     errorMessage += '- La bio no puede superar los 300 caracteres.<br>';
     enviar = false;
   }
-  if (contrasena.length < 8) {
-    errorMessage += '- La contraseña debe tener mas de 8 caracteres.<br>';
+  if (contrasena.length < 8 || contrasena.length > 50) {
+    errorMessage += '- La contraseña debe tener mas entre 8 y 50 caracteres.<br>';
     enviar = false;
   }
   if (contrasena != contrasena2) {

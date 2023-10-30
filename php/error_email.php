@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_error_alquiler.css" >
     <script src="../js/funciones_publicar_oferta.js"></script>
-    <title>RappiBnB - Registro exitoso</title>
+    <title>RappiBnB - Error</title>
 
 </head>
 <body>
@@ -15,7 +15,7 @@
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <div class="col-md-6">
-                    <a class="navbar-brand" href="../php/inicio.php">
+                    <a class="navbar-brand" href="../php/login.php">
                         <img src="../img/RapiBnB.png" alt="Logo" width="50" class="d-inline-block align-text-top">
                         <p>RapiBnB</p>
                     </a>
@@ -28,19 +28,19 @@
             <div class="container" id="mainContainer">
                 <div class="row">
                     <div class="col mt-3 animate-text colMensaje">
-                        <img src="../img/valid.jpg" id="imgValid" alt="">
-                        <h1>Se ha registrado en RapiBnB</h1>
+                        <img src="../img/error_img.jpg" alt="">
+                        <h1>Error</h1>
                     </div>
                 </div>
                 <div class="row">
                     <div class="mt-3">
-                        <p>Gracias por formar parte de RapiBnB<p>
-                        <p id="descripcionError">Desea iniciar sesion?<p>
+                        <p>El correo electrónico ingresado se encuentra registrado previamente<p>
+                        <p id="descripcionError">Desea verificar su cuenta?<p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col" id="colSubmit">
-                    <a href="../php/login.php"><button type="button" class="btn btn-success">Iniciar sesion</button></a>
+                    <a href="../php/registro_usuario.php"><button type="button" class="btn btn-success">Volver al registro</button></a>
                     </div>
                 </div>
             </div>

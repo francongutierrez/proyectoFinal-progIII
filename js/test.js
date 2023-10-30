@@ -20,16 +20,16 @@ form.addEventListener('submit', function(event) {
   let enviar = true;
   let errorMessage = "";
 
-  if (titulo.length < 5 || titulo.length > 25) {
-    errorMessage += '- El titulo debe tener entre 5 y 25 caracteres.<br>';
+  if (titulo.length < 5 || titulo.length > 50) {
+    errorMessage += '- El titulo debe tener entre 5 y 50 caracteres.<br>';
     enviar = false;
   }
   if (descripcion.length < 5 || descripcion.length > 499) {
     errorMessage += '- La descripción debe tener entre 5 y 500 caracteres.<br>';
     enviar = false;
   }
-  if (ubicacion.length < 5 || ubicacion.length > 25) {
-    errorMessage += '- La ubicacion debe tener entre 5 y 25 caracteres.<br>';
+  if (ubicacion.length < 5 || ubicacion.length > 100) {
+    errorMessage += '- La ubicación debe tener entre 5 y 100 caracteres.<br>';
     enviar = false;
   }
 

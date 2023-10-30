@@ -114,7 +114,7 @@
                     </div>
                     <div class="row">
                         <div class="col" id="colSubmit">
-                            <button type="submit" class="btn btn-success" id="botonPublicar">Registrate</button>
+                            <button type="submit" class="btn btn-success" id="botonPublicar" name="registrarse">Registrate</button>
                         </div>
                     </div>
                 </form>

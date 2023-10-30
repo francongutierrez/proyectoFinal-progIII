@@ -89,86 +89,29 @@ include 'scripts/verificacion.php'
                 <div class="row">
                     <div class="mb-3">
                         <label for="titulo" class="form-label">Titulo</label>
-                        <input type="text" class="form-control" id="tituloInput" name="titulo" placeholder="Ingrese el titulo de su publicacion aqui">
+                        <input type="text" class="form-control" id="tituloInput" name="titulo" placeholder="Ingrese el titulo de su publicacion aqui" maxlength="50">
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-3">
                         <label for="titulo" class="form-label">Ubicacion</label>
-                        <input type="text" class="form-control" id="ubicacionInput" name="ubicacion" placeholder="Ingrese la ubicacion aqui">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mb-3">
-                        <label for="etiquetas" class="form-label">Etiquetas</label>
-                        <input type="text" class="form-control" id="etiquetasInput" name="etiquetas" placeholder="Ingrese las etiquetas aquí">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mb-3">
-                        <button class="btn btn-outline-success" id="agregarEtiqueta" onclick="agregarEtiqueta()">Agregar Etiqueta</button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mb-3">
-                        <div id="etiquetasContainer">
-                            <!-- Aquí se mostrarán las etiquetas ingresadas -->
-                        </div>
+                        <input type="text" class="form-control" id="ubicacionInput" name="ubicacion" placeholder="Ingrese la ubicacion aqui" maxlength="100">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <label for="serviciosIncluidos" class="form-label">Ingrese los servicios incluidos</label>
+                        <label for="etiquetas" class="form-label">Etiquetas</label>
+                        <input type="text" class="form-control" id="etiquetasInput" name="etiquetas" placeholder="Ingrese las etiquetas aquí" maxlength="100">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="wifiCheckbox" value="wifi">
-                            <label class="form-check-label" for="wifiCheckbox">Wi-fi</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="limpiezaCheckbox" value="limpieza">
-                            <label class="form-check-label" for="limpiezaCheckbox">Servicio de limpieza</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="cocheraCheckbox" value="cochera">
-                            <label class="form-check-label" for="cocheraCheckbox">Cochera</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="tvCheckbox" value="tv">
-                            <label class="form-check-label" for="tvCheckbox">TV</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="desayunoCheckbox" value="desayuno">
-                            <label class="form-check-label" for="desayunoCheckbox">Desayuno</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="piscinaCheckbox" value="piscina">
-                            <label class="form-check-label" for="inlineCheckbox3">Piscina</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mt-3">
+                    <div class="col mt-3">
                         <label for="titulo" class="form-label">Costo por dia maximo</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col mb-3">
-                        <input type="number" class="form-control" min="0" id="costoInput" name="costo" placeholder="Ingrese aqui el costo maximo por dia">
+                        <input type="number" class="form-control" min="0" max="999999" id="costoInput" name="costo" placeholder="Ingrese aqui el costo maximo por dia">
                     </div>
                 </div>
                 <div class="row">
@@ -184,7 +127,7 @@ include 'scripts/verificacion.php'
                 <div class="row">
                     <div class="col mb-3">
                         <label for="titulo" class="form-label">Cupo de personas</label>
-                        <input type="number" class="form-control" id="cupoInput" name="cupo" placeholder="Ingrese el maximo de personas">
+                        <input type="number" class="form-control" id="cupoInput" name="cupo" min="1" max="10" placeholder="Ingrese el maximo de personas">
                     </div>
                 </div>
                 <div class="row">

@@ -1,5 +1,5 @@
 // *Manejo de la ventana modal*
-
+/*
 const form = document.getElementById('formularioBuscar');
 const errorModal = document.getElementById('errorModal');
 const closeModal = document.getElementById('closeModal');
@@ -63,9 +63,9 @@ window.addEventListener('click', function(event) {
     errorModal.style.display = 'none';
   }
 });
-
+*/
 // Cambio en el estilo de los input
-
+/*
 function validarForm() {
     
     // Elementos
@@ -147,3 +147,4 @@ function validarForm() {
 
 }
 
+*/
