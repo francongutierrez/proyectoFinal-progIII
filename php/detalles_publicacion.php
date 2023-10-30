@@ -81,7 +81,6 @@ include 'scripts/verificacion.php'
             <?php
 
                 include 'scripts/mostrar_detalles.php';
-                include 'scripts/postular_alquiler.php';
             ?>
         </div>
         <div class="container" id="reseñas">

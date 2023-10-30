@@ -13,6 +13,8 @@ form.addEventListener('submit', function(event) {
   const costo = document.getElementById('costoInput').value;
   const tiempoMaximo = document.getElementById('tiempoMaximoInput').value;
   const cupo = document.getElementById('cupoInput').value;
+  const inicioDisponibilidad = document.getElementById('inicioDisponibilidad').value;
+  const finDisponibilidad = document.getElementById('finDisponibilidad').value;
 
   let enviar = true;
   let errorMessage = "";
@@ -21,33 +23,35 @@ form.addEventListener('submit', function(event) {
     errorMessage += '- El título debe tener menos de 25 caracteres.<br>';
     enviar = false;
   }
-  if (ubicacion.length > 25) {
-    errorMessage += '- La ubicación debe tener menos de 25 caracteres.<br>';
+  if (ubicacion.length > 100) {
+    errorMessage += '- La ubicación debe tener menos de 100 caracteres.<br>';
     enviar = false;
   }
   if (tiempoMaximo > 90 || tiempoMaximo < 1) {
     errorMessage += '- El tiempo minimo debe estar entre 1 y 90 dias.<br>';
     enviar = false;
   }
-  if (costo > 999999 || costo < 1000) {
+  if (costo != "" && (costo > 999999 || costo < 1000)) {
     errorMessage += '- El costo por dia debe ser de entre $999.999,00 y $1.000,00.<br>';
     enviar = false;
   }
-  if (cupo < 1 || cupo > 10) {
+  if (cupo != "" && (cupo < 1 || cupo > 10)) {
     errorMessage += '- El cupo de personas debe ser entre 1 y 10.<br>';
+    enviar = false;
+  }
+  if (inicioDisponibilidad == "" || finDisponibilidad == "") {
+    errorMessage += '- No ha especificado las fechas de disponibilidad.<br>';
     enviar = false;
   }
 
 
-
-
-  errorText.innerHTML = errorMessage;
+errorText.innerHTML = errorMessage;
   
-  if (enviar) {
-    form.submit();
-  } else {
-    errorModal.style.display = 'block';
-  }
+if (!enviar) {
+  errorModal.style.display = 'block';
+} else {
+  window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/resultados.php';
+}
 });
 
 closeModal.addEventListener('click', function() {
@@ -70,6 +74,8 @@ function validarForm() {
     let tiempoMaximoInput = document.getElementById('tiempoMaximoInput');
     let costoInput = document.getElementById('costoInput');
     let cupoInput = document.getElementById('cupoInput');
+    let inicioDisponibilidadInput = document.getElementById('inicioDisponibilidad');
+    let finDisponibilidadInput = document.getElementById('finDisponibilidad');
 
 
     // Valores
@@ -78,6 +84,8 @@ function validarForm() {
     let tiempoMaximo = document.getElementById('tiempoMaximoInput').value;
     let costo = document.getElementById('costoInput').value;
     let cupo = document.getElementById('cupoInput').value;
+    let inicioDisponibilidad = document.getElementById('inicioDisponibilidad').value;
+    let finDisponibilidad = document.getElementById('finDisponibilidad').value;
 
 
 
@@ -85,25 +93,19 @@ function validarForm() {
 
     if (titulo.length > 25) {
       tituloInput.classList.add('is-invalid');
-      tituloInput.classList.remove('is-valid');
     } else {
-      tituloInput.classList.add('is-valid');
       tituloInput.classList.remove('is-invalid');
     }
 
     if (ubicacion.length > 25) {
       ubicacionInput.classList.add('is-invalid');
-      ubicacionInput.classList.remove('is-valid');
     } else {
-      ubicacionInput.classList.add('is-valid');
       ubicacionInput.classList.remove('is-invalid');
     }
 
-    if (costo > 999999 || costo < 1000) {
+    if (costo != null && (costo > 999999 || costo < 1000)) {
       costoInput.classList.add('is-invalid');
-      costoInput.classList.remove('is-valid');
     } else {
-      costoInput.classList.add('is-valid');
       costoInput.classList.remove('is-invalid');
     }
 
@@ -125,15 +127,23 @@ function validarForm() {
 
 
 
-    if (cupo < 1 || cupo > 10) {
+    if (cupo != '' && (cupo < 1 || cupo > 10)) {
       cupoInput.classList.add('is-invalid');
-      cupoInput.classList.remove('is-valid');
     } else {
-      cupoInput.classList.add('is-valid');
       cupoInput.classList.remove('is-invalid');
     }
 
-
+    if (inicioDisponibilidad == "" || finDisponibilidad == "") {
+      inicioDisponibilidadInput.classList.add('is-invalid');
+      inicioDisponibilidadInput.classList.remove('is-valid');
+      finDisponibilidadInput.classList.add('is-invalid');
+      finDisponibilidadInput.classList.remove('is-valid');
+    } else {
+      inicioDisponibilidadInput.classList.add('is-valid');
+      inicioDisponibilidadInput.classList.remove('is-invalid');
+      finDisponibilidadInput.classList.add('is-valid');
+      finDisponibilidadInput.classList.remove('is-invalid');
+    }
 
 }
 

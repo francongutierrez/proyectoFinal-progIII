@@ -1,11 +1,9 @@
 <?php
-session_start();
-if (!isset($_SESSION['id_usuario'])) {
-    header('Location: login.php');
-    exit();
-}
-?>
 
+    include 'scripts/verificacion.php';
+    include 'scripts/comprobar_ofertas_usuario.php';
+
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -13,9 +11,10 @@ if (!isset($_SESSION['id_usuario'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../estilos/estilo_general.css" type="text/css">
-    <link rel="stylesheet" href="../estilos/estilo_inicio.css" type="text/css">
-    <title>RapiBnB - Inicio</title>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_confimar_alquiler.css">
+    <title>RappiBnB - Confirmar alquiler</title>
+
 </head>
 <body>
     <header>
@@ -60,9 +59,6 @@ if (!isset($_SESSION['id_usuario'])) {
 
                             <a href="mi_perfil.php">Mi perfil</a>
                             <a href="mis_alquileres.php">Mis alquileres</a>
-                            <a href="mis_postulaciones.php" id="ofertas">Alquileres activos/pendientes:
-                                <?php include "scripts/cantidad_postulaciones.php";?>
-                            </a>
                             <a href="mis_alquileres.php" id="ofertas">Ofertas de alquiler:
                                 <?php include "scripts/cantidad_ofertas_alquiler.php";?>
                             </a>
@@ -79,51 +75,71 @@ if (!isset($_SESSION['id_usuario'])) {
         </nav>
     </header>
     <section>
-        <div class="container" id="mainContainer">
-            <div class="row">
-                <div class="col mb-3 animate-text">
-                    <h1>
-                    <?php echo $_SESSION['nombre_usuario'].","?>
-                    
-                    <?php
-
-                        if ($_SESSION['sexo'] == 'm') {
-                            echo "bienvenido a";
-                        }
-                        else if ($_SESSION['sexo'] == 'f') {
-                            echo "bienvenida a";
-                        } else {
-                            echo "bienvenide a";
-                        }
-
-                    ?>
-
-
-                    <img src="../img/logo2.png" width="300" alt=""></h1>
+        <form action="" method="POST" enctype="multipart/form-data" id="formularioVerificar">
+            <div class="container" id="mainContainer">
+                <div class="row">
+                    <div class="col mt-3 animate-text">
+                        <h1>Confirmar fechas de alquiler</h1>
+                    </div>
+                </div>
+                <form action="" method="POST">
+                    <div class="row">
+                        <div class="col mt-3">
+                            <label for="fotos" class="form-label">Ingrese las fechas de su alquiler:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label>Fecha de inicio del alquiler:</label>
+                            <input type="date" name="fechaInicio" class="form-control" min="<?php echo $_SESSION['fechaInicioDisponibilidad'] ?>" max="<?php echo $_SESSION['fechaFinDisponibilidad'] ?>">
+                        </div>
+                        <div class="col mb-3">
+                            <label>Fecha de fin del alquiler:</label>
+                            <input type="date" name="fechaFin" class="form-control" min="<?php echo $_SESSION['fechaInicioDisponibilidad'] ?>" max="<?php echo $_SESSION['fechaFinDisponibilidad'] ?>">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" id="colSubmit">
+                            <p id="mensajeAtencion">ATENCION: Esta acción no podrá deshacerse</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" id="colSubmit">
+                            <button type="submit" class="btn btn-success" id="enviarPostulacion" name="enviarPostulacion">Confirmar alquiler</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </form>
+        <div class="container">
+                <div id="errorModal" class="modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">  
+                            <div class="modal-header">
+                                <h4>Error</h4>
+                                <span class="close" id="closeModal">&times;</span>
+                            </div>   
+                            <div class="modal-body">
+                                <p id="errorText"></p>
+                            </div>
+                            <div class="modal-footer">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col mb-3 animate-text">
-                    <p>Qué desea hacer?</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <a href="../php/buscar_oferta.php" class="btn btn-outline-success">Alquilar una propiedad</a>
-                </div>
-                <div class="col-lg-4">
-                    <a href="../php/publicar_oferta.php" class="btn btn-outline-success">Publicar una oferta de alquiler</a>
-                </div>
-                <div class="col-lg-4">
-                    <a href="../php/verificar_cuenta.php" class="btn btn-outline-success">Verificar mi cuenta</a>
-                </div>
 
-            </div>
-        </div>
+        <?php
+            
+            include 'scripts/postular_alquiler.php';
+
+
+        ?>
+
     </section>
     <footer>
         <p>2023 - Gutierrez Franco</p>
     </footer>
-    <?php include 'scripts/cerrar_sesion.php' ?>
+
 </body>
 </html>

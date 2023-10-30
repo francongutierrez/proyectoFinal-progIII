@@ -86,7 +86,7 @@ include 'scripts/verificacion.php'
         </div>
         <div class="container" id="reseñas">
             <div class="row">
-                <div class="col">
+                <div class="col mt-3">
                     <h1>Reseñas de la publicación:</h1>
                 </div>
             </div>
@@ -100,7 +100,7 @@ include 'scripts/verificacion.php'
         </div>
         <div class="container" id="ofertas">
             <div class="row col-ofertas-titulo">
-                <div class="col ">
+                <div class="col mt-3">
                     <h1>Ofertas de alquiler:</h1>
                 </div>
             </div>
@@ -111,6 +111,23 @@ include 'scripts/verificacion.php'
                 </div>
             </div>
             
+        </div>
+        <div class="container">
+            <div id="errorModal" class="modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">  
+                        <div class="modal-header">
+                            <h4>Error</h4>
+                            <span class="close" id="closeModal">&times;</span>
+                        </div>   
+                        <div class="modal-body">
+                            <p id="errorText"></p>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
@@ -123,6 +140,6 @@ include 'scripts/verificacion.php'
     </footer>
     <?php include 'scripts/cerrar_sesion.php' ?>
 
-    <script src="../js/funciones_detalles_publicacion.js"></script>
+    <script src="../js/funciones_detalles_mi_publicacion.js"></script>
 </body>
 </html>

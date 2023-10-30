@@ -6,31 +6,19 @@
         $id_usuario_ofertante = $_POST['id_usuario_ofertante'];
 
 
-        // Iniciar la transacción
-        $conn->begin_transaction();
-
-        // Preparar y ejecutar la primera consulta
-        $sql_decision1 = "UPDATE propiedades SET activa = 0 WHERE propiedades.id = ?";
-        $stmt_decision1 = $conn->prepare($sql_decision1);
-        $stmt_decision1->bind_param("i", $_SESSION["selected_publicacion"]);
-        $execute1 = $stmt_decision1->execute();
-
         // Preparar y ejecutar la segunda consulta
-        $sql_decision2 = "UPDATE alquileres SET estado = 'activo' WHERE alquileres.id_usuario = ? AND alquileres.id_propiedad = ?";
-        $stmt_decision2 = $conn->prepare($sql_decision2);
-        $stmt_decision2->bind_param("ii", $id_usuario_ofertante, $_SESSION["selected_publicacion"]);
-        $execute2 = $stmt_decision2->execute();
+        $sql_decision = "UPDATE alquileres SET estado = 'activo' WHERE alquileres.id_usuario = ? AND alquileres.id_propiedad = ? AND estado = 'pendiente'";
+        $stmt_decision = $conn->prepare($sql_decision);
+        $stmt_decision->bind_param("ii", $id_usuario_ofertante, $_SESSION["selected_publicacion"]);
+        $execute = $stmt_decision->execute();
 
 
-        if ($execute1 && $execute2) {
-            echo '<script>window.location.href = "http://localhost/ProgramacionIII/proyectoFinal/php/publicacion_exitosa.php"</script>';
+        if ($execute) {
+            echo '<script>window.location.href = "http://localhost/ProgramacionIII/proyectoFinal/php/exito_aceptar.php"</script>';
         } else {
             $conn->rollback();
-            echo '<script>window.location.href = "http://localhost/ProgramacionIII/proyectoFinal/php/error_alquiler.php"</script>';
+            echo '<script>window.location.href = "http://localhost/ProgramacionIII/proyectoFinal/php/error_aceptar.php"</script>';
         }
-
-        // Confirmar la transacción
-        $conn->commit();
 
         $stmt_desicion->close();
         $conn->close();
@@ -47,17 +35,17 @@
 
 
         // Preparar y ejecutar la segunda consulta
-        $sql_decision2 = "UPDATE alquileres SET estado = 'rechazado' WHERE alquileres.id_usuario = ? AND alquileres.id_propiedad = ?";
-        $stmt_decision2 = $conn->prepare($sql_decision2);
-        $stmt_decision2->bind_param("ii", $id_usuario_ofertante, $_SESSION["selected_publicacion"]);
-        $execute2 = $stmt_decision2->execute();
+        $sql_decision = "UPDATE alquileres SET estado = 'rechazado' WHERE alquileres.id_usuario = ? AND alquileres.id_propiedad = ? AND estado = 'pendiente'";
+        $stmt_decision = $conn->prepare($sql_decision);
+        $stmt_decision->bind_param("ii", $id_usuario_ofertante, $_SESSION["selected_publicacion"]);
+        $execute = $stmt_decision->execute();
 
 
-        if ($execute2) {
-            echo '<script>window.location.href = "http://localhost/ProgramacionIII/proyectoFinal/php/publicacion_exitosa.php"</script>';
+        if ($execute) {
+            echo '<script>window.location.href = "http://localhost/ProgramacionIII/proyectoFinal/php/exito_rechazar.php"</script>';
         } else {
             $conn->rollback();
-            echo '<script>window.location.href = "http://localhost/ProgramacionIII/proyectoFinal/php/error_alquiler.php"</script>';
+            echo '<script>window.location.href = "http://localhost/ProgramacionIII/proyectoFinal/php/error_rechazar.php"</script>';
         }
 
         // Confirmar la transacción

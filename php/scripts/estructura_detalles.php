@@ -1,4 +1,13 @@
 <?php
+$etiquetas = '';
+if ($row['etiquetas'] != null) {
+    $palabras = explode(" ", $row['etiquetas']); 
+    foreach ($palabras as &$palabra) {
+        $palabra = ' ' . '#' . $palabra;
+    }
+    $etiquetas = implode("", $palabras);
+}
+
 
 
 echo "<div class='container'>";
@@ -19,7 +28,10 @@ echo "</div>";
 echo "</div>";
 echo "<div class='row'>";
 echo     "<div class='col'>";
-echo         "<p id='etiquetasShow'><span class='titular'>Etiquetas:</span> ".$row['etiquetas']."</p>";
+if ($etiquetas != "") {
+    echo         "<p id='etiquetasShow'><span class='titular'>Etiquetas:</span> ".$etiquetas."</p>";
+}
+
 echo     "</div>";
 echo "</div>";
 echo "<div class='row'>";
@@ -72,17 +84,18 @@ echo     "</div>";
 echo "</div>";
 echo "<div class='row'>";
 echo     "<div class='col botones'>";
-echo         "<form method='POST'>";
-echo             "<button type='submit' name='postular-alquiler' class='btn btn-success'>";
-echo                 "Alquilar propiedad";
-echo             "</button>";
-echo             "<button class='btn btn-outline-success'>";
-echo                 "<a href='javascript:history.back()'>Volver a todas las propiedades</a>";
-echo             "</button>";
-echo         "</form>";
+echo         "<a href='confirmar_fecha_alquiler.php' class='btn btn-success'>";
+echo             "Alquilar propiedad";
+echo         "</a>";
+echo         "<button class='btn btn-outline-success'>";
+echo             "<a href='javascript:history.back()'>Volver a todas las propiedades</a>";
+echo         "</button>";
 echo     "</div>";
 echo "</div>";
 echo "</div>";
+
+$_SESSION["cantidadMinimaDeDias"] = $row["tiempo_minimo"];
+$_SESSION["cantidadMaximaDeDias"] = $row["tiempo_maximo"];
 
 
 ?>

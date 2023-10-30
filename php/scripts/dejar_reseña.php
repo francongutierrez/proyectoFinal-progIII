@@ -22,7 +22,7 @@ if ($result_usuario_alquilado->num_rows == 1 && $result_resena_hecha->num_rows =
         <div class="col">
             <h5>Alquilaste esta propiedad! Deseas dejar una reseña?</h5>
             <form method="POST" id="formResena" onsubmit="validarForm()">
-                <textarea name="resena-usuario" class="form-control mt-3" placeholder="Escribe tu reseña aquí" id="descripcionResena"></textarea>
+                <textarea name="resena-usuario" class="form-control mt-3" placeholder="Escribe tu reseña aquí" id="descripcionResena" maxlength="300"></textarea>
                 <input type="number" name="puntaje-resena-usuario" class="form-control mt-3" placeholder="Escribe tu puntaje aquí (del 1 al 5)" min="1" max="5" id="puntajeResena">
                 <button type="submit" name="guardar-resena" class="btn btn-success mt-3">Enviar reseña</button>
             </form>

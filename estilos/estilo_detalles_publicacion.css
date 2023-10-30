@@ -85,6 +85,12 @@ h3 {
     padding: 0.5em;
 }
 
+.mensajeErrorValidacion {
+    background-color: #ffc3ca;
+    padding: 1em;
+    border-radius: 1em;
+  }
+
 /* Estilo para el modal */
 .modal {
     display: none;

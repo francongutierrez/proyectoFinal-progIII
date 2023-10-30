@@ -8,6 +8,13 @@ footer {
     text-decoration: none;
     padding: 0.5em;
 }
+
 .selectores-pagina:hover {
     color: black;
+}
+
+.publicaciones-destacadas-title {
+    background-color: #e5ffe5;
+    padding: 1em;
+    border-radius: 1em;
 }

@@ -3,7 +3,7 @@
 
 include 'scripts/conexion_db.php';
 
-$sql = "SELECT usuarios.nombre, usuarios.apellido, usuarios.foto, usuarios.email, usuarios.id FROM usuarios, alquileres WHERE usuarios.id = alquileres.id_usuario AND alquileres.estado = 'pendiente' AND alquileres.id_propiedad = ? ORDER BY alquileres.id";
+$sql = "SELECT usuarios.nombre, usuarios.apellido, usuarios.foto, usuarios.email, usuarios.id, alquileres.fecha_inicio, alquileres.fecha_fin FROM usuarios, alquileres WHERE usuarios.id = alquileres.id_usuario AND alquileres.estado = 'pendiente' AND alquileres.id_propiedad = ? ORDER BY alquileres.id";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $_SESSION['selected_publicacion']);
 $stmt->execute();

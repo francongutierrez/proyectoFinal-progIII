@@ -1,11 +1,8 @@
 <?php
-session_start();
-if (!isset($_SESSION['id_usuario'])) {
-    header('Location: login.php');
-    exit();
-}
-?>
 
+include 'scripts/verificacion.php'
+
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -13,9 +10,11 @@ if (!isset($_SESSION['id_usuario'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../estilos/estilo_general.css" type="text/css">
-    <link rel="stylesheet" href="../estilos/estilo_inicio.css" type="text/css">
-    <title>RapiBnB - Inicio</title>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_mis_alquileres.css" >
+    <script src="../js/funciones_publicar_oferta.js"></script>
+    <title>RappiBnB - Publicaciones en oferta</title>
+
 </head>
 <body>
     <header>
@@ -60,9 +59,6 @@ if (!isset($_SESSION['id_usuario'])) {
 
                             <a href="mi_perfil.php">Mi perfil</a>
                             <a href="mis_alquileres.php">Mis alquileres</a>
-                            <a href="mis_postulaciones.php" id="ofertas">Alquileres activos/pendientes:
-                                <?php include "scripts/cantidad_postulaciones.php";?>
-                            </a>
                             <a href="mis_alquileres.php" id="ofertas">Ofertas de alquiler:
                                 <?php include "scripts/cantidad_ofertas_alquiler.php";?>
                             </a>
@@ -81,45 +77,30 @@ if (!isset($_SESSION['id_usuario'])) {
     <section>
         <div class="container" id="mainContainer">
             <div class="row">
-                <div class="col mb-3 animate-text">
-                    <h1>
-                    <?php echo $_SESSION['nombre_usuario'].","?>
-                    
-                    <?php
-
-                        if ($_SESSION['sexo'] == 'm') {
-                            echo "bienvenido a";
-                        }
-                        else if ($_SESSION['sexo'] == 'f') {
-                            echo "bienvenida a";
-                        } else {
-                            echo "bienvenide a";
-                        }
-
-                    ?>
-
-
-                    <img src="../img/logo2.png" width="300" alt=""></h1>
+                <div class="col mt-3 animate-text">
+                    <h1>Mis postulaciones</h1>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col mb-3 animate-text">
-                    <p>Qué desea hacer?</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <a href="../php/buscar_oferta.php" class="btn btn-outline-success">Alquilar una propiedad</a>
-                </div>
-                <div class="col-lg-4">
-                    <a href="../php/publicar_oferta.php" class="btn btn-outline-success">Publicar una oferta de alquiler</a>
-                </div>
-                <div class="col-lg-4">
-                    <a href="../php/verificar_cuenta.php" class="btn btn-outline-success">Verificar mi cuenta</a>
-                </div>
-
             </div>
         </div>
+
+        <div class="container" id="resultados">
+            <?php
+
+            include '../php/scripts/mostrar_mis_postulaciones.php';
+
+            ?>
+        </div>
+
+        <?php
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            include 'scripts/activar_desactivar_publicacion.php';
+        }
+
+        ?>
+
+
+
     </section>
     <footer>
         <p>2023 - Gutierrez Franco</p>

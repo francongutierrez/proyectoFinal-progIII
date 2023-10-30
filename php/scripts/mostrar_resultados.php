@@ -1,5 +1,8 @@
 <?php
 
+    include "conexion_db.php";
+
+
     $resultados = $_SESSION['resultados'];
 
 

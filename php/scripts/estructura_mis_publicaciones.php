@@ -1,7 +1,7 @@
 <?php
-    $sql_ofertas = "SELECT COUNT(*) FROM propiedades, alquileres WHERE propiedades.id_dueno = ? AND propiedades.id = alquileres.id_propiedad AND alquileres.estado = 'pendiente'";
+    $sql_ofertas = "SELECT COUNT(*) FROM propiedades, alquileres WHERE propiedades.id_dueno = ? AND propiedades.id = alquileres.id_propiedad AND alquileres.estado = 'pendiente' AND alquileres.id_propiedad = ?";
     $stmt_ofertas = $conn->prepare($sql_ofertas);
-    $stmt_ofertas->bind_param("i", $_SESSION['id_usuario']);
+    $stmt_ofertas->bind_param("ii", $_SESSION['id_usuario'], $row['id']);
     $stmt_ofertas->execute();
     $result_ofertas = $stmt_ofertas->get_result();
     $row_ofertas = $result_ofertas->fetch_assoc(); // Obtiene la fila de resultado como un array asociativo
@@ -43,4 +43,6 @@
 
     echo "</div>";
     echo "</div>";
+
+    $stmt_ofertas->close();
 ?>

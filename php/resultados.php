@@ -5,7 +5,7 @@ include 'scripts/verificacion.php'
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,19 +75,34 @@ include 'scripts/verificacion.php'
         </nav>
     </header>
     <section>
+        <div class="container" id="descatadas">
+            <?php
+            
+            echo $_SESSION['criterios'];
+    
+            include '../php/scripts/publicaciones_destacadas.php';
+
+            ?>
+        </div>
+        <div class="container" id="recomendadas">
+            <?php
+            
+    
+            include '../php/scripts/publicaciones_recomendadas.php';
+
+            ?>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col mt-3 animate-text">
-                    <h1>Resultados</h1>
+                    <h1>Resultados de la búsqueda</h1>
                 </div>
             </div>
         </div>
 
         <div class="container" id="resultados">
             <?php
-
-            include '../php/scripts/mostrar_resultados.php';
-
+            include '../php/scripts/mostrar_publicaciones.php';
             ?>
         </div>
 
@@ -98,8 +113,7 @@ include 'scripts/verificacion.php'
                 $_SESSION['selected_publicacion'] = $_POST['id_publicacion'];
                 echo "<script>window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/detalles_publicacion.php' </script>";
                 exit();
-            } else {
-                echo "No ha seleccionado ninguna publicacion";
+            } else {;
             }
         }
 

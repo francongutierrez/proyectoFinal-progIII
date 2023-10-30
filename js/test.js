@@ -256,6 +256,5 @@ function agregarEtiqueta() {
       }
   });
 
-  // Limpiar el input
-  etiquetasInput.value = "";
+
 };

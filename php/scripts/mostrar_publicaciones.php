@@ -3,6 +3,8 @@
 
 include 'scripts/conexion_db.php';
 
+$criterios = $_SESSION['criterios'];
+
 // Configurar variables de paginación
 $por_pagina = 10; // Cantidad de resultados por página
 
@@ -21,9 +23,8 @@ if ($pagina != 1) {
 $inicio = ($pagina - 1) * $por_pagina;
 
 
-$sql = "SELECT id, titulo, descripcion, costo FROM propiedades WHERE id_dueno != ? AND activa = 1 LIMIT ?, ? ";
+$sql = $criterios;
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("iii", $_SESSION['id_usuario'], $inicio, $por_pagina);
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -46,11 +47,17 @@ if ($result->num_rows > 0) {
     echo "<div class='col'>";
 }
 
+
+$sql_total = "SELECT COUNT(*) as total FROM ($criterios) AS subconsulta";
+$stmt_total = $conn->prepare($sql_total);
+$stmt_total->execute();
+$result = $stmt_total->get_result();
+$row = $result->fetch_assoc();
+
+$totalResultados = $row['total'];
+
 // Calcular la cantidad total de páginas para los resultados regulares
-$sql_total_regulares = "SELECT COUNT(*) as total FROM propiedades WHERE dueno_certificado = 0 AND id_dueno != $_SESSION[id_usuario]";
-$resultado_total_regulares = $conn->query($sql_total_regulares);
-$total_registros_regulares = $resultado_total_regulares->fetch_assoc()['total'];
-$total_paginas = ceil($total_registros_regulares / $por_pagina);
+$total_paginas = ceil($totalResultados / $por_pagina);
 
 // Mostrar enlaces de paginación solo para los resultados regulares
 echo '<div class="row">';

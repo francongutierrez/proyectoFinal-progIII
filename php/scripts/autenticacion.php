@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contrasena = $_POST['contrasena'];
 
     // Consultar la base de datos para verificar las credenciales
-    $sql = "SELECT id, nombre, foto, contrasena, certificacion, certificacion_en_proceso, sexo FROM usuarios WHERE email = ?";
+    $sql = "SELECT id, nombre, foto, contrasena, certificacion, certificacion_en_proceso, sexo, intereses FROM usuarios WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -30,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['id_usuario'] = $row['id'];
             $_SESSION['foto_usuario'] = $row['foto'];
             $_SESSION['certificacion'] = $row['certificacion'];
+            $_SESSION['intereses'] = $row['intereses'];
             $_SESSION['certificacion_en_proceso'] = $row['certificacion_en_proceso'];
             $_SESSION['sexo'] = $row['sexo'];
             

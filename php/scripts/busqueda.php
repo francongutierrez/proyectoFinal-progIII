@@ -1,42 +1,45 @@
 <?php
-
+    
     if (isset($_POST['buscar'])) {
         extract($_POST);
+
 
         include 'scripts/conexion_db.php';
 
         // Consulta dinamica
-        $sql = "SELECT * FROM propiedades WHERE 1";
+        $sql_busqueda = "SELECT * FROM propiedades WHERE 1";
 
         if (!empty($titulo)) {
             $titulo = strtolower($titulo);
-            $sql .= " AND LOWER(titulo) LIKE '%$titulo%'";
+            $sql_busqueda .= " AND LOWER(titulo) LIKE '%$titulo%'";
         }
         if (!empty($ubicacion)) {
             $ubicacion = strtolower($ubicacion);
-            $sql .= " AND LOWER(ubicacion) LIKE '%$ubicacion%'";
+            $sql_busqueda .= " AND LOWER(ubicacion) LIKE '%$ubicacion%'";
         }
         if (!empty($costo)) {
-            $sql .= " AND costo <= $costo";
+            $sql_busqueda .= " AND costo <= $costo";
         }
         if (!empty($tiempoMaximo)) {
-            $sql .= " AND tiempo_maximo <= $tiempoMaximo";
+            $sql_busqueda .= " AND tiempo_maximo <= $tiempoMaximo";
         }
         if (!empty($cupo)) {
-            $sql .= " AND cupo = $cupo";
+            $sql_busqueda .= " AND cupo = $cupo";
         }
+        if (!empty($inicioDisponibilidad) && !empty($finDisponibilidad)) {
+            $sql_busqueda .= " AND id NOT IN 
+            (SELECT id_propiedad FROM alquileres 
+            WHERE fecha_inicio BETWEEN '$inicioDisponibilidad' AND '$finDisponibilidad'
+            AND fecha_fin BETWEEN '$inicioDisponibilidad' AND '$finDisponibilidad'
+            AND (estado = 'pendiente' OR estado = 'activo'))";
+        }        
 
-        $sql .= " AND activa = 1 AND id_dueno != $_SESSION[id_usuario]";
+        $sql_busqueda .= " AND activa = 1 AND id_dueno != $_SESSION[id_usuario]";
 
-        $result = $conn->query($sql);
-
-        $result_array = array();
-
-        while ($row = $result->fetch_assoc()) {
-            $result_array[] = $row;
-        }
-
-        $_SESSION['resultados'] = $result_array;
+        $_SESSION['criterios'] = $sql_busqueda;
+        
+        $_SESSION['fechaInicioDisponibilidad'] = $inicioDisponibilidad;
+        $_SESSION['fechaFinDisponibilidad'] = $finDisponibilidad;
 
         $conn->close();
 

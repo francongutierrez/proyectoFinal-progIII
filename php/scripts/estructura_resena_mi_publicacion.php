@@ -23,9 +23,9 @@
         // Opcion para editar respuesta si el dueño es el usuario
         if ($_SESSION["id_usuario"] == $row["id_dueno"]) {
             echo '<h6>Deseas editar tu respuesta?:</h6>';
-            echo '<form method="POST">';
+            echo '<form method="POST" class="formularioRespuesta">';
             echo '
-            <textarea type="number" class="form-control mb-3" name="nuevaRespuesta" placeholder="Escriba la nueva respuesta aquí"></textarea>
+            <textarea type="number" class="form-control mb-3" name="nuevaRespuesta" id="nuevaRespuesta" placeholder="Escriba la nueva respuesta aquí" maxlength="300"></textarea>
             <input type="hidden" name="id_usuario_resena" value="'.$row["id_usuario"].'">
             <button type="submit" class="btn btn-success" name="editarRespuesta">Guardar respuesta</button>
             ';
@@ -35,9 +35,9 @@
     // El dueño no ha respondido
     } else {
         echo '<h5>Responder a la reseña:</h5>';
-        echo '<form method="POST">';
+        echo '<form method="POST"> class="formularioRespuesta"';
         echo '
-        <textarea type="number" class="form-control mb-3 mt-3" name="nuevaRespuesta" placeholder="Escriba su respuesta aquí"></textarea>
+        <textarea type="number" class="form-control mb-3 mt-3" name="nuevaRespuesta" id="nuevaRespuesta" placeholder="Escriba su respuesta aquí" maxlength="300"></textarea>
         <input type="hidden" name="id_usuario_resena" value="'.$row["id_usuario"].'">
         <button type="submit" class="btn btn-success" name="editarRespuesta">Guardar respuesta</button>
         ';

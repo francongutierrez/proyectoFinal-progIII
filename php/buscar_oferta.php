@@ -5,15 +5,13 @@ include 'scripts/verificacion.php'
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_buscar_oferta.css" >
-    <script src="../js/funciones_publicar_oferta.js"></script>
-    <script src="../js/funciones_buscar_oferta.js"></script>
     <title>RappiBnB - Buscar oferta</title>
 
 </head>
@@ -76,7 +74,7 @@ include 'scripts/verificacion.php'
         </nav>
     </header>
     <section>
-        <form action="" method="POST" id="formularioBuscar">
+        <form action="" method="POST" id="formularioBuscar" onsubmit="validarForm();">
             <div class="container" id="mainContainer">
                 <div class="row">
                     <div class="col mt-3 mb-3 animate-text">
@@ -184,21 +182,33 @@ include 'scripts/verificacion.php'
                     </div>
                 </div>
                 <div class="row">
-                    <div class="mb-3">
+                    <div class="col mb-3">
                         <label for="titulo" class="form-label">Cupo de personas</label>
-                        <input type="number" class="form-control" id="cupo" name="cupo" placeholder="Ingrese el maximo de personas">
+                        <input type="number" class="form-control" id="cupoInput" name="cupo" placeholder="Ingrese el maximo de personas">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="titulo" class="form-label">Fechas de disponibilidad:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mb-3">
+                        <label for="titulo" class="form-label">Inicio:</label>
+                        <input type="date" name="inicioDisponibilidad" id="inicioDisponibilidad" class="form-control" min="<?php echo date('Y-m-d', strtotime('+7 days')); ?>" max="2025-12-31">
+                    </div>
+                    <div class="col mb-3">
+                        <label for="titulo" class="form-label">Fin:</label>
+                        <input type="date" name="finDisponibilidad" id="finDisponibilidad" class="form-control" min="<?php echo date('Y-m-d', strtotime('+7 days')); ?>" max="2025-12-31">
+
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mb-3 mt-3" id="colSubmit">
-                        <button type="submit" class="btn btn-success" name="buscar">Buscar oferta</button>
-                        <a href="publicaciones.php" class="btn btn-outline-success">Mostrar todos</a>
+                        <button type="submit" class="btn btn-success" name="buscar">Buscar ofertas</button>
                     </div>
                 </div>
-
-            </div>
-            
-
+            </div>         
         </form>
         <div class="container">
             <div id="errorModal" class="modal">
@@ -217,13 +227,15 @@ include 'scripts/verificacion.php'
                 </div>
             </div>
         </div>
-        <?php include 'scripts/busqueda.php' ?>
+
+        <?php include 'scripts/busqueda.php'; ?>
 
     </section>
     <footer>
         <p>2023 - Gutierrez Franco</p>
     </footer>
 
-    <script src="../js/funciones_buscar_oferta.php"></script>
+    
+    <!-- <script src="../js/funciones_buscar_oferta.js"></script> -->
 </body>
 </html>

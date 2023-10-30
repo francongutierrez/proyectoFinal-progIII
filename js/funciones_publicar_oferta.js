@@ -18,8 +18,6 @@ function agregarEtiqueta() {
         }
     });
 
-    // Limpiar el input
-    etiquetasInput.value = "";
 };
 
 // *Manejo de la ventana modal*

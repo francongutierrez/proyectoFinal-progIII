@@ -4,11 +4,10 @@
 
 .foto-perfil-display {
     width: 15em;
-    margin-left: 5em;
+    margin-left: 2em;
     border-radius: 1em;
 }
 
 #actualizar-datos-button {
     margin: 1em;
-    padding: 0;
 }
