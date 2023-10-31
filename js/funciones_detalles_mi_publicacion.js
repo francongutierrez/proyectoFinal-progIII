@@ -43,3 +43,14 @@ closeModal.addEventListener('click', function() {
       errorModal.style.display = 'none';
     }
   });*/
+
+
+  // Imagenes
+
+const images = document.querySelectorAll('.imagenPropiedad');
+
+images.forEach((image) => {
+    image.addEventListener('click', () => {
+        image.classList.toggle('enlarged');
+    });
+});

@@ -13,7 +13,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_verificar_cuenta.css" >
-    <script src="../js/funciones_verificar_cuenta.js"></script>
     <title>RappiBnB - Verificar cuenta</title>
 
 </head>
@@ -79,7 +78,7 @@
         </nav>
     </header>
     <section>
-        <form action="" method="POST" enctype="multipart/form-data" id="formularioVerificar">
+        <form action="" method="POST" enctype="multipart/form-data" id="formularioVerificar" novalidate onsubmit="return validarForm()">
             <div class="container" id="mainContainer">
                 <div class="row">
                     <div class="col mt-3 animate-text">
@@ -89,7 +88,7 @@
                 <div class="row">
                     <div class="mt-3 mb-3">
                         <label for="fotos" class="form-label">Ingrese la documentacion adjunta necesaria para la verificacion</label>
-                        <input class="form-control" type="file" id="documentacion" name="documentacion" required>
+                        <input class="form-control" type="file" id="documentacion" name="documentacion">
                     </div>
                 </div>
                 <div class="row">
@@ -117,13 +116,14 @@
                 </div>
             </div>
 
-        <?php
+
+
+    </section>
+    <?php
 
         include 'scripts/enviar_solicitud_de_verificacion.php';
 
-        ?>
-
-    </section>
+    ?>
     <footer>
         <p>2023 - Gutierrez Franco</p>
     </footer>

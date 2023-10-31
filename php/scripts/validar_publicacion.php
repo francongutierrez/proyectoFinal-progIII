@@ -38,7 +38,8 @@
         echo '<h6 class="mensajeError">El costo por día debe estar entre $1000 y $999999</h6>';
         $validado = false;
     }
-    $totalArchivos = count($_FILES['archivos']['tmp_name']);
+
+    $totalArchivos = count($_FILES['fotos']['tmp_name']);
     if($totalArchivos > 10 || $totalArchivos < 1){
         echo "<h6 class='mensajeError'>El número de fotos subidas debe estar entre 1 y 10</h6>";
         $validado = false;

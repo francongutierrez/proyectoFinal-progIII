@@ -60,16 +60,6 @@ function validarForm() {
     ubicacionInput.classList.remove('is-invalid');
   }
 
-  if (tiempoMinimo > 90 || tiempoMinimo < 1) {
-    errorMessage += '- El tiempo minimo debe estar entre 1 y 90 dias.<br>';
-    enviar = false;
-    tiempoMinimoInput.classList.add('is-invalid');
-    tiempoMinimoInput.classList.remove('is-valid');
-  } else {
-    tiempoMinimoInput.classList.add('is-valid');
-    tiempoMinimoInput.classList.remove('is-invalid');
-  }
-
   if (tiempoMinimo > tiempoMaximo) {
     errorMessage += '- El tiempo minimo debe ser menor al tiempo maximo.<br>';
     enviar = false;
@@ -84,6 +74,16 @@ function validarForm() {
     tiempoMaximoInput.classList.remove('is-invalid');
   }
 
+  if (tiempoMinimo > 90 || tiempoMinimo < 1) {
+    errorMessage += '- El tiempo minimo debe estar entre 1 y 90 dias.<br>';
+    enviar = false;
+    tiempoMinimoInput.classList.add('is-invalid');
+    tiempoMinimoInput.classList.remove('is-valid');
+  } else {
+    tiempoMinimoInput.classList.add('is-valid');
+    tiempoMinimoInput.classList.remove('is-invalid');
+  }
+
   if (tiempoMaximo > 90 || tiempoMaximo < 1) {
     errorMessage += '- El tiempo minimo debe estar entre 1 y 90 dias.<br>';
     enviar = false;
@@ -93,6 +93,10 @@ function validarForm() {
     tiempoMaximoInput.classList.add('is-valid');
     tiempoMaximoInput.classList.remove('is-invalid');
   }
+
+
+
+
   if (costo > 999999 || costo < 1000) {
     errorMessage += '- El costo por dia debe ser de entre $999.999,00 y $1.000,00.<br>';
     enviar = false;
@@ -113,6 +117,16 @@ function validarForm() {
     cupoInput.classList.remove('is-invalid');
   }
 
+  if (fotos.files.length > 10) {
+    errorMessage += '- Puede subir 10 fotos como maximo.<br>';
+    enviar = false;
+    fotosInput.classList.add('is-invalid');
+    fotosInput.classList.remove('is-valid');
+  } else {
+    fotosInput.classList.add('is-valid');
+    fotosInput.classList.remove('is-invalid');
+  }
+
   if (fotos.files.length === 0) {
     errorMessage += '- No ha seleccionado ninguna foto.<br>';
     enviar = false;
@@ -123,15 +137,6 @@ function validarForm() {
     fotosInput.classList.remove('is-invalid');
   }
 
-  if (fotos.files.length > 10) {
-    errorMessage += '- Puede subir 10 fotos como maximo.<br>';
-    enviar = false;
-    fotosInput.classList.add('is-invalid');
-    fotosInput.classList.remove('is-valid');
-  } else {
-    fotosInput.classList.add('is-valid');
-    fotosInput.classList.remove('is-invalid');
-  }
 
   for (let i = 0; i < fotos.files.length; i++) {
     let file = fotos.files[i];
