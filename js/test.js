@@ -170,7 +170,6 @@ window.addEventListener('click', function(event) {
 
 // Cambio en el estilo de los input
 
-
 function agregarEtiqueta() {
   const etiquetasInput = document.getElementById("etiquetasInput");
   const etiquetasContainer = document.getElementById("etiquetasContainer");
