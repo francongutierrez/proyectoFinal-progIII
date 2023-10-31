@@ -19,11 +19,11 @@
     }
 
 
-    if (empty($ubicacion)) {
-        echo '<h6 class="mensajeError">La ubicación debe tener entre 5 y 100 caracteres</h6> ';
+    if (empty($ciudad)) {
+        echo '<h6 class="mensajeError">La ciudad debe tener entre 5 y 100 caracteres</h6> ';
         $validado = false;
-    } elseif (strlen($ubicacion) < 2 || strlen($ubicacion) > 100) {
-        echo '<h6 class="mensajeError">La ubicación debe tener entre 5 y 100 caracteres</h6> ';
+    } elseif (strlen($ciudad) < 2 || strlen($ciudad) > 100) {
+        echo '<h6 class="mensajeError">La ciudad debe tener entre 5 y 100 caracteres</h6> ';
         $validado = false;
     }
 
@@ -63,7 +63,7 @@
     }
 
     $maxFileSize = 5 * 1024 * 1024;
-    $tamano = filesize($foto);
+    $tamano = filesize($_FILES['foto']['tmp_name']);
 
     if (empty($tamano)) {
         echo '<h6 class="mensajeError">Debe subir una imagen</h6> ';

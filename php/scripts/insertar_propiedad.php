@@ -12,16 +12,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             include 'scripts/conexion_db.php';
         
             $contador = 0;
+            $activa = 1;
             $id_dueno = $_SESSION['id_usuario'];
         
-            $sql = "INSERT INTO propiedades(titulo, descripcion, ubicacion, costo, tiempo_minimo, tiempo_maximo, cupo, id_dueno, tipo) VALUES (?,?,?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO propiedades(titulo, descripcion, ubicacion, costo, tiempo_minimo, tiempo_maximo, cupo, id_dueno, tipo, activa) VALUES (?,?,?,?,?,?,?,?,?,?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sssiiiiis", $titulo, $descripcion, $ubicacion, $costo, $tiempo_minimo, $tiempo_maximo, $cupo, $id_dueno, $tipo);
+            $stmt->bind_param("sssiiiiisi", $titulo, $descripcion, $ubicacion, $costo, $tiempo_minimo, $tiempo_maximo, $cupo, $id_dueno, $tipo, $activa);
+            
         
             if ($stmt->execute()) {
                 $contador++;
                 $id_publicacion = $conn->insert_id;
-        
+                
+                // Insercion de las imagenes en la DB
                 for ($i = 0; $i < count($_FILES['fotos']['name']); $i++) {
                     $nombre_imagen = $_FILES['fotos']['name'][$i];
                     $tipo_mimetype = $_FILES['fotos']['type'][$i];
@@ -34,6 +37,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $stmt2->bind_param("sssi", $nombre_imagen, $tipo_mimetype, $datos_imagen, $id_publicacion);
                     $stmt2->execute();
                 }
+
+                // Insercion de servicios en la tabla incluye
+                include "insertar_incluye.php";
+
+                // Creacion del evento que controla la vigencia de la publicación
+                if (isset($_POST["inicioVigencia"]) || isset($_POST["finVigencia"])) {
+                    $nombreEventoVigencia = "actualizar_vigencia_" . time();
+                    $nombreEventoVigencia2 = "actualizar_vigencia_" . (time() + 1);
+
+                    // Inicio de vigencia
+                    if (isset($_POST["inicioVigencia"])) {
+                        $eventoVigencia = "
+                            DELIMITER //
+                            CREATE EVENT $nombreEventoVigencia
+                            ON SCHEDULE AT '$inicioVigencia'
+                            DO
+                            BEGIN
+                                UPDATE propiedades SET activa = 1 WHERE id = '$id_publicacion';
+                            END;
+                            //
+                            DELIMITER ;";
+                        $conn->multi_query($eventoVigencia);
+                    }
+
+                    // Fin de vigencia
+                    if (isset($_POST["finVigencia"])) {
+                        $eventoVigencia2 = "
+                            DELIMITER //
+                            CREATE EVENT $nombreEventoVigencia2
+                            ON SCHEDULE AT '$finVigencia'
+                            DO
+                            BEGIN
+                                UPDATE propiedades SET activa = 0 WHERE id = '$id_publicacion';
+                            END;
+                            //
+                            DELIMITER ;";
+                        $conn->multi_query($eventoVigencia2);
+                    }
+                }
+
+                $stmt2->close();
         
                 echo "<script>
                 window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/publicacion_exitosa.php';

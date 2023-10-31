@@ -157,19 +157,19 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="wifiCheckbox" value="wifi">
+                                <input class="form-check-input" type="checkbox" id="wifiCheckbox" name="wifiCheckbox" value="1">
                                 <label class="form-check-label" for="wifiCheckbox">Wi-fi</label>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="limpiezaCheckbox" value="limpieza">
+                                <input class="form-check-input" type="checkbox" id="limpiezaCheckbox" name="limpiezaCheckbox" value="3">
                                 <label class="form-check-label" for="limpiezaCheckbox">Servicio de limpieza</label>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="cocheraCheckbox" value="cochera">
+                                <input class="form-check-input" type="checkbox" id="cocheraCheckbox" name="cocheraCheckbox" value="5">
                                 <label class="form-check-label" for="cocheraCheckbox">Cochera</label>
                             </div>
                         </div>
@@ -177,19 +177,19 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="tvCheckbox" value="tv">
+                                <input class="form-check-input" type="checkbox" id="tvCheckbox" name="tvCheckbox" value="2">
                                 <label class="form-check-label" for="tvCheckbox">TV</label>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="desayunoCheckbox" value="desayuno">
+                                <input class="form-check-input" type="checkbox" id="desayunoCheckbox" name="desayunoCheckbox" value="4">
                                 <label class="form-check-label" for="desayunoCheckbox">Desayuno</label>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="piscinaCheckbox" value="piscina">
+                                <input class="form-check-input" type="checkbox" id="piscinaCheckbox" name="piscinaCheckbox" value="6">
                                 <label class="form-check-label" for="inlineCheckbox3">Piscina</label>
                             </div>
                         </div>
@@ -232,11 +232,11 @@
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="titulo" class="form-label">Inicio: </label>
-                            <input type="date" class="form-control" id="costoInput" placeholder="Ingrese el maximo de personas">
+                            <input type="date" class="form-control" id="inicioInput" name="inicioVigencia" placeholder="Ingrese el inicio de la vigencia de la oferta">
                         </div>
                         <div class="col-md-6">
                             <label for="titulo" class="form-label">Fin:</label>
-                            <input type="date" class="form-control" id="costoInput" placeholder="Ingrese el maximo de personas">
+                            <input type="date" class="form-control" id="finInput" name="finVigencia" placeholder="Ingrese el fin de la vigencia de la oferta">
                         </div>
                     </div>
                     <div class="row">

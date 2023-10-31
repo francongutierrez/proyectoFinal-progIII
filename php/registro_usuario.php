@@ -40,7 +40,7 @@
                 </div>
             </div>
 
-                <form action="" id="formularioRegistro" class="needs-validation" novalidate onsubmit="validarForm()" method="POST" enctype="multipart/form-data">
+                <form action="" id="formularioRegistro" class="needs-validation" novalidate onsubmit="return validarForm();" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre</label>
