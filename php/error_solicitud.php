@@ -11,8 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
-    <link rel="stylesheet" type="text/css" href="../estilos/estilo_error_alquiler.css" >
-    <script src="../js/funciones_publicar_oferta.js"></script>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_error_alquiler.css">
     <title>RappiBnB - Error</title>
 
 </head>
@@ -88,13 +87,13 @@
                 </div>
                 <div class="row">
                     <div class="mt-3">
-                        <p>No puede publicar más de una oferta de alquiler si su cuenta no esta verificada<p>
-                        <p id="descripcionError">Desea verificar su cuenta?<p>
+                        <p>Ocurrió un error al enviar la solicitud de verificación<p>
+                        <p id="descripcionError">Desea volver al inicio?<p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col" id="colSubmit">
-                    <a href="../php/verificar_cuenta.php"><button type="button" class="btn btn-success">Verificar mi cuenta</button></a>
+                    <a href="../php/inicio.php"><button type="button" class="btn btn-success">Volver al inicio</button></a>
                     </div>
                 </div>
             </div>

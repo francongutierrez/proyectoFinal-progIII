@@ -64,10 +64,6 @@ footer {
     display: none;
 }
 
-#ofertas {
-    display: flex;
-    flex-direction: column;
-}
 
 h3 {
     margin-top: 1em;

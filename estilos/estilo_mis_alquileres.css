@@ -5,3 +5,10 @@ footer {
 .opcionDueno {
     margin-right: 1em;
 }
+
+.enlacesPostulaciones {
+    font-size: x-large;
+    color: #0c6a01;
+    text-decoration: none;
+    padding: 0.5em;
+}

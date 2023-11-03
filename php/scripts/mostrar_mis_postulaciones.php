@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
 
     }
 } else {
-    echo "<h3>Sin resultados</h3>";
+    echo "<h3 class='mt-3'>Sin resultados</h3>";
 }
 
 
@@ -45,9 +45,13 @@ $totalRegistros = $rowCount['total'];
 $totalRegistros = $result->num_rows;
 $totalPaginas = ceil($totalRegistros / $itemsPorPagina);
 
+echo '<div class="row">';
+echo '<div class="col text-center">';
 for ($i = 1; $i <= $totalPaginas; $i++) {
-    echo "<a href='mis_postulaciones.php?page=$i'>$i</a> ";
+    echo "<a class='enlacesPostulaciones' href='mis_postulaciones.php?page=$i'>$i</a> ";
 }
+'</div>';
+'</div>';
 
 $conn->close();
 $stmt->close();

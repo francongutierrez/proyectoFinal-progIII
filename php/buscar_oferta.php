@@ -77,7 +77,7 @@ include 'scripts/verificacion.php'
         </nav>
     </header>
     <section>
-        <form action="" method="POST" id="formularioBuscar" onsubmit="validarForm();">
+        <form action="" method="POST" id="formularioBuscar" onsubmit="return validarForm()">
             <div class="container" id="mainContainer">
                 <div class="row">
                     <div class="col mt-3 mb-3 animate-text">
@@ -91,14 +91,14 @@ include 'scripts/verificacion.php'
                 </div>
                 <div class="row">
                     <div class="mb-3">
-                        <label for="titulo" class="form-label">Titulo</label>
-                        <input type="text" class="form-control" id="tituloInput" name="titulo" placeholder="Ingrese el titulo de su publicacion aqui" maxlength="50">
+                        <label for="titulo" class="form-label">Título</label>
+                        <input type="text" class="form-control" id="tituloInput" name="titulo" placeholder="Ingrese el título de su publicación aquí" maxlength="50">
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-3">
-                        <label for="titulo" class="form-label">Ubicacion</label>
-                        <input type="text" class="form-control" id="ubicacionInput" name="ubicacion" placeholder="Ingrese la ubicacion aqui" maxlength="100">
+                        <label for="titulo" class="form-label">Ubicación</label>
+                        <input type="text" class="form-control" id="ubicacionInput" name="ubicacion" placeholder="Ingrese la ubicación aquí" maxlength="100">
                     </div>
                 </div>
                 <div class="row">
@@ -109,28 +109,28 @@ include 'scripts/verificacion.php'
                 </div>
                 <div class="row">
                     <div class="col mt-3">
-                        <label for="titulo" class="form-label">Costo por dia maximo</label>
+                        <label for="titulo" class="form-label">Costo por día máximo</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col mb-3">
-                        <input type="number" class="form-control" min="0" max="999999" id="costoInput" name="costo" placeholder="Ingrese aqui el costo maximo por dia">
+                        <input type="number" class="form-control" min="0" max="999999" id="costoInput" name="costo" placeholder="Ingrese aquí el costo máximo por dia">
                     </div>
                 </div>
                 <div class="row">
                     <div>
-                        <label for="titulo" class="form-label">Maximo tiempo de permanencia (en dias)</label>
+                        <label for="titulo" class="form-label">Máximo tiempo de permanencia (en días)</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col mb-3">
-                        <input type="number" class="form-control" id="tiempoMaximoInput" name="tiempoMaximo" placeholder="Maximo" min="1" max="90">
+                        <input type="number" class="form-control" id="tiempoMaximoInput" name="tiempoMaximo" placeholder="Ingrese el máximo de días aquí" min="1" max="90">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col mb-3">
                         <label for="titulo" class="form-label">Cupo de personas</label>
-                        <input type="number" class="form-control" id="cupoInput" name="cupo" min="1" max="10" placeholder="Ingrese el maximo de personas">
+                        <input type="number" class="form-control" id="cupoInput" name="cupo" min="1" max="10" placeholder="Ingrese el máximo de personas aquí">
                     </div>
                 </div>
                 <div class="row">
@@ -182,6 +182,6 @@ include 'scripts/verificacion.php'
     </footer>
 
     
-    <!-- <script src="../js/funciones_buscar_oferta.js"></script> -->
+    <script src="../js/funciones_buscar_oferta.js"></script>
 </body>
 </html>

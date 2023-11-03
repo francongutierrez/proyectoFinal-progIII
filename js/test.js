@@ -20,9 +20,9 @@ function validarForm() {
   const titulo = document.getElementById('tituloInput').value;
   const descripcion = document.getElementById('descripcionInput').value;
   const ubicacion = document.getElementById('ubicacionInput').value;
-  const costo = document.getElementById('costoInput').value;
-  const tiempoMinimo = document.getElementById('tiempoMinimoInput').value;
-  const tiempoMaximo = document.getElementById('tiempoMaximoInput').value;
+  const costo = parseInt(document.getElementById('costoInput').value);
+  const tiempoMinimo = parseInt(document.getElementById('tiempoMinimoInput').value);
+  const tiempoMaximo = parseInt(document.getElementById('tiempoMaximoInput').value);
   const fotos = document.getElementById('fotos');
   const cupo = document.getElementById('cupoInput').value;
 
@@ -61,7 +61,7 @@ function validarForm() {
   }
 
   if (tiempoMinimo > tiempoMaximo) {
-    errorMessage += '- El tiempo minimo debe ser menor al tiempo maximo.<br>';
+    errorMessage += '- El tiempo mínimo debe ser menor al tiempo máximo.<br>';
     enviar = false;
     tiempoMinimoInput.classList.add('is-invalid');
     tiempoMinimoInput.classList.remove('is-valid');

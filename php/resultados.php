@@ -80,8 +80,6 @@ include 'scripts/verificacion.php'
     <section>
         <div class="container" id="descatadas">
             <?php
-            
-            echo $_SESSION['criterios'];
     
             include '../php/scripts/publicaciones_destacadas.php';
 

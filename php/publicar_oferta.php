@@ -232,11 +232,11 @@
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="titulo" class="form-label">Inicio: </label>
-                            <input type="date" class="form-control" id="inicioInput" name="inicioVigencia" placeholder="Ingrese el inicio de la vigencia de la oferta">
+                            <input type="date" class="form-control" id="inicioInput" name="inicioVigencia" placeholder="Ingrese el inicio de la vigencia de la oferta" min="<?php echo date('Y-m-d', strtotime('+7 days')); ?>" max="2025-12-31">
                         </div>
                         <div class="col-md-6">
                             <label for="titulo" class="form-label">Fin:</label>
-                            <input type="date" class="form-control" id="finInput" name="finVigencia" placeholder="Ingrese el fin de la vigencia de la oferta">
+                            <input type="date" class="form-control" id="finInput" name="finVigencia" placeholder="Ingrese el fin de la vigencia de la oferta" min="<?php echo date('Y-m-d', strtotime('+7 days')); ?>" max="2025-12-31">
                         </div>
                     </div>
                     <div class="row">

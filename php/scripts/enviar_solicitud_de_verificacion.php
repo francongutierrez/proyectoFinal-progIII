@@ -23,11 +23,11 @@
             
                 if ($stmt->execute() && $stmt2->execute()) {
                     echo "<script>
-                    window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/publicacion_exitosa.php';
+                    window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/exito_solicitud.php';
                     </script>";
                 } else {
                     echo "<script>
-                    window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/error_alquiler.php';
+                    window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/error_solicitud.php';
                     </script>";
                 }
             

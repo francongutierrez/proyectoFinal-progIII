@@ -14,9 +14,9 @@
                 $activa = 1;
                 $id_dueno = $_SESSION['id_usuario'];
             
-                $sql = "INSERT INTO propiedades(titulo, descripcion, ubicacion, costo, tiempo_minimo, tiempo_maximo, cupo, id_dueno, tipo, activa) VALUES (?,?,?,?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO propiedades(titulo, descripcion, ubicacion, costo, tiempo_minimo, tiempo_maximo, cupo, id_dueno, tipo, activa, fecha_inicio, fecha_fin) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param("sssiiiiisi", $titulo, $descripcion, $ubicacion, $costo, $tiempo_minimo, $tiempo_maximo, $cupo, $id_dueno, $tipo, $activa);
+                $stmt->bind_param("sssiiiiisi", $titulo, $descripcion, $ubicacion, $costo, $tiempo_minimo, $tiempo_maximo, $cupo, $id_dueno, $tipo, $activa, $inicioVigencia, $finVigencia);
             
                 if ($stmt->execute()) {
                     $contador++;

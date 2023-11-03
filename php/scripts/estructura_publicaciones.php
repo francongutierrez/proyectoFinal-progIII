@@ -10,7 +10,7 @@
     echo "<div class='card-footer text-body-secondary'>";
     echo "<form method='POST'>";
     echo "<input type='hidden' name='id_publicacion' value='" . $row['id'] . "'>";
-    echo "<button type='submit' class='btn btn-success' name='verMas' id='ver-mas-button'><a>Ver mas</a></button>";
+    echo "<button type='submit' class='btn btn-success' name='verMas' id='ver-mas-button'><a>Ver más</a></button>";
     echo "</form>";
     echo "</div>";
     echo "</div>";

@@ -87,7 +87,7 @@
                 </div>
                 <div class="row">
                     <div class="mt-3 mb-3">
-                        <label for="fotos" class="form-label">Ingrese la documentacion adjunta necesaria para la verificacion</label>
+                        <label for="fotos" class="form-label">Ingrese la documentación adjunta necesaria para la verificación</label>
                         <input class="form-control" type="file" id="documentacion" name="documentacion">
                     </div>
                 </div>
