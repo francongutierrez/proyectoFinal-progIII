@@ -1,6 +1,6 @@
 <?php
-
-    include "scripts/verificacion.php";
+    
+    include "scripts/verificacion_administrador.php";
 
 ?>
 
@@ -20,7 +20,7 @@
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <div class="col-md-6">
-                    <a class="navbar-brand" href="../php/inicio.php">
+                    <a class="navbar-brand" href="../php/inicio_administrador.php">
                         <img src="../img/RapiBnB.png" alt="Logo" width="50" class="d-inline-block align-text-top">
                         <p>RapiBnB</p>
                     </a>
@@ -47,23 +47,8 @@
 
                         </button>
                         <div class="dropdown-content">
-
-                            <?php
-                            
-                            if ($_SESSION['certificacion'] == 1) {
-                                echo "<a href='' onclick='return false;' id='usuario-verificado-menu'>Usuario verificado</a>";
-                            } else {}
-                            
-                            ?>
-
-                            <a href="mi_perfil.php">Mi perfil</a>
-                            <a href="mis_alquileres.php">Mis alquileres</a>
-                            <a href="mis_postulaciones.php" id="ofertas">Alquileres activos/pendientes:
-                                <?php include "scripts/cantidad_postulaciones.php";?>
-                            </a>
-                            <a href="mis_alquileres.php" id="ofertas">Ofertas de alquiler:
-                                <?php include "scripts/cantidad_ofertas_alquiler.php";?>
-                            </a>
+                            <a href="">Sesión iniciada como administrador</a>
+                            <a href="">Mi perfil</a>
                             <form action="scripts/cerrar_sesion.php" method="POST">
                                 <button type="submit" id="cerrar-sesion-button" name="cerrar-sesion">
                                     <a href="#"><span class="cerrarSesion">Cerrar sesión</span></a>
@@ -96,7 +81,6 @@
 
                     ?>
 
-
                     <img src="../img/logo2.png" width="300" alt=""></h1>
                 </div>
             </div>
@@ -106,16 +90,12 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4">
-                    <a href="../php/buscar_oferta.php" class="btn btn-outline-success">Alquilar una propiedad</a>
+                <div class="col-lg-6">
+                    <a href="" class="btn btn-outline-success">Validar solicitudes de verificación</a>
                 </div>
-                <div class="col-lg-4">
-                    <a href="../php/publicar_oferta.php" class="btn btn-outline-success">Publicar una oferta de alquiler</a>
+                <div class="col-lg-6">
+                    <a href="" class="btn btn-outline-success">Dar de alta publicaciones pendientes</a>
                 </div>
-                <div class="col-lg-4">
-                    <a href="../php/verificar_cuenta.php" class="btn btn-outline-success">Verificar mi cuenta</a>
-                </div>
-
             </div>
         </div>
     </section>

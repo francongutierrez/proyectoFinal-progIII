@@ -4,12 +4,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     include 'scripts/conexion_db.php';
 
-
     $email = $_POST['email'];
     $contrasena = $_POST['contrasena'];
 
     // Consultar la base de datos para verificar las credenciales
-    $sql = "SELECT id, nombre, foto, contrasena, certificacion, certificacion_en_proceso, sexo, intereses FROM usuarios WHERE email = ?";
+    $sql = "SELECT id, nombre, foto, contrasena, certificacion, certificacion_en_proceso, sexo, intereses FROM usuarios WHERE email = ? AND es_administrador = 1";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -31,9 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['intereses'] = $row['intereses'];
             $_SESSION['certificacion_en_proceso'] = $row['certificacion_en_proceso'];
             $_SESSION['sexo'] = $row['sexo'];
+            $_SESSION['es_administrador'] = 1;
             
             echo "<script>
-            window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/inicio.php';
+            window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/inicio_administrador.php';
             </script>";
 
         } else {

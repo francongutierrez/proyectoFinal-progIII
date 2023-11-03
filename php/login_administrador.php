@@ -25,7 +25,7 @@ if (isset($_SESSION['id_usuario'])) {
         </div>
         <div class="row">
             <div class="col mt-3">
-                <p>Descubra ahora las mejores propiedades para usted</p>
+                <h6>Inicio de sesión como administrador</h6>
             </div>
         </div>
         <div class="container-fluid" id="subContainer">
@@ -47,9 +47,7 @@ if (isset($_SESSION['id_usuario'])) {
             </div>
             <div class="row">
                 <div class="col mt-3">
-                    <hr><p>No tiene una cuenta? <a href="../php/registro_usuario.php">Regístrese aquí</a></p>
-                    <p>o</p>
-                    <p> <a href="../php/login_administrador.php">Iniciar sesión como administrador</a></p>
+                    <hr><p><a href="../php/login.php">Iniciar sesión como usuario regular</a></p>
                 </div>
             </div>
         </form>
@@ -58,7 +56,7 @@ if (isset($_SESSION['id_usuario'])) {
             <div class="col">
                 <?php
 
-                    include 'scripts/autenticacion.php';
+                    include 'scripts/autenticacion_administrador.php';
 
                 ?>
             </div>
