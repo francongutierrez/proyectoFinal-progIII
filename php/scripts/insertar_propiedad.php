@@ -46,6 +46,11 @@
 
                         // Inicio de vigencia
                         if (isset($_POST["inicioVigencia"]) && !empty($_POST["inicioVigencia"])) {
+
+                            // Desactivar la publicacion si se establecio un inicio de la vigencia
+                            $sql_desactivar_vigencia = "UPDATE propiedades SET activa = 0 WHERE id = '$id_publicacion'";
+                            $conn->query($sql_desactivar_vigencia);
+
                             $eventoVigencia = "
                                 CREATE EVENT $nombreEventoVigencia
                                 ON SCHEDULE AT '$inicioVigencia'
@@ -76,7 +81,7 @@
                     </script>";
                 } else {
                     echo "<script>
-                    window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/error_alquiler.php';
+                    window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/error_al_publicar.php';
                 </script>";
                 }
             

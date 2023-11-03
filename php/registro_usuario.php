@@ -36,7 +36,7 @@
             </div>
             <div class="row">
                 <div class="col mt-3 mb-3 animate-text">
-                    <h5>Ingrese sus datos a continuacion:</h5>
+                    <h5>Ingrese sus datos a continuación:</h5>
                 </div>
             </div>
 
@@ -61,7 +61,7 @@
                     </div>
                     <div class="row">
                         <div class="mb-3">
-                            <label for="email" class="form-label">Correo electronico</label>
+                            <label for="email" class="form-label">Correo electrónico</label>
                             <input type="email" class="form-control"  id="emailInput" placeholder="Ingrese su email aqui" name="email" required>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                     </div>
                     <div class="row">
                         <div class="mb-3">
-                            <label for="telefono" class="form-label">Telefono</label>
+                            <label for="telefono" class="form-label">Teléfono</label>
                             <input type="number" class="form-control"  id="telefonoInput" placeholder="Ingrese su telefono aqui" name="telefono" required>
                         </div>
                     </div>

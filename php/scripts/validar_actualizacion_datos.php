@@ -48,14 +48,21 @@
         $validado = false;
     }
 
-    $maxFileSize = 5 * 1024 * 1024;
-    $tamano = filesize($foto);
-
-    if (empty($tamano)) {
-    } elseif ($tamano > $maxFileSize) {
-        echo '<h6 class="mensajeError">La imagen subida no puede superar los 5MB</h6> ';
-        $validado = false;
+    if (isset($_FILES['foto']) && $_FILES['foto']['error'] === UPLOAD_ERR_OK) {
+        $foto = file_get_contents($_FILES['foto']['tmp_name']);
+        // Ahora puedes usar $foto para realizar operaciones necesarias con el archivo.
+        $maxFileSize = 5 * 1024 * 1024;
+        $foto = file_get_contents($_FILES['foto']['tmp_name']);
+        $tamano = filesize($foto);
+    
+        if (empty($tamano)) {
+        } elseif ($tamano > $maxFileSize) {
+            echo '<h6 class="mensajeError">La imagen subida no puede superar los 5MB</h6> ';
+            $validado = false;
+        }
     }
+
+
 
     if (empty($bio)) {
     } elseif (strlen($bio) > 300) {

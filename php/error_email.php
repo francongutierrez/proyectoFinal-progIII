@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="mt-3">
                         <p>El correo electrónico ingresado se encuentra registrado previamente<p>
-                        <p id="descripcionError">Desea verificar su cuenta?<p>
+                        <p id="descripcionError">Desea verificar al registro?<p>
                     </div>
                 </div>
                 <div class="row">

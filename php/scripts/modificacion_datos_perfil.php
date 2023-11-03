@@ -53,7 +53,7 @@
 
                     if ($result_email->num_rows > 0) {
                         echo "<script>
-                        window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/error_email.php';
+                        window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/error_email_actualizar.php';
                         </script>";
                     } else {
                         if (!empty($actualizaciones)) {
@@ -63,17 +63,19 @@
                     
                             if (mysqli_query($conn, $query)) {
                                 echo "<script>
-                                window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/publicacion_exitosa.php';
+                                window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/exito_actualizacion.php';
                                 </script>";
                             } else {
                                 echo "<script>
-                                window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/error_alquiler.php';
+                                window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/error_actualizacion.php';
                                 </script>";
                             }
                         }
                     
-                        mysqli_close($conn);
+                        
                     }
+
+                    mysqli_close($conn);
                 }
             }
         }

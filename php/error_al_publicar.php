@@ -4,7 +4,6 @@
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_error_alquiler.css" >
     <script src="../js/funciones_publicar_oferta.js"></script>
-    <title>RappiBnB - Publicación exitosa</title>
+    <title>RappiBnB - Error</title>
 
 </head>
 <body>
@@ -83,13 +82,13 @@
             <div class="container" id="mainContainer">
                 <div class="row">
                     <div class="col mt-3 animate-text colMensaje">
-                        <img src="../img/valid.jpg" alt="">
-                        <h1>Publicación exitosa</h1>
+                        <img src="../img/error_img.jpg" alt="">
+                        <h1>Error</h1>
                     </div>
                 </div>
                 <div class="row">
                     <div class="mt-3">
-                        <p>Se ha publicado su oferta<p>
+                        <p>Ocurrió un error al crear la publicación<p>
                         <p id="descripcionError">Desea volver al inicio?<p>
                     </div>
                 </div>

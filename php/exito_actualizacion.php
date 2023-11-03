@@ -6,7 +6,7 @@
 
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_error_alquiler.css" >
     <script src="../js/funciones_publicar_oferta.js"></script>
-    <title>RappiBnB - Publicación exitosa</title>
+    <title>RappiBnB - Actualización exitosa</title>
 
 </head>
 <body>
@@ -84,13 +84,12 @@
                 <div class="row">
                     <div class="col mt-3 animate-text colMensaje">
                         <img src="../img/valid.jpg" alt="">
-                        <h1>Publicación exitosa</h1>
+                        <h1>Se han actualizado sus datos</h1>
                     </div>
                 </div>
                 <div class="row">
                     <div class="mt-3">
-                        <p>Se ha publicado su oferta<p>
-                        <p id="descripcionError">Desea volver al inicio?<p>
+                        <p>Desea volver al inicio?<p>
                     </div>
                 </div>
                 <div class="row">
