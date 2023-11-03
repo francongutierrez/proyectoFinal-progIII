@@ -22,7 +22,7 @@
             echo '<span class="serviciosNombre">'.$row_servicios['nombre'].'</span> / ';
         }
     } else {
-        echo "<p>La publicacion no tiene servicios especificados.</p>";
+        echo "<p>La publicación no tiene servicios especificados.</p>";
     }
 
     $prepara2->close();

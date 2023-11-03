@@ -17,7 +17,7 @@ if ($result->num_rows > 0) {
 
     }
 } else {
-    echo "<h3>Esta publicacion no tiene ofertas de alquiler</h3>";
+    echo "<h3>Esta publicación no tiene ofertas de alquiler</h3>";
 }
 
 $conn->close();

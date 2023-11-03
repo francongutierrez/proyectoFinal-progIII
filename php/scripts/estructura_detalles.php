@@ -38,10 +38,10 @@
     echo "</div>";
     echo "<div class='row'>";
     echo     "<div class='col-md-6'>";
-    echo         "<p><span class='titular'>Tiempo mínimo:</span> ".$row['tiempo_minimo']." dias</p>";
+    echo         "<p><span class='titular'>Tiempo mínimo:</span> ".$row['tiempo_minimo']." día/s</p>";
     echo     "</div>";
     echo     "<div class='col-md-6'>";
-    echo         "<p><span class='titular'>Tiempo máximo:</span> ".$row['tiempo_maximo']." dias</p>";
+    echo         "<p><span class='titular'>Tiempo máximo:</span> ".$row['tiempo_maximo']." día/s</p>";
     echo     "</div>";
     echo "</div>";
     echo "<div class='row'>";

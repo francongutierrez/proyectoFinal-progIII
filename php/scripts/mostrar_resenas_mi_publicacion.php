@@ -17,7 +17,7 @@
 
         }
     } else {
-        echo "<h3>Esta publicacion no tiene reseñas</h3>";
+        echo "<h3>Esta publicación no tiene reseñas</h3>";
     }
 
     $stmt->close();
