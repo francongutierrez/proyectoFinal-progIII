@@ -1,9 +1,8 @@
 <?php
 
-    include 'scripts/verificacion.php';  
+include 'scripts/verificacion_administrador.php'
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -12,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
-    <link rel="stylesheet" type="text/css" href="../estilos/estilo_error_alquiler.css">
-    <title>RappiBnB - Solicitud enviada</title>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_detalles_publicacion.css" >
+    <title>RappiBnB - Publicaciones en oferta</title>
 
 </head>
 <body>
@@ -21,7 +20,7 @@
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <div class="col-md-6">
-                    <a class="navbar-brand" href="../php/inicio.php">
+                    <a class="navbar-brand" href="../php/inicio_administrador.php">
                         <img src="../img/RapiBnB.png" alt="Logo" width="50" class="d-inline-block align-text-top">
                         <p>RapiBnB</p>
                     </a>
@@ -48,23 +47,8 @@
 
                         </button>
                         <div class="dropdown-content">
-
-                            <?php
-                            
-                            if ($_SESSION['certificacion'] == 1) {
-                                echo "<a href='' onclick='return false;' id='usuario-verificado-menu'>Usuario verificado</a>";
-                            } else {}
-                            
-                            ?>
-
-                            <a href="mi_perfil.php">Mi perfil</a>
-                            <a href="mis_alquileres.php">Mis alquileres</a>
-                            <a href="mis_postulaciones.php" id="ofertas">Alquileres activos/pendientes:
-                                <?php include "scripts/cantidad_postulaciones.php";?>
-                            </a>
-                            <a href="mis_alquileres.php" id="ofertas">Ofertas de alquiler:
-                                <?php include "scripts/cantidad_ofertas_alquiler.php";?>
-                            </a>
+                            <a href="">Sesión iniciada como administrador</a>
+                            <a href="">Mi perfil</a>
                             <form action="scripts/cerrar_sesion.php" method="POST">
                                 <button type="submit" id="cerrar-sesion-button" name="cerrar-sesion">
                                     <a href="#"><span class="cerrarSesion">Cerrar sesión</span></a>
@@ -78,31 +62,28 @@
         </nav>
     </header>
     <section>
-        <form action="">
-            <div class="container" id="mainContainer">
-                <div class="row">
-                    <div class="col mt-3 animate-text colMensaje">
-                        <img src="../img/valid.jpg" alt="">
-                        <h1>Se ha enviado su solicitud de verificación</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mt-3">
-                        <p>En breve un administrador revisará su documentación<p>
-                        <p id="descripcionError">Desea volver al inicio?<p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col" id="colSubmit">
-                    <a href="../php/inicio.php"><button type="button" class="btn btn-success">Volver al inicio</button></a>
-                    </div>
-                </div>
-            </div>
-        </form>
+        
+
+
+        <div class="container" id="resultados">
+            <?php
+
+                include 'scripts/manejar_decision_publicacion.php';
+                include 'scripts/mostrar_detalles_publicacion_pendiente.php';
+
+            ?>
+        </div>
+
+
+
+
 
     </section>
     <footer>
         <p>2023 - Gutierrez Franco</p>
     </footer>
+    <?php include 'scripts/cerrar_sesion.php' ?>
+
+    <script src="../js/funciones_detalles_publicacion.js"></script>
 </body>
 </html>

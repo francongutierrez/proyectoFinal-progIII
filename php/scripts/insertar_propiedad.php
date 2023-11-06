@@ -11,12 +11,20 @@
                 include 'scripts/conexion_db.php';
             
                 $contador = 0;
-                $activa = 1;
                 $id_dueno = $_SESSION['id_usuario'];
+
+                if ($_SESSION['certificacion'] == 1) {
+                    $activa = 1;
+                    $estado = 'activa';
+                } else {
+                    $activa = 0;
+                    $estado = 'pendiente';
+                }
+
             
-                $sql = "INSERT INTO propiedades(titulo, descripcion, ubicacion, costo, tiempo_minimo, tiempo_maximo, cupo, id_dueno, tipo, activa, fecha_inicio, fecha_fin) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO propiedades(titulo, descripcion, ubicacion, costo, tiempo_minimo, tiempo_maximo, cupo, id_dueno, tipo, activa, fecha_inicio, fecha_fin, estado) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param("sssiiiiisi", $titulo, $descripcion, $ubicacion, $costo, $tiempo_minimo, $tiempo_maximo, $cupo, $id_dueno, $tipo, $activa, $inicioVigencia, $finVigencia);
+                $stmt->bind_param("sssiiiiisis", $titulo, $descripcion, $ubicacion, $costo, $tiempo_minimo, $tiempo_maximo, $cupo, $id_dueno, $tipo, $activa, $inicioVigencia, $finVigencia, $estado);
             
                 if ($stmt->execute()) {
                     $contador++;

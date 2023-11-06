@@ -91,10 +91,10 @@
             </div>
             <div class="row">
                 <div class="col-lg-6">
-                    <a href="" class="btn btn-outline-success">Validar solicitudes de verificación</a>
+                    <a href="solicitudes_de_verificacion.php" class="btn btn-outline-success">Validar solicitudes de verificación</a>
                 </div>
                 <div class="col-lg-6">
-                    <a href="" class="btn btn-outline-success">Dar de alta publicaciones pendientes</a>
+                    <a href="publicaciones_pendientes.php" class="btn btn-outline-success">Dar de alta publicaciones pendientes</a>
                 </div>
             </div>
         </div>
