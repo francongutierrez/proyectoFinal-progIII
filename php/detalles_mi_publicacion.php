@@ -29,36 +29,29 @@ include 'scripts/verificacion.php'
                 <div class="col-md-6">
                     <div class="dropdown">
                         <button class="menu-button">
-                            <!-- <img src="../img/test_image.jpg" alt="Foto de perfil" class="profile-image"> -->
-
-
                             <?php
                             // Mostrar la imagen de perfil del usuario
                             if ($_SESSION['foto_usuario']) {
-                                // Codifica la imagen en Base64
                                 $imagen_codificada = base64_encode($_SESSION['foto_usuario']);
-                                // Muestra la imagen en el documento HTML
                                 echo '<img src="data:image/jpeg;base64,' . $imagen_codificada . '" alt="Foto de perfil" class="profile-image">';
                             } else {
                                 echo "Imagen no encontrada";
                             }
-
                             ?>
-
-
                         </button>
                         <div class="dropdown-content">
-
                             <?php
-                            
+                            // Distincion en los usuarios verificados y vencimiento
                             if ($_SESSION['certificacion'] == 1) {
-                                echo "<a href='' onclick='return false;' id='usuario-verificado-menu'>Usuario verificado</a>";
+                                echo "<a href='' onclick='return false;' id='usuario-verificado-menu'>Usuario verificado";
+                                if (isset($_SESSION['vencimiento_verificacion'])) {
+                                    echo " hasta el ".$_SESSION['vencimiento_verificacion'];
+                                }
+                                echo "</a>";
                             } else {}
-                            
                             ?>
-
                             <a href="mi_perfil.php">Mi perfil</a>
-                            <a href="mis_alquileres.php">Mis alquileres</a>
+                            <a href="mis_publicaciones.php">Mis publicaciones</a>
                             <a href="mis_postulaciones.php" id="ofertas">Alquileres activos/pendientes:
                                 <?php include "scripts/cantidad_postulaciones.php";?>
                             </a>
@@ -70,7 +63,6 @@ include 'scripts/verificacion.php'
                                     <a href="#"><span class="cerrarSesion">Cerrar sesión</span></a>
                                 </button>
                             </form>
-                            
                         </div>
                     </div>
                 </div>
@@ -103,13 +95,13 @@ include 'scripts/verificacion.php'
             
         </div>
         <div class="container" id="ofertas">
-            <div class="row col-ofertas-titulo">
+            <div class="row">
                 <div class="col mt-3">
                     <h1>Ofertas de alquiler:</h1>
                 </div>
             </div>
-            <div class="row col-ofertas">
-                <div class="col ">
+            <div class="row">
+                <div class="col">
                     <?php include 'scripts/mostrar_ofertas.php'; ?>
                     <?php include '../php/scripts/manejar_decision_dueno.php'; ?>
                 </div>

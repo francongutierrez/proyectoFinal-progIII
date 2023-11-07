@@ -19,11 +19,11 @@
         echo "</div>"; // cierre de card body 3
         echo "<div class='card-footer'>";
         echo 
-        '<form method="POST" id="decisionOferta">
-        <input type="hidden" value="'. $row['id'] . '" name="id_usuario_ofertante">
-        <button type="submit" name="aceptar" class="btn btn-success" name="aceptar" id="aceptar" data-accion="aceptar">Aceptar</button>
-        <button type="submit" name="rechazar" class="btn btn-danger" name="rechazar" id="rechazar" data-accion="rechazar">Rechazar</button>
-    </form>';
+            '<form method="POST" id="decisionOferta">
+            <input type="hidden" value="'. $row['id'] . '" name="id_usuario_ofertante">
+            <button type="submit" name="aceptar" class="btn btn-success" name="aceptar" id="aceptar" data-accion="aceptar">Aceptar</button>
+            <button type="submit" name="rechazar" class="btn btn-danger" name="rechazar" id="rechazar" data-accion="rechazar">Rechazar</button>
+            </form>';
         echo "</div>"; // cierre de card footer
         echo "</div>"; // cierre de card
 

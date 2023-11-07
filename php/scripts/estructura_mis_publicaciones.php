@@ -25,6 +25,8 @@
 
     if ($row["activa"] == 1 || $cambio == 1) {
         echo "<button type='submit' class='btn btn-danger opcionDueno' name='desactivar' id='desactivar-button'><a>Desactivar</a></button>";
+    } elseif ($row['estado'] == 'pendiente') {
+        echo "<button class='btn btn-success opcionDueno' name='pendiente' id='disabled-button' disabled><a>Pendiente</a></button>";
     } else {
         echo "<button type='submit' class='btn btn-success opcionDueno' name='activar' id='activar-button'><a>Activar</a></button>";
     }
@@ -35,6 +37,8 @@
         echo '<p class="mensajeOfertas mt-3">Tiene '. $count . ' oferta/s pendiente/s en esta publicación</p>';
     } elseif ($count == 0 && $row["activa"] == 1) {
         echo '<p class="mensajeOfertas mt-3">No tiene ofertas para esta publicación</p>';
+    } elseif ($row["estado"] == 'pendiente') {
+        echo '<p class="mensajeOfertas mt-3">Publicación pendiente de revisión</p>';
     } else { 
         echo '<p class="mensajeOfertas mt-3">Publicación inactiva</p>';
     }

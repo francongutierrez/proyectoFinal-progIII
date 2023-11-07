@@ -81,7 +81,7 @@ include 'scripts/verificacion.php'
         <div class="container" id="mainContainer">
             <div class="row">
                 <div class="col mt-3 animate-text">
-                    <h1>Mis ofertas de alquiler</h1>
+                    <h1>Mis publicaciones</h1>
                 </div>
             </div>
         </div>
