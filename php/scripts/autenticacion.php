@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contrasena = $_POST['contrasena'];
 
     // Consultar la base de datos para verificar las credenciales
-    $sql = "SELECT id, nombre, foto, contrasena, certificacion, certificacion_en_proceso, sexo, intereses FROM usuarios WHERE email = ?";
+    $sql = "SELECT id, nombre, foto, contrasena, certificacion, certificacion_en_proceso, sexo, intereses FROM usuarios, vencimiento_verificacion WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -31,6 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['intereses'] = $row['intereses'];
             $_SESSION['certificacion_en_proceso'] = $row['certificacion_en_proceso'];
             $_SESSION['sexo'] = $row['sexo'];
+
+            if ($row['vencimiento_verificacion'] != null) {
+                $fecha_formateada = date("d/m/Y", strtotime($row['vencimiento_verificacion']));
+                $_SESSION['vencimiento_verificacion'] = $fecha_formateada;
+            } else {}
             
             echo "<script>
             window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/inicio.php';

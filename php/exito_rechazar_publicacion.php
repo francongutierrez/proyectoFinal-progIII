@@ -1,6 +1,6 @@
 <?php
-    
-    include "scripts/verificacion_administrador.php";
+
+    include 'scripts/verificacion_administrador.php';  
 
 ?>
 
@@ -11,9 +11,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../estilos/estilo_general.css" type="text/css">
-    <link rel="stylesheet" href="../estilos/estilo_inicio.css" type="text/css">
-    <title>RapiBnB - Inicio</title>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_exito_validacion.css">
+    <title>RappiBnB - Publicación rechazada</title>
+
 </head>
 <body>
     <header>
@@ -48,7 +49,7 @@
                         </button>
                         <div class="dropdown-content">
                             <a href="">Sesión iniciada como administrador</a>
-                            <a href="mi_perfil_administrador.php">Mi perfil</a>
+                            <a href="">Mi perfil</a>
                             <form action="scripts/cerrar_sesion.php" method="POST">
                                 <button type="submit" id="cerrar-sesion-button" name="cerrar-sesion">
                                     <a href="#"><span class="cerrarSesion">Cerrar sesión</span></a>
@@ -62,46 +63,29 @@
         </nav>
     </header>
     <section>
-        <div class="container" id="mainContainer">
-            <div class="row">
-                <div class="col mb-3 animate-text">
-                    <h1>
-                    <?php echo $_SESSION['nombre_usuario'].","?>
-                    
-                    <?php
-
-                        if ($_SESSION['sexo'] == 'm') {
-                            echo "bienvenido a";
-                        }
-                        else if ($_SESSION['sexo'] == 'f') {
-                            echo "bienvenida a";
-                        } else {
-                            echo "bienvenide a";
-                        }
-
-                    ?>
-
-                    <img src="../img/logo2.png" width="300" alt=""></h1>
+        <form action="">
+            <div class="container" id="mainContainer">
+                <div class="row">
+                    <div class="col mt-3 animate-text colMensaje">
+                        <img src="../img/valid.jpg" alt="">
+                        <h1>Publicación rechazada</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mt-3">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" id="colSubmit">
+                    <a href="../php/solicitudes_de_verificacion.php" class="btn btn-success" id="botonVolver">Volver a validar publicaciones pendientes</a>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col mb-3 animate-text">
-                    <p>Qué desea hacer?</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <a href="solicitudes_de_verificacion.php" class="btn btn-outline-success">Validar solicitudes de verificación</a>
-                </div>
-                <div class="col-lg-6">
-                    <a href="publicaciones_pendientes.php" class="btn btn-outline-success">Dar de alta publicaciones pendientes</a>
-                </div>
-            </div>
-        </div>
+        </form>
+
     </section>
     <footer>
         <p>2023 - Gutierrez Franco</p>
     </footer>
-    <?php include 'scripts/cerrar_sesion.php' ?>
 </body>
 </html>

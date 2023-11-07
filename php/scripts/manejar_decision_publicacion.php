@@ -16,7 +16,7 @@
                 $conn->close();
 
                 echo "<script>
-                window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/exito_validacion.php';
+                window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/exito_publicacion_aceptada.php';
                 </script>";
 
             // Si el usuario no eligio una fecha de vencimiento (validar)
@@ -36,7 +36,7 @@
 
 
             echo "<script>
-            window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/exito_validacion_rechazar.php';
+            window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/exito_rechazar_publicacion.php';
             </script>";
         }
     }

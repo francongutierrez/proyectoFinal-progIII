@@ -1,9 +1,8 @@
 <?php
-    
-    include "scripts/verificacion_administrador.php";
+
+    include 'scripts/verificacion_administrador.php'    
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -11,9 +10,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../estilos/estilo_general.css" type="text/css">
-    <link rel="stylesheet" href="../estilos/estilo_inicio.css" type="text/css">
-    <title>RapiBnB - Inicio</title>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_mi_perfil.css" >
+    <script src="../js/funciones_publicar_oferta.js"></script>
+    <title>RappiBnB - Verificar cuenta</title>
+
 </head>
 <body>
     <header>
@@ -64,44 +65,30 @@
     <section>
         <div class="container" id="mainContainer">
             <div class="row">
-                <div class="col mb-3 animate-text">
-                    <h1>
-                    <?php echo $_SESSION['nombre_usuario'].","?>
-                    
-                    <?php
-
-                        if ($_SESSION['sexo'] == 'm') {
-                            echo "bienvenido a";
-                        }
-                        else if ($_SESSION['sexo'] == 'f') {
-                            echo "bienvenida a";
-                        } else {
-                            echo "bienvenide a";
-                        }
-
-                    ?>
-
-                    <img src="../img/logo2.png" width="300" alt=""></h1>
+                <div class="col mt-3 animate-text">
+                    <h1>Mi perfil:</h1>
                 </div>
             </div>
+
+            <?php
+
+            include 'scripts/datos_perfil.php';
+
+            ?>
             <div class="row">
-                <div class="col mb-3 animate-text">
-                    <p>Qué desea hacer?</p>
+                <div class="col">
+                    <h6 class="mensajeAtencion">ATENCIÓN: Para modificar los datos de su perfil debe iniciar sesión como usuario regular</h6>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <a href="solicitudes_de_verificacion.php" class="btn btn-outline-success">Validar solicitudes de verificación</a>
-                </div>
-                <div class="col-lg-6">
-                    <a href="publicaciones_pendientes.php" class="btn btn-outline-success">Dar de alta publicaciones pendientes</a>
-                </div>
-            </div>
+
+
         </div>
+
+
+
     </section>
     <footer>
         <p>2023 - Gutierrez Franco</p>
     </footer>
-    <?php include 'scripts/cerrar_sesion.php' ?>
 </body>
 </html>
