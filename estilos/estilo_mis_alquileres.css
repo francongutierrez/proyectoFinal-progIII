@@ -12,3 +12,14 @@ footer {
     text-decoration: none;
     padding: 0.5em;
 }
+
+a {
+    text-decoration: none;
+}
+
+.mensajeAtencion {
+    background-color: #ffff98;
+    border-radius: 1em;
+    padding: 1em;
+    margin-top: 1em;
+}

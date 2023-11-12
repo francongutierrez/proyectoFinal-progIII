@@ -1,6 +1,9 @@
 <?php
 
-include 'scripts/verificacion.php'
+    include 'scripts/verificacion.php';
+    if ($_SESSION['certificacion'] == 0) {
+        include 'scripts/comprobar_ofertas_usuario.php';
+    }
 
 ?>
 
@@ -168,7 +171,7 @@ include 'scripts/verificacion.php'
         </div>
 
         <?php include 'scripts/busqueda.php'; ?>
-
+        
     </section>
     <footer>
         <p>2023 - Gutierrez Franco</p>

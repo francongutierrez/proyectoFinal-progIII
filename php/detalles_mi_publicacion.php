@@ -94,7 +94,7 @@ include 'scripts/verificacion.php'
             </div>
             
         </div>
-        <div class="container" id="ofertas">
+        <div class="container" id="misOfertas">
             <div class="row">
                 <div class="col mt-3">
                     <h1>Ofertas de alquiler:</h1>

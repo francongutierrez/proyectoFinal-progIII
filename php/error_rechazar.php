@@ -85,7 +85,7 @@
                 </div>
                 <div class="row">
                     <div class="col" id="colSubmit">
-                    <a href="../php/mis_alquileres.php"><button type="button" class="btn btn-success">Volver a mis publicaciones</button></a>
+                    <a href="../php/mis_alquileres.php" id="buttonVolver"><button type="button" class="btn btn-success">Volver a mis publicaciones</button></a>
                     </div>
                 </div>
             </div>

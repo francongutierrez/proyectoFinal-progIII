@@ -21,6 +21,11 @@
                 WHERE id = $id_usuario_solicitud";
                 $conn->query($sql_aceptar2);
 
+                $sql_aceptar3 = "UPDATE propiedades 
+                SET dueno_certificado = 1
+                WHERE id_dueno = $id_usuario_solicitud";
+                $conn->query($sql_aceptar3);
+
                 $conn->close();
 
                 echo "<script>

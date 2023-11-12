@@ -39,9 +39,9 @@
             if (!empty($inicioDisponibilidad) && !empty($finDisponibilidad)) {
                 $sql_busqueda .= " AND id NOT IN 
                 (SELECT id_propiedad FROM alquileres 
-                WHERE fecha_inicio BETWEEN '$inicioDisponibilidad' AND '$finDisponibilidad'
-                AND fecha_fin BETWEEN '$inicioDisponibilidad' AND '$finDisponibilidad'
-                AND (estado = 'pendiente' OR estado = 'activo'))";
+                WHERE fecha_inicio <= '$inicioDisponibilidad'
+                AND fecha_fin >=  '$finDisponibilidad'
+                AND (estado = 'activo'))"; // Solo estado activo para que el dueño de la propiedad decida sobre el alquiler
             }        
     
             $sql_busqueda .= " AND activa = 1 AND id_dueno != $_SESSION[id_usuario]";
@@ -56,7 +56,7 @@
             echo "<script>window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/resultados.php'</script>";
         }
 
-
+        
 
     }
 

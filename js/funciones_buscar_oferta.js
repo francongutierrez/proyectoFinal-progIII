@@ -23,8 +23,8 @@ function validarForm() {
     const costo = parseFloat(document.getElementById('costoInput').value);
     const tiempoMaximo = parseInt(document.getElementById('tiempoMaximoInput').value);
     const cupo = parseInt(document.getElementById('cupoInput').value);
-    const inicioDisponibilidad = document.getElementById('inicioDisponibilidad').value;
-    const finDisponibilidad = document.getElementById('finDisponibilidad').value;
+    const inicioDisponibilidad = new Date(document.getElementById('inicioDisponibilidad').value);
+    const finDisponibilidad = new Date (document.getElementById('finDisponibilidad').value);
 
     let enviar = true;
     let errorMessage = "";
@@ -71,6 +71,20 @@ function validarForm() {
 
     if (inicioDisponibilidad == "" || finDisponibilidad == "") {
       errorMessage += '- No ha especificado las fechas de disponibilidad.<br>';
+      enviar = false;
+      inicioDisponibilidadInput.classList.add('is-invalid');
+      inicioDisponibilidadInput.classList.remove('is-valid');
+      finDisponibilidadInput.classList.add('is-invalid');
+      finDisponibilidadInput.classList.remove('is-valid');
+    } else {
+      inicioDisponibilidadInput.classList.add('is-valid');
+      inicioDisponibilidadInput.classList.remove('is-invalid');
+      finDisponibilidadInput.classList.add('is-valid');
+      finDisponibilidadInput.classList.remove('is-invalid');
+    }
+
+    if (inicioDisponibilidad > finDisponibilidad) {
+      errorMessage += '- La fecha de fin no puede ser anterior a la de inicio.<br>';
       enviar = false;
       inicioDisponibilidadInput.classList.add('is-invalid');
       inicioDisponibilidadInput.classList.remove('is-valid');

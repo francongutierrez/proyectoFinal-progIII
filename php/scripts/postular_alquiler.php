@@ -22,11 +22,11 @@
             
             if ($stmt_alquilar->execute()) {
                 echo "<script>
-                window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/exito_postulacion.php';
+                window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/exito_alquiler.php';
                 </script>";
             } else {
                 echo "<script>
-                window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/error_postulacion.php';
+                window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/error_al_alquilar.php';
                 </script>";
             }
 
@@ -77,7 +77,7 @@
             
             if ($stmt_alquilar->execute() && $conn->query($eventoSQL) == TRUE) {
                 echo "<script>
-                window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/exito_alquiler.php';
+                window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/exito_postulacion.php';
                 </script>";
             } else {
                 echo "<script>

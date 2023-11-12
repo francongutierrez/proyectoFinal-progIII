@@ -86,7 +86,7 @@
                 </div>
                 <div class="row">
                     <div class="col" id="colSubmit">
-                    <a href="../php/mis_publicaciones.php"><button type="button" class="btn btn-success">Volver a mis publicaciones</button></a>
+                        <a href="../php/mis_publicaciones.php" class="btn btn-success">Volver a mis publicaciones</a>
                     </div>
                 </div>
             </div>

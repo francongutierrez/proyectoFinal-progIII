@@ -3,6 +3,8 @@
 
     include 'scripts/conexion_db.php';
 
+
+
     // Criterios de busqueda ingresados
     $criterios = $_SESSION['criterios'];
 

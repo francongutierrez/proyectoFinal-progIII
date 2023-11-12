@@ -10,15 +10,17 @@
     
             if ($validado) {
                 include 'scripts/conexion_db.php';
-                $nombreDocumentacion = $_FILES['documentacion']['tmp_name'];
-                $documentacion = file_get_contents($nombreDocumentacion);
+                $nombreDocumentacion = $_FILES['documentacion']['name'];
+                $documentacion = file_get_contents($_FILES['documentacion']['tmp_name']);
                 $extension = pathinfo($nombreDocumentacion, PATHINFO_EXTENSION);
+
+
                 $true = 1;
                 $pendiente = "pendiente";
             
                 $sql = "INSERT INTO solicitudes_de_verificacion(id_usuario, documentacion, extension, estado) VALUES (?,?,?,?)";
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param("sss", $_SESSION['id_usuario'], $documentacion, $extension, $estado);
+                $stmt->bind_param("ssss", $_SESSION['id_usuario'], $documentacion, $extension, $pendiente);
             
                 $sql2 = "UPDATE usuarios SET certificacion_en_proceso = ? WHERE id = ?";
                 $stmt2 = $conn->prepare($sql2);
