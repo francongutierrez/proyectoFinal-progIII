@@ -45,6 +45,13 @@
         $validado = false;
     }
 
+    if ($inicioVigencia == "") {
+        $inicioVigencia = null;
+    }
+    if ($finVigencia == "") {
+        $finVigencia = null;
+    }    
+
 
 
 ?>

@@ -22,11 +22,11 @@
         
             if ($stmt_insertar_resena->execute()) {
                 echo "<script>
-                window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/publicacion_exitosa.php';
+                window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/exito_resena.php';
                 </script>";    
             } else {
                 echo "<script>
-                window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/error_alquiler.php';
+                window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/error_resena.php';
                 </script>";
             }
     

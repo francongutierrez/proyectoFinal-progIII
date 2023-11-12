@@ -6,7 +6,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -87,24 +87,24 @@
                 </div>
             </div>
 
-                <form action="" id="formularioPublicar" class="needs-validation" novalidate onsubmit="return validarForm()" method="POST" enctype="multipart/form-data">
+                <form action="" id="formularioPublicar" class="needs-validation" onsubmit="return validarForm();" method="POST" enctype="multipart/form-data" novalidate>
                     <div class="row">
                         <div class="mb-3">
-                            <label for="titulo" class="form-label">Titulo</label>
-                            <input type="text" class="form-control" id="tituloInput" placeholder="Ingrese el titulo de su publicacion aqui" name="titulo" required>
+                            <label for="titulo" class="form-label">Título</label>
+                            <input type="text" class="form-control" id="tituloInput" placeholder="Ingrese el titulo de su publicacion aqui" name="titulo" maxlength="50" required>
                             <div id="mensajeTituloError" class="is-invalid"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="mb-3">
-                            <label for="descipcion" class="form-label">Descripcion</label>
-                            <textarea class="form-control" id="descripcionInput" rows="3" placeholder="Ingrese la descripcion del alquiler aqui" name="descripcion" required></textarea>
+                            <label for="descipcion" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="descripcionInput" rows="3" placeholder="Ingrese la descripcion del alquiler aqui" name="descripcion" maxlength="500" required></textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="mb-3">
-                            <label for="titulo" class="form-label">Ubicacion</label>
-                            <input type="text" class="form-control"  id="ubicacionInput" placeholder="Ingrese la ubicacion aqui" name="ubicacion" required>
+                            <label for="titulo" class="form-label">Ubicación</label>
+                            <input type="text" class="form-control"  id="ubicacionInput" placeholder="Ingrese la ubicacion aqui" name="ubicacion" maxlength="100" required>
                         </div>
                     </div>
                     <div class="row">
@@ -119,7 +119,7 @@
                     <div class="row">
                         <div class="mb-3">
                             <label for="etiquetas" class="form-label">Etiquetas</label>
-                            <input type="text" class="form-control" id="etiquetasInput" placeholder="Ingrese las etiquetas aquí" name="etiquetas" required>
+                            <input type="text" class="form-control" id="etiquetasInput" placeholder="Ingrese las etiquetas aquí" name="etiquetas" maxlength="200" required>
                         </div>
                     </div>
                     <div class="row">
@@ -188,8 +188,8 @@
                     </div>
                     <div class="row">
                         <div class="mt-3 mb-3">
-                            <label for="titulo" class="form-label">Costo por dia</label>
-                            <input type="number" class="form-control" id="costoInput" placeholder="Ingrese el costo por dia aqui" name="costo" required>
+                            <label for="titulo" class="form-label">Costo por día</label>
+                            <input type="number" class="form-control" id="costoInput" placeholder="Ingrese el costo por dia aqui" name="costo" min="1000" max="999999" required>
                         </div>
                     </div>
                     <div class="row">
@@ -273,6 +273,6 @@
 
     <?php include 'scripts/cerrar_sesion.php' ?>
 
-    <script src="../js/test.js"></script>
+    <script src="../js/funciones_publicar_oferta.js"></script>
 </body>
 </html>

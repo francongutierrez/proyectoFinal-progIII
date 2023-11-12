@@ -71,7 +71,7 @@ function validarForm() {
   }
 
   if (!emailRegex.test(email)) {
-    errorMessage += '- El formato del correo electronico ingresado no es valido.<br>';
+    errorMessage += '- El formato del correo electrónico ingresado no es valido.<br>';
     enviar = false;
     emailInput.classList.add('is-invalid');
     emailInput.classList.remove('is-valid');
@@ -81,7 +81,7 @@ function validarForm() {
   }
 
   if (telefono < 999999999 || telefono > 99999999999) {
-    errorMessage += '- El telefono debe tener 10 caracteres numericos.<br>';
+    errorMessage += '- El teléfono debe tener 10 caracteres numericos.<br>';
     enviar = false;
     telefonoInput.classList.add('is-invalid');
     telefonoInput.classList.remove('is-valid');
@@ -126,7 +126,7 @@ function validarForm() {
   }
 
   if (contrasena != contrasena2) {
-    errorMessage += '- Las contrasenas no coinciden.<br>';
+    errorMessage += '- Las contraseñas no coinciden.<br>';
     enviar = false;
     contrasenaInput.classList.add('is-invalid');
     contrasenaInput.classList.remove('is-valid');

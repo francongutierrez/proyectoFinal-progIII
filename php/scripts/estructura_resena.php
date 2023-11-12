@@ -19,13 +19,14 @@
     // Mostrar opcion para editar reseña si coincide con el id del usuario activo
     if ($row["id_usuario"] == $_SESSION["id_usuario"]) {
         echo '<button class="btn btn-success mt-3" onclick="mostrarFormReseña()"  id="editarResena">Editar reseña</button>';
-        echo '<form method="POST" id="formResena" onsubmit="validarForm()">';
+        echo '<form method="POST" id="formResena">';
         echo '
-        <input type="number" class="form-control mb-3" placeholder="Ingrese el nuevo puntaje aquí (Del 1 al 5)" min="1" max="5" name="nuevoPuntaje" id="puntajeResena">
-        <textarea type="number" class="form-control mb-3" placeholder="Escriba la nueva reseña aquí" name="nuevaDescripcion" id="descripcionResena" maxlength="300"></textarea>
+        <input type="number" class="form-control mb-3" placeholder="Ingrese el nuevo puntaje aquí (Del 1 al 5)" min="1" max="5" name="nuevoPuntaje" id="puntajeResena" required>
+        <textarea class="form-control mb-3" placeholder="Escriba la nueva reseña aquí" name="nuevaDescripcion" id="descripcionResena" maxlength="300" required></textarea>
+        <input type="hidden" name="editarResena">
         <button type="submit" class="btn btn-success" name="editarResena">Guardar reseña</button>
         ';
-        echo '</form>';
+        echo '</form>';        
     }
 
 

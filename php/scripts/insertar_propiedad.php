@@ -22,9 +22,9 @@
                 }
 
             
-                $sql = "INSERT INTO propiedades(titulo, descripcion, ubicacion, costo, tiempo_minimo, tiempo_maximo, cupo, id_dueno, tipo, activa, fecha_inicio, fecha_fin, estado) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO propiedades(titulo, descripcion, ubicacion, etiquetas, costo, tiempo_minimo, tiempo_maximo, cupo, id_dueno, tipo, activa, fecha_inicio, fecha_fin, estado) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param("sssiiiiisis", $titulo, $descripcion, $ubicacion, $costo, $tiempo_minimo, $tiempo_maximo, $cupo, $id_dueno, $tipo, $activa, $inicioVigencia, $finVigencia, $estado);
+                $stmt->bind_param("ssssiiiiisisss", $titulo, $descripcion, $ubicacion, $etiquetas, $costo, $tiempo_minimo, $tiempo_maximo, $cupo, $id_dueno, $tipo, $activa, $inicioVigencia, $finVigencia, $estado);
             
                 if ($stmt->execute()) {
                     $contador++;
@@ -48,7 +48,7 @@
                     include "insertar_incluye.php";
 
                     // Creacion del evento que controla la vigencia de la publicación
-                    if (isset($_POST["inicioVigencia"]) || isset($_POST["finVigencia"])) {
+                    /*if (isset($_POST["inicioVigencia"]) || isset($_POST["finVigencia"])) {
                         $nombreEventoVigencia = "actualizar_vigencia_" . time();
                         $nombreEventoVigencia2 = "actualizar_vigencia_" . (time() + 1);
 
@@ -80,7 +80,7 @@
                                 END;";
                             $conn->query($eventoVigencia2);
                         }
-                    }
+                    }*/
 
                     $stmt2->close();
             

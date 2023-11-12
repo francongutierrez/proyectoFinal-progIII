@@ -54,10 +54,7 @@
         $validado = false;
     }
 
-    if (empty($intereses)) {
-        echo '<h6 class="mensajeError">Los intereses no pueden superar los 300 caracteres</h6> ';
-        $validado = false;
-    } elseif (strlen($intereses) > 300) {
+    if (strlen($intereses) > 300) {
         echo '<h6 class="mensajeError">Los intereses no pueden superar los 300 caracteres</h6> ';
         $validado = false;
     }

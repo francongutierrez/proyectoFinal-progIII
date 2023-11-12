@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,12 +35,12 @@
                 <div class="row">
                     <div class="mt-3">
                         <p>Gracias por formar parte de RapiBnB<p>
-                        <p id="descripcionError">Desea iniciar sesion?<p>
+                        <p id="descripcionError">Desea iniciar sesión?<p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col" id="colSubmit">
-                    <a href="../php/login.php"><button type="button" class="btn btn-success">Iniciar sesion</button></a>
+                    <a href="../php/login.php"><button type="button" class="btn btn-success">Iniciar sesión</button></a>
                     </div>
                 </div>
             </div>

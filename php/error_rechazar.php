@@ -80,7 +80,7 @@
                 </div>
                 <div class="row">
                     <div class="mt-3">
-                        <p>Ocurrio un error al rechazar la oferta<p>
+                        <p>Ocurrió un error al rechazar la oferta<p>
                     </div>
                 </div>
                 <div class="row">

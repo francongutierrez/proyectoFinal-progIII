@@ -35,9 +35,9 @@
     // El dueño no ha respondido
     } else {
         echo '<h5>Responder a la reseña:</h5>';
-        echo '<form method="POST"> class="formularioRespuesta"';
+        echo '<form method="POST" class="formularioRespuesta">';
         echo '
-        <textarea type="number" class="form-control mb-3 mt-3" name="nuevaRespuesta" id="nuevaRespuesta" placeholder="Escriba su respuesta aquí" maxlength="300"></textarea>
+        <textarea type="number" class="form-control mb-3 mt-3" name="nuevaRespuesta" id="nuevaRespuesta" placeholder="Escriba su respuesta aquí" maxlength="300" required></textarea>
         <input type="hidden" name="id_usuario_resena" value="'.$row["id_usuario"].'">
         <button type="submit" class="btn btn-success" name="editarRespuesta">Guardar respuesta</button>
         ';

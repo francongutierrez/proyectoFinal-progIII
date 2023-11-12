@@ -44,43 +44,43 @@
                     <div class="row">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombreInput" placeholder="Ingrese su nombre aqui" name="nombre" required>
+                            <input type="text" class="form-control" id="nombreInput" placeholder="Ingrese su nombre aqui" name="nombre" maxlength="50" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="mb-3">
                             <label for="apellido" class="form-label">Apellido</label>
-                            <input class="form-control" id="apellidoInput" rows="3" placeholder="Ingrese su apellido aqui" name="apellido" required>
+                            <input class="form-control" id="apellidoInput" rows="3" placeholder="Ingrese su apellido aqui" name="apellido" maxlength="50" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="mb-3">
                             <label for="ciudad" class="form-label">Ciudad</label>
-                            <input type="text" class="form-control" id="ciudadInput" rows="3" placeholder="Ingrese su ciudad aqui" name="ciudad" required>
+                            <input type="text" class="form-control" id="ciudadInput" rows="3" placeholder="Ingrese su ciudad aqui" name="ciudad" maxlength="100" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="mb-3">
                             <label for="email" class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control"  id="emailInput" placeholder="Ingrese su email aqui" name="email" required>
+                            <input type="email" class="form-control"  id="emailInput" placeholder="Ingrese su email aqui" name="email" maxlength="100" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="mb-3">
                             <label for="contrasena" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control"  id="contrasenaInput" placeholder="Ingrese su contraseña aqui" name="contrasena" required>
+                            <input type="password" class="form-control"  id="contrasenaInput" placeholder="Ingrese su contraseña aqui" maxlength="150" name="contrasena" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="mb-3">
                             <label for="contrasena2" class="form-label">Ingrese nuevamente su contraseña</label>
-                            <input type="password" class="form-control"  id="contrasenaInput2" placeholder="Ingrese su contraseña aqui" name="contrasena2" required>
+                            <input type="password" class="form-control"  id="contrasenaInput2" placeholder="Ingrese su contraseña aqui" maxlength="150" name="contrasena2" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="mb-3">
                             <label for="telefono" class="form-label">Teléfono</label>
-                            <input type="number" class="form-control"  id="telefonoInput" placeholder="Ingrese su telefono aqui" name="telefono" required>
+                            <input type="number" class="form-control"  id="telefonoInput" placeholder="Ingrese su telefono aqui" max="9999999999" name="telefono" required>
                         </div>
                     </div>
                     <div class="row">
@@ -97,7 +97,7 @@
                     <div class="row">
                         <div class="mb-3">
                             <label for="intereses" class="form-label">Intereses</label>
-                            <textarea type="textarea" class="form-control" id="interesesInput" placeholder="Ingrese sus intereses aquí" name="intereses" required></textarea>
+                            <textarea type="textarea" class="form-control" id="interesesInput" placeholder="Ingrese sus intereses aquí" maxlength="200" name="intereses" required></textarea>
                         </div>
                     </div>
                     <div class="row">
@@ -109,7 +109,7 @@
                     <div class="row">
                         <div class="mt-3 mb-3">
                             <label for="bio" class="form-label">Bio:</label>
-                            <textarea class="form-control" id="bioInput" placeholder="Ingrese informacion sobre usted aqui" name="bio" required></textarea>
+                            <textarea class="form-control" id="bioInput" placeholder="Ingrese informacion sobre usted aqui" name="bio" maxlength="300" required></textarea>
                         </div>
                     </div>
                     <div class="row">

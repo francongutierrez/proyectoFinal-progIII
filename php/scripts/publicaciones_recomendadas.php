@@ -7,15 +7,16 @@
         include 'scripts/conexion_db.php';
 
         // Criterios de busqueda ingresados
-        $criterios = $_SESSION['criterios'];
-
         $intereses = strtolower($_SESSION['intereses']);
+
+        $criterios = $_SESSION['criterios'];
 
         $criterios_recomendadas = $criterios;
 
-        $criterios_recomendadas .= " AND LOWER(etiquetas) LIKE '%$intereses%'";
 
-        $criterios_recomendadas .= " AND activa = 1 ORDER BY RAND() LIMIT 3";
+        $criterios_recomendadas .= " AND (LOWER(descripcion) LIKE '%$intereses%' OR LOWER(etiquetas) LIKE '%$intereses%')";
+
+        $criterios_recomendadas .= " ORDER BY RAND() LIMIT 3";
         
 
         $stmt = $conn->prepare($criterios_recomendadas);

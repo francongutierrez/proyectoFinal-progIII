@@ -65,7 +65,6 @@
         <div class="container" id="resultados">
             <?php
 
-            include 'scripts/manejar_decision_solicitud.php';
             include '../php/scripts/mostrar_publicaciones_pendientes.php';
 
             ?>

@@ -15,8 +15,8 @@
     echo "<h3>" . $row['titulo'] . "</h3>";
     echo "</div>";
     echo "<div class='card-body'>";
-    echo "<h5 class='card-title'>". $row['descripcion'] . "</h5>";
-    echo "<h5 class='card-title'>Costo por dia: $" . $row['costo'] . "</h5>";
+    echo "<h6 class='card-title'>". $row['descripcion'] . "</h6>";
+    echo "<h6 class='card-title'>Costo por dia: $" . $row['costo'] . "</h6>";
     echo "</div>";
     echo "<div class='card-footer text-body-secondary'>";
     echo "<form method='POST'>";
@@ -27,8 +27,10 @@
         echo "<button type='submit' class='btn btn-danger opcionDueno' name='desactivar' id='desactivar-button'><a>Desactivar</a></button>";
     } elseif ($row['estado'] == 'pendiente') {
         echo "<button class='btn btn-success opcionDueno' name='pendiente' id='disabled-button' disabled><a>Pendiente</a></button>";
-    } else {
+    } elseif ($row['estado'] == 'desactivada') {
         echo "<button type='submit' class='btn btn-success opcionDueno' name='activar' id='activar-button'><a>Activar</a></button>";
+    } else {
+        echo "<button class='btn btn-danger opcionDueno' name='pendiente' id='disabled-button' disabled><a>Rechazada</a></button>";
     }
 
     echo "</form>";

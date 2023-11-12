@@ -76,7 +76,7 @@ include 'scripts/verificacion.php'
         <div class="container" id="resultados">
             <?php
 
-                include 'scripts/mostrar_detalles.php';
+                include 'scripts/mostrar_detalles_mi_publicacion.php';
             
             ?>
         </div>
