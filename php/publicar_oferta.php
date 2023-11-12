@@ -58,7 +58,7 @@
                             <a href="mis_postulaciones.php" id="ofertas">Alquileres activos/pendientes:
                                 <?php include "scripts/cantidad_postulaciones.php";?>
                             </a>
-                            <a href="mis_alquileres.php" id="ofertas">Ofertas de alquiler:
+                            <a href="mis_publicaciones.php" id="ofertas">Ofertas de alquiler:
                                 <?php include "scripts/cantidad_ofertas_alquiler.php";?>
                             </a>
                             <form action="scripts/cerrar_sesion.php" method="POST">
