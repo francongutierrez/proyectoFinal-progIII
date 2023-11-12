@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </script>";
 
         } else {
-            echo "<p class='errorInicio'>Credenciales incorrectas. Inténtelo de nuevo.</p>";
+            echo "<p class='errorInicio'>La contraseña ingresada es incorrecta. Inténtelo de nuevo.</p>";
         }
 
     } else {

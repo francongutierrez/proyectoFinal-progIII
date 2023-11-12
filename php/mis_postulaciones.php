@@ -89,7 +89,12 @@ include 'scripts/verificacion.php'
         <?php
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            include 'scripts/activar_desactivar_publicacion.php';
+            if (isset($_POST['verMas'])) {
+                $_SESSION['selected_publicacion'] = $_POST['id_publicacion'];
+                echo "<script>window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/detalles_publicacion_postulaciones.php' </script>";
+                exit();
+            } else {;
+            }
         }
 
         ?>

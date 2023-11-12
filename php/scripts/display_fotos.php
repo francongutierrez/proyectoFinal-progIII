@@ -25,7 +25,7 @@
             echo '<img src="data:image/jpeg;base64,' . $imagen_codificada . '" alt="" class="imagenPropiedad">';
         }
     } else {
-        echo "<p>La publicacion no tiene imagenes.</p>";
+        echo "<p>La publicación no tiene imágenes.</p>";
     }
 
     $prepara->close();

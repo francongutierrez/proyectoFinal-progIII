@@ -86,7 +86,7 @@
                 </div>
                 <div class="row">
                     <div class="col" id="colSubmit">
-                    <a href="../php/inicio.php"><button type="button" class="btn btn-success">Volver a actualizar mis datos</button></a>
+                    <a href="javascript:history.back()" class="btn btn-success">Volver a actualizar mis datos</a>
                     </div>
                 </div>
             </div>

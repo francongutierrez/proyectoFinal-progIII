@@ -84,8 +84,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col" id="colSubmit">
-                    <a href="javascript:history.back()"><button type="button" class="btn btn-success">Volver a la publicación</button></a>
+                    <div class="col">
+                        <a href="javascript:history.back()" class="btn btn-success">Volver a la publicación</a>
                     </div>
                 </div>
             </div>

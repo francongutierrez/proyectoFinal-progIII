@@ -96,7 +96,7 @@
                     </div>
                     <div class="row">
                         <div class="col" id="colSubmit">
-                            <p id="mensajeAtencion">ATENCION: Esta acción no podrá deshacerse</p>
+                            <p id="mensajeAtencion">ATENCIÓN: Esta acción no podrá deshacerse</p>
                         </div>
                     </div>
                     <div class="row">

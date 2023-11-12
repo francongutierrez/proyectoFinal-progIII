@@ -37,8 +37,16 @@ function validarForm() {
   const contrasena2 = document.getElementById('contrasenaInput2').value;
   const bio = document.getElementById('bioInput').value;
 
+  const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+  const fileType = foto.files[0].type;
+
   let enviar = true;
   let errorMessage = "";
+
+  if (!allowedTypes.includes(fileType)) {
+    errorMessage += 'Por favor, selecciona un archivo de imagen válido (JPEG, PNG, GIF).';
+    enviar = false;
+  }
 
   if (nombre != "" && (nombre.length < 2 || nombre.length > 50)) {
     errorMessage += '- El nombre debe tener entre 2 y 50 caracteres.<br>';

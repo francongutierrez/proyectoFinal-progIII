@@ -26,7 +26,7 @@
     elseif ($row["estado"] == 'activo') {
         echo '<p class="mensajeActivo mt-3">Ha alquilado esta propiedad! El alquiler inicia el '.$fechaInicioFormateadaPostulaciones.' y finaliza el '.$fechaFinFormateadaPostulaciones.'</p>';
     }
-    elseif ($row["fecha_fin"] < $fechaHoy && $row["estado"] == 'activo') {
+    elseif ($row["fecha_fin"] < $fechaHoy) {
         echo '<p class="mensajeRechazado mt-3">El alquiler finalizó el '.$fechaFinFormateadaPostulaciones.'</p>';
     }
     elseif ($row["estado"] == 'rechazado') {

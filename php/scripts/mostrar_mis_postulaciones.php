@@ -13,7 +13,7 @@
       WHEN alquileres.estado = 'pendiente' THEN 1
       WHEN alquileres.estado = 'activo' THEN 2
       WHEN alquileres.estado = 'rechazado' THEN 3
-      ELSE 4  -- Opcional: Manejar otros estados o valores por defecto
+      ELSE 4 
     END
     LIMIT ?, ?";
   $stmt = $conn->prepare($sql);

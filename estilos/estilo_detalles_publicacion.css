@@ -13,10 +13,6 @@ a {
     color: #0c6a01;
 }
 
-a:hover {
-    color: white;
-}
-
 .reseñas {
     margin-bottom: 2em;
 }
@@ -76,6 +72,12 @@ h3 {
 }
 
 .mensajeErrorActualizacion {
+    background-color: #ffc3ca;
+    border-radius: 1em;
+    padding: 0.5em;
+}
+
+.mensajeErrorResena {
     background-color: #ffc3ca;
     border-radius: 1em;
     padding: 0.5em;
