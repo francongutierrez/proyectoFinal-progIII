@@ -25,9 +25,12 @@
             <input type="hidden" value="'. $row['id'] . '" name="id_usuario_ofertante">
             <button type="submit" name="aceptar" class="btn btn-success" name="aceptar" id="aceptar" data-accion="aceptar" ';
             
-            if (fechasSeIntersectan($row['fecha_inicio'], $row['fecha_fin'], $fechasExistencias)) {
-                echo 'disabled';
+            if (isset($fechasVerificados)) {
+                if (fechasSeIntersectan($row['fecha_inicio'], $row['fecha_fin'], $fechasExistencias)) {
+                    echo 'disabled';
+                }
             }
+
             
         echo '
             
