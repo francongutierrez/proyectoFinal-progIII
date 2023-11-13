@@ -97,9 +97,9 @@
     echo         "<a href='confirmar_fecha_alquiler.php' class='btn btn-success'>";
     echo             "Alquilar propiedad";
     echo         "</a>";
-    echo         "<button class='btn btn-outline-success'>";
-    echo             "<a href='javascript:history.back()'>Volver a todas las propiedades</a>";
-    echo         "</button>";
+    echo         "<a href='javascript:history.back()' class='btn btn-outline-success'>
+                    Volver a todas las propiedades
+                </a>";
     echo     "</div>";
     echo "</div>";
     echo "</div>";

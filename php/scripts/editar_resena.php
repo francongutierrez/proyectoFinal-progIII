@@ -9,8 +9,8 @@
             $nuevo_puntaje_resena = $_POST['nuevoPuntaje'];
     
             // Validaciones de los campos ingresados por el usuario
-            if (strlen($nueva_descripcion_resena) > 300 || strlen($nueva_descripcion_resena) < 3 || empty($nueva_descripcion_resena)) {
-                echo '<h6 class="mensajeErrorResena">La descripción de la reseña debe tener entre 3 y 300 caracteres.</h6>';
+            if (strlen($nueva_descripcion_resena) > 500 || strlen($nueva_descripcion_resena) < 3 || empty($nueva_descripcion_resena)) {
+                echo '<h6 class="mensajeErrorResena">La descripción de la reseña debe tener entre 3 y 500 caracteres.</h6>';
             } elseif ($nuevo_puntaje_resena < 1 || $nuevo_puntaje_resena > 5) {
                 echo '<h6 class="mensajeErrorResena">El puntaje de la reseña debe estar entre 1 y 5.</h6>';
             } else {

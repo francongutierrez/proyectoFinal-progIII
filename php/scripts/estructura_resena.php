@@ -22,7 +22,7 @@
         echo '<form method="POST" id="formResena">';
         echo '
         <input type="number" class="form-control mb-3" placeholder="Ingrese el nuevo puntaje aquí (Del 1 al 5)" min="1" max="5" name="nuevoPuntaje" id="puntajeResena" required>
-        <textarea class="form-control mb-3" placeholder="Escriba la nueva reseña aquí" name="nuevaDescripcion" id="descripcionResena" maxlength="300" required></textarea>
+        <textarea class="form-control mb-3" placeholder="Escriba la nueva reseña aquí" name="nuevaDescripcion" id="descripcionResena" maxlength="500" required></textarea>
         <input type="hidden" name="editarResena">
         <button type="submit" class="btn btn-success" name="editarResena">Guardar reseña</button>
         ';

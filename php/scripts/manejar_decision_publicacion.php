@@ -31,9 +31,7 @@
                             CREATE EVENT $nombreEventoVigencia
                             ON SCHEDULE AT '$row_vigencias[fecha_inicio]'
                             DO
-                            BEGIN
-                                UPDATE propiedades SET activa = 1 WHERE id = '$id_publicacion';
-                            END;";
+                                UPDATE propiedades SET activa = 1 WHERE id = '$id_publicacion';";
                         $conn->query($eventoVigencia);
                     }
                     // Fin de vigencia
@@ -42,9 +40,7 @@
                             CREATE EVENT $nombreEventoVigencia2
                             ON SCHEDULE AT '$row_vigencias[fecha_inicio]'
                             DO
-                            BEGIN
-                                UPDATE propiedades SET activa = 0 WHERE id = '$id_publicacion';
-                            END;";
+                                UPDATE propiedades SET activa = 0 WHERE id = '$id_publicacion';";
                         $conn->query($eventoVigencia2);
                     }
                 }
@@ -54,8 +50,6 @@
                 echo "<script>
                 window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/exito_publicacion_aceptada.php';
                 </script>";
-
-            // Si el usuario no eligio una fecha de vencimiento (validar)
 
         }
         if (isset($_POST['rechazar'])) {

@@ -47,46 +47,20 @@
                     // Insercion de servicios en la tabla incluye
                     include "insertar_incluye.php";
 
-                    // Creacion del evento que controla la vigencia de la publicación
-                    /*if (isset($_POST["inicioVigencia"]) || isset($_POST["finVigencia"])) {
-                        $nombreEventoVigencia = "actualizar_vigencia_" . time();
-                        $nombreEventoVigencia2 = "actualizar_vigencia_" . (time() + 1);
 
-                        // Inicio de vigencia
-                        if (isset($_POST["inicioVigencia"]) && !empty($_POST["inicioVigencia"])) {
-
-                            // Desactivar la publicacion si se establecio un inicio de la vigencia
-                            $sql_desactivar_vigencia = "UPDATE propiedades SET activa = 0 WHERE id = '$id_publicacion'";
-                            $conn->query($sql_desactivar_vigencia);
-
-                            $eventoVigencia = "
-                                CREATE EVENT $nombreEventoVigencia
-                                ON SCHEDULE AT '$inicioVigencia'
-                                DO
-                                BEGIN
-                                    UPDATE propiedades SET activa = 1 WHERE id = '$id_publicacion';
-                                END;";
-                            $conn->query($eventoVigencia);
-                        }
-
-                        // Fin de vigencia
-                        if (isset($_POST["finVigencia"]) && !empty($_POST["finVigencia"])) {
-                            $eventoVigencia2 = "
-                                CREATE EVENT $nombreEventoVigencia2
-                                ON SCHEDULE AT '$finVigencia'
-                                DO
-                                BEGIN
-                                    UPDATE propiedades SET activa = 0 WHERE id = '$id_publicacion';
-                                END;";
-                            $conn->query($eventoVigencia2);
-                        }
-                    }*/
 
                     $stmt2->close();
-            
-                    echo "<script>
-                    window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/publicacion_exitosa.php';
-                    </script>";
+
+                    if ($_SESSION['certificacion'] == 1) {
+                        echo "<script>
+                        window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/publicacion_exitosa.php';
+                        </script>";
+                    } else {
+                        echo "<script>
+                        window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/exito_publicacion_pendiente.php';
+                        </script>";
+                    }          
+
                 } else {
                     echo "<script>
                     window.location.href = 'http://localhost/ProgramacionIII/proyectoFinal/php/error_al_publicar.php';

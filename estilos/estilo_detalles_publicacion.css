@@ -41,15 +41,15 @@ footer {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(4); /* Amplía la imagen sin cambiar su tamaño */
-    z-index: 999; /* Asegura que la imagen ampliada esté por encima de otras imágenes */
+    transform: translate(-50%, -50%) scale(4); 
+    z-index: 999; 
 }
 
 .enlarged img {
-    width: auto; /* Ancho automático para mantener la relación de aspecto original */
-    height: auto; /* Altura automática para mantener la relación de aspecto original */
-    max-width: 90%; /* Limita el ancho de la imagen para evitar que se extienda demasiado */
-    max-height: 90%; /* Limita la altura de la imagen para evitar que se extienda demasiado */
+    width: auto; 
+    height: auto;
+    max-width: 90%; 
+    max-height: 90%; 
 }
 
 #formularioRespuesta {
@@ -66,6 +66,12 @@ h3 {
 }
 
 .mensajeActualizacion {
+    background-color: #c3ffc3;
+    border-radius: 1em;
+    padding: 0.5em;
+}
+
+#mensajeActualizacionRespuesta {
     background-color: #c3ffc3;
     border-radius: 1em;
     padding: 0.5em;
@@ -88,6 +94,12 @@ h3 {
     padding: 1em;
     border-radius: 1em;
   }
+
+.mensajeAtencion {
+    background-color: #fcffc3;
+    border-radius: 1em;
+    padding: 0.5em;
+}
 
 /* Estilo para el modal */
 .modal {

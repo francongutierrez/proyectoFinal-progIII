@@ -41,7 +41,7 @@ if ($result->num_rows > 0) {
     }
 } else {
     echo "<div class='row'>";
-    echo "<div class='col mb-3' id='sin-resultados'>";
+    echo "<div class='col mb-3 sinResultados' id='sin-resultados'>";
     echo "<h3>Sin resultados</h3>";    
     echo "<div class='row'>";
     echo "<div class='col'>";

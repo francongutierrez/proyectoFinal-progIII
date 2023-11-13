@@ -7,8 +7,7 @@
     $row_ofertas = $result_ofertas->fetch_assoc(); // Obtiene la fila de resultado como un array asociativo
     $count = $row_ofertas['COUNT(*)']; // Obtiene el valor de COUNT(*)
     $cambio = $row["activa"];
-
-
+    $fecha_inicio_formateada = date("d/m/Y", strtotime($row["fecha_inicio"]));
 
     echo "<div class='card mt-3 mb-3'>";
     echo "<div class='card-header'>";
@@ -29,6 +28,8 @@
         echo "<button class='btn btn-success opcionDueno' name='pendiente' id='disabled-button' disabled><a>Pendiente</a></button>";
     } elseif ($row['estado'] == 'desactivada') {
         echo "<button type='submit' class='btn btn-success opcionDueno' name='activar' id='activar-button'><a>Activar</a></button>";
+    } elseif ($row['estado'] == 'activa' && $row["activa"] == 0) {
+        echo "<button type='submit' class='btn btn-success opcionDueno' name='activar' id='activar-button' disabled><a>Activar</a></button>";
     } else {
         echo "<button class='btn btn-danger opcionDueno' name='pendiente' id='disabled-button' disabled><a>Rechazada</a></button>";
     }
@@ -41,6 +42,8 @@
         echo '<p class="mensajeOfertas mt-3">No tiene ofertas para esta publicación</p>';
     } elseif ($row["estado"] == 'pendiente') {
         echo '<p class="mensajeOfertas mt-3">Publicación pendiente de revisión</p>';
+    } elseif ($row["estado"] == 'activa' && $row["activa"] == 0) {
+        echo '<p class="mensajeOfertas mt-3">La publicación se activará el '.$fecha_inicio_formateada.'</p>';
     } else { 
         echo '<p class="mensajeOfertas mt-3">Publicación inactiva</p>';
     }

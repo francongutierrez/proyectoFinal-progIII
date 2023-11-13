@@ -2,7 +2,11 @@
 
     include "conexion_db.php";
 
-    $query_cantidad = "SELECT COUNT(*) FROM alquileres, propiedades WHERE alquileres.id_propiedad = propiedades.id AND propiedades.id_dueno = '$_SESSION[id_usuario]' AND alquileres.estado = 'pendiente'";
+    $query_cantidad = "SELECT COUNT(*) 
+                    FROM alquileres, propiedades 
+                    WHERE alquileres.id_propiedad = propiedades.id 
+                    AND propiedades.id_dueno = '$_SESSION[id_usuario]' 
+                    AND alquileres.estado = 'pendiente'";
 
     
     $result = mysqli_query($conn, $query_cantidad);

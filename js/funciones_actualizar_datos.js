@@ -43,10 +43,6 @@ function validarForm() {
   let enviar = true;
   let errorMessage = "";
 
-  if (!allowedTypes.includes(fileType)) {
-    errorMessage += 'Por favor, selecciona un archivo de imagen válido (JPEG, PNG, GIF).';
-    enviar = false;
-  }
 
   if (nombre != "" && (nombre.length < 2 || nombre.length > 50)) {
     errorMessage += '- El nombre debe tener entre 2 y 50 caracteres.<br>';
@@ -109,6 +105,16 @@ function validarForm() {
 
   if (foto.files.size > (1048576)*5) {
     errorMessage += '- La foto subida no puede superar los 5MB.<br>';
+    enviar = false;
+    fotoInput.classList.add('is-invalid');
+    fotoInput.classList.remove('is-valid');
+  } else {
+    fotoInput.classList.add('is-valid');
+    fotoInput.classList.remove('is-invalid');
+  }
+
+  if (!allowedTypes.includes(fileType)) {
+    errorMessage += 'Por favor, selecciona un archivo de imagen válido (JPEG, PNG, GIF).<br>';
     enviar = false;
     fotoInput.classList.add('is-invalid');
     fotoInput.classList.remove('is-valid');

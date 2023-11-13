@@ -6,6 +6,7 @@
     width: 15em;
     margin-left: 2em;
     border-radius: 1em;
+    border: 2px solid green;
 }
 
 #actualizar-datos-button {

@@ -2,7 +2,7 @@
 
 include 'scripts/conexion_db.php';
 
-$sql = "SELECT id, titulo, descripcion, costo, activa, estado FROM propiedades WHERE id_dueno = ?";
+$sql = "SELECT id, titulo, descripcion, costo, activa, estado, fecha_inicio FROM propiedades WHERE id_dueno = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $_SESSION['id_usuario']);
 $stmt->execute();

@@ -96,7 +96,6 @@ include 'scripts/verificacion.php'
         <div class="container" id="resultados">
             <?php
             include '../php/scripts/mostrar_publicaciones.php';
-
             ?>
         </div>
 

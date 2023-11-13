@@ -57,22 +57,22 @@
             $stmt_alquilar->bind_param("iisss", $_SESSION["id_usuario"], $_SESSION["selected_publicacion"], $estado, $fechaInicio, $fechaFin);
 
             // Definir el cuerpo del evento
-            $eventoSQL = "        
+            $eventoSQL = "
+
             CREATE EVENT $nombreEvento
             ON SCHEDULE AT CURRENT_TIMESTAMP + INTERVAL 3 DAY
             DO
             BEGIN
-                DECLARE condicion_estado VARCHAR(10);
-            
-                -- Realiza una consulta y almacena el resultado en la variable condicion_estado
-                SELECT estado INTO condicion_estado FROM alquileres WHERE id_usuario = {$_SESSION['id_usuario']} AND id_propiedad = {$_SESSION['selected_publicacion']};
+                -- Almacena el resultado de la consulta en una variable
+                SET @condicion_estado = (SELECT estado FROM alquileres WHERE id_usuario = {$_SESSION['id_usuario']} AND id_propiedad = {$_SESSION['selected_publicacion']});
             
                 -- Verifica si el resultado de la consulta cumple con la condición deseada
-                IF condicion_estado = 'pendiente' THEN
-                    -- Código a ejecutar si el resultado de la consulta es verdadero
+                IF @condicion_estado = 'pendiente' THEN
+                    -- Actualiza el estado si la condición es verdadera
                     UPDATE alquileres SET estado = 'rechazada' WHERE id_usuario = {$_SESSION['id_usuario']} AND id_propiedad = {$_SESSION['selected_publicacion']};
                 END IF;
-            END;
+            END;                 
+                
             ";        
             
             if ($stmt_alquilar->execute() && $conn->query($eventoSQL) == TRUE) {

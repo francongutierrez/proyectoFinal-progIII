@@ -1,11 +1,9 @@
 <?php
 
-    include 'scripts/verificacion.php';
-    if ($_SESSION['certificacion'] == 0) {
-        include 'scripts/comprobar_ofertas_usuario.php';
-    }
+    include 'scripts/verificacion.php';  
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -14,9 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css" >
-    <link rel="stylesheet" type="text/css" href="../estilos/estilo_confimar_alquiler.css">
+    <link rel="stylesheet" type="text/css" href="../estilos/estilo_error_alquiler.css" >
     <link rel="icon" type="image/x-icon" href="../img/icono.ico">
-    <title>RappiBnB - Confirmar alquiler</title>
+    <title>RappiBnB - Publicación exitosa</title>
 
 </head>
 <body>
@@ -73,72 +71,32 @@
         </nav>
     </header>
     <section>
-        <form action="" method="POST" onsubmit="return validarForm()" enctype="multipart/form-data" id="formularioVerificar">
+        <form action="">
             <div class="container" id="mainContainer">
                 <div class="row">
-                    <div class="col mt-3 animate-text">
-                        <h1>Confirmar fechas de alquiler</h1>
+                    <div class="col mt-3 animate-text colMensaje">
+                        <img src="../img/valid.jpg" alt="">
+                        <h1>Publicación exitosa</h1>
                     </div>
                 </div>
-                <form action="" method="POST">
-                    <div class="row">
-                        <div class="col mt-3">
-                            <label for="fotos" class="form-label">Ingrese las fechas de su alquiler:</label>
-                        </div>
+                <div class="row">
+                    <div class="mt-3">
+                        <p>Se publicación será revisada por un administrador. <p>
+                        <p>Los usuarios verificados no tienen restricciones en las publicaciones. <p>
                     </div>
-                    <div class="row">
-                        <div class="col mb-3">
-                            <label>Fecha de inicio del alquiler:</label>
-                            <input type="date" id="fechaInicio" name="fechaInicio" class="form-control" min="<?php echo $_SESSION['fechaInicioDisponibilidad'] ?>" max="<?php echo $_SESSION['fechaFinDisponibilidad'] ?>">
-                        </div>
-                        <div class="col mb-3">
-                            <label>Fecha de fin del alquiler:</label>
-                            <input type="date" id="fechaFin" name="fechaFin" class="form-control" min="<?php echo $_SESSION['fechaInicioDisponibilidad'] ?>" max="<?php echo $_SESSION['fechaFinDisponibilidad'] ?>">
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col" id="colSubmit">
+                    <a href="../php/inicio.php" class="btn btn-success">Volver al inicio</a>
+                    <a href="../php/verificar_cuenta.php" class="btn btn-success">Verificar mi cuenta</a>
                     </div>
-                    <div class="row">
-                        <div class="col" id="colSubmit">
-                            <p id="mensajeAtencion">ATENCIÓN: Esta acción no podrá deshacerse</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col" id="colSubmit">
-                            <button type="submit" class="btn btn-success" id="enviarPostulacion" name="enviarPostulacion">Confirmar alquiler</button>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
         </form>
-        <div class="container">
-                <div id="errorModal" class="modal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">  
-                            <div class="modal-header">
-                                <h4>Error</h4>
-                                <span class="close" id="closeModal">&times;</span>
-                            </div>   
-                            <div class="modal-body">
-                                <p id="errorText"></p>
-                            </div>
-                            <div class="modal-footer">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        <?php
-            
-            include 'scripts/postular_alquiler.php';
-
-
-        ?>
 
     </section>
     <footer>
         <p>2023 - Gutierrez Franco</p>
     </footer>
-    
-    <script src="../js/funciones_confirmar_fechas.js"></script>
 </body>
 </html>

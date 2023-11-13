@@ -103,9 +103,9 @@
     echo             "Rechazar publicación";
     echo         "</button>";
     echo "</form>";
-    echo         "<button class='btn btn-outline-success'>";
-    echo             "<a href='javascript:history.back()'>Volver a publicaciones pendientes</a>";
-    echo         "</button>";
+    echo        "<a href='javascript:history.back()' class='btn btn-outline-success'>
+                    Volver a publicaciones pendientes
+                </a>";
     echo     "</div>";
     echo "</div>";
     echo "</div>";
