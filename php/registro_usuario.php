@@ -80,7 +80,7 @@
                     <div class="row">
                         <div class="mb-3">
                             <label for="telefono" class="form-label">Teléfono</label>
-                            <input type="number" class="form-control"  id="telefonoInput" placeholder="Ingrese su telefono aqui" max="9999999999" name="telefono" required>
+                            <input type="number" class="form-control"  id="telefonoInput" placeholder="Ingrese su telefono aqui" min="1000000000" max="9999999999" name="telefono" required>
                         </div>
                     </div>
                     <div class="row">

@@ -140,7 +140,7 @@ function validarForm() {
   }
 
   if (contrasena.length < 8 || contrasena.length > 50) {
-    errorMessage += '- La contraseña debe tener mas entre 8 y 50 caracteres.<br>';
+    errorMessage += '- La contraseña debe tener entre 8 y 50 caracteres.<br>';
     enviar = false;
     contrasenaInput.classList.add('is-invalid');
     contrasenaInput.classList.remove('is-valid');

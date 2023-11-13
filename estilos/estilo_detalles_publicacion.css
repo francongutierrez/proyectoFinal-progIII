@@ -71,6 +71,11 @@ h3 {
     padding: 0.5em;
 }
 
+.mensajeVerificados {
+    background-color: #c3ffc3;
+    padding: 0.5em;
+}
+
 #mensajeActualizacionRespuesta {
     background-color: #c3ffc3;
     border-radius: 1em;

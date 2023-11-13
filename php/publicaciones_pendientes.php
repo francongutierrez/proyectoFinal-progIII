@@ -29,24 +29,33 @@
                 <div class="col-md-6">
                     <div class="dropdown">
                         <button class="menu-button">
+                            <!-- <img src="../img/test_image.jpg" alt="Foto de perfil" class="profile-image"> -->
+
+
                             <?php
                             // Mostrar la imagen de perfil del usuario
                             if ($_SESSION['foto_usuario']) {
+                                // Codifica la imagen en Base64
                                 $imagen_codificada = base64_encode($_SESSION['foto_usuario']);
+                                // Muestra la imagen en el documento HTML
                                 echo '<img src="data:image/jpeg;base64,' . $imagen_codificada . '" alt="Foto de perfil" class="profile-image">';
                             } else {
                                 echo "Imagen no encontrada";
                             }
+
                             ?>
+
+
                         </button>
                         <div class="dropdown-content">
                             <a href="">Sesión iniciada como administrador</a>
-                            <a href="">Mi perfil</a>
+                            <a href="mi_perfil_administrador.php">Mi perfil</a>
                             <form action="scripts/cerrar_sesion.php" method="POST">
                                 <button type="submit" id="cerrar-sesion-button" name="cerrar-sesion">
                                     <a href="#"><span class="cerrarSesion">Cerrar sesión</span></a>
                                 </button>
                             </form>
+                            
                         </div>
                     </div>
                 </div>

@@ -19,7 +19,7 @@
     echo "<form method='POST'>";
     echo "<input type='hidden' name='id_usuario' value='" . $row['id_usuario'] . "'>";
     echo "<label>Vencimiento de la verificación (en caso de aceptarla)</label>";
-    echo "<input type='date' class='form-control' name='vencimiento' min='" . date('Y-m-d', strtotime('+6 months')) . "' max='2025-12-31'><br>";
+    echo "<input type='date' class='form-control' name='vencimiento' min='" . date('Y-m-d', strtotime('+6 months')) . "' max='2025-12-31' required><br>";
     echo "<button type='submit' class='btn btn-success' name='aceptar' id='aceptar-button'><a>Aceptar solicitud</a></button>";
     echo "<button type='submit' class='btn btn-danger' name='rechazar' id='rechazar-button'><a>Rechazar solicitud</a></button>";
     echo "</form>";

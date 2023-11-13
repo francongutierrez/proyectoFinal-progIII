@@ -3,9 +3,9 @@
         $fechaFinFormateada = date("d/m/Y",strtotime($row['fecha_fin']));
 
 
-
         $imagen_codificada_oferta = base64_encode($row['foto']);
         echo "<div class='card mt-3 mb-3'>";
+        echo "<p class='mensajeVerificados'>El siguiente usuario verificado alquiló la propiedad</p>";
         echo "<div class='card-header'>";
         echo '<img src="data:image/jpeg;base64,' . $imagen_codificada_oferta . '" alt="Foto de perfil" class="profile-image">';
         echo "<h4>" . $row['nombre'] . " " . $row['apellido'] . "</h4>";
@@ -19,22 +19,13 @@
         echo "<div class='card-body'>";
         echo "<h5 class='card-title'> Fecha de fin: ". $fechaFinFormateada . "</h5>";
         echo "</div>"; // cierre de card body 3
-        echo "<div class='card-footer'>";
-        echo 
-            '<form method="POST" id="decisionOferta">
-            <input type="hidden" value="'. $row['id'] . '" name="id_usuario_ofertante">
-            <button type="submit" name="aceptar" class="btn btn-success" name="aceptar" id="aceptar" data-accion="aceptar" ';
-            
-            if (fechasSeIntersectan($row['fecha_inicio'], $row['fecha_fin'], $fechasExistencias)) {
-                echo 'disabled';
-            }
-            
-        echo '
-            
-            >Aceptar</button>
-            <button type="submit" name="rechazar" class="btn btn-danger" name="rechazar" id="rechazar" data-accion="rechazar">Rechazar</button>
-            </form>';
-        echo "</div>"; // cierre de card footer
         echo "</div>"; // cierre de card
+
+        $fechasExistencias[] = [
+                'inicio' => $row['fecha_inicio'],
+                'fin' => $row['fecha_fin']
+            ];
+            
+
 
 ?>

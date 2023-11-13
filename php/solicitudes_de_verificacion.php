@@ -49,7 +49,7 @@
                         </button>
                         <div class="dropdown-content">
                             <a href="">Sesión iniciada como administrador</a>
-                            <a href="">Mi perfil</a>
+                            <a href="mi_perfil_administrador.php">Mi perfil</a>
                             <form action="scripts/cerrar_sesion.php" method="POST">
                                 <button type="submit" id="cerrar-sesion-button" name="cerrar-sesion">
                                     <a href="#"><span class="cerrarSesion">Cerrar sesión</span></a>

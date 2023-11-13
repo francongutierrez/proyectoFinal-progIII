@@ -40,7 +40,7 @@
                 </div>
                 <div class="row">
                     <div class="col" id="colSubmit">
-                    <a href="../php/registro_usuario.php"><button type="button" class="btn btn-success">Volver al registro</button></a>
+                    <a href="javascript:history.back()"><button type="button" class="btn btn-success">Volver al registro</button></a>
                     </div>
                 </div>
             </div>

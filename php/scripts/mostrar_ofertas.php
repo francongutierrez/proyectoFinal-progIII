@@ -10,8 +10,33 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
+    // Funcion interseccion
+    function fechasSeIntersectan($nuevaFechaInicio, $nuevaFechaFin, $fechasExistencias) {
+        $nuevaFechaInicio = new DateTime($nuevaFechaInicio);
+        $nuevaFechaFin = new DateTime($nuevaFechaFin);
+    
+        foreach ($fechasExistencias as $rango) {
+            $inicioExistente = new DateTime($rango["inicio"]);
+            $finExistente = new DateTime($rango["fin"]);
+    
+            // Verificar si las fechas se intersectan
+            if (
+                ($nuevaFechaInicio >= $inicioExistente && $nuevaFechaInicio <= $finExistente) ||
+                ($nuevaFechaFin >= $inicioExistente && $nuevaFechaFin <= $finExistente) ||
+                ($nuevaFechaInicio <= $inicioExistente && $nuevaFechaFin >= $finExistente)
+            ) {
+                return true; // Las fechas se intersectan
+            }
+        }
+    
+        return false; // Las fechas no se intersectan
+    }
+
+    
+
     while ($row = $result->fetch_assoc()) {
 
+        
     // Script para manejar la estructura de las reseñass
     include 'estructura_oferta.php';
 

@@ -102,6 +102,7 @@ include 'scripts/verificacion.php'
             </div>
             <div class="row">
                 <div class="col">
+                    <?php include 'scripts/ofertas_certificados.php'; ?>
                     <?php include 'scripts/mostrar_ofertas.php'; ?>
                     <?php include '../php/scripts/manejar_decision_dueno.php'; ?>
                 </div>

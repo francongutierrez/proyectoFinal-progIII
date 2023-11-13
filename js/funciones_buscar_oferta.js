@@ -69,33 +69,27 @@ function validarForm() {
       cupoInput.classList.remove('is-invalid');
     }
 
-    if (inicioDisponibilidad == "" || finDisponibilidad == "") {
-      errorMessage += '- No ha especificado las fechas de disponibilidad.<br>';
-      enviar = false;
-      inicioDisponibilidadInput.classList.add('is-invalid');
-      inicioDisponibilidadInput.classList.remove('is-valid');
-      finDisponibilidadInput.classList.add('is-invalid');
-      finDisponibilidadInput.classList.remove('is-valid');
-    } else {
-      inicioDisponibilidadInput.classList.add('is-valid');
-      inicioDisponibilidadInput.classList.remove('is-invalid');
-      finDisponibilidadInput.classList.add('is-valid');
-      finDisponibilidadInput.classList.remove('is-invalid');
-    }
-
-    if (inicioDisponibilidad > finDisponibilidad) {
+    if (inicioDisponibilidad > finDisponibilidad && (!isNaN(inicioDisponibilidad) || !isNaN(finDisponibilidad))) {
       errorMessage += '- La fecha de fin no puede ser anterior a la de inicio.<br>';
       enviar = false;
       inicioDisponibilidadInput.classList.add('is-invalid');
-      inicioDisponibilidadInput.classList.remove('is-valid');
       finDisponibilidadInput.classList.add('is-invalid');
-      finDisponibilidadInput.classList.remove('is-valid');
     } else {
-      inicioDisponibilidadInput.classList.add('is-valid');
       inicioDisponibilidadInput.classList.remove('is-invalid');
-      finDisponibilidadInput.classList.add('is-valid');
       finDisponibilidadInput.classList.remove('is-invalid');
     }
+
+    if (isNaN(inicioDisponibilidad) || isNaN(finDisponibilidad)) {
+      errorMessage += '- No ha especificado las fechas de disponibilidad.<br>';
+      enviar = false;
+      inicioDisponibilidadInput.classList.add('is-invalid');
+      finDisponibilidadInput.classList.add('is-invalid');
+    } else {
+      inicioDisponibilidadInput.classList.remove('is-invalid');
+      finDisponibilidadInput.classList.remove('is-invalid');
+    }
+
+
 
   errorText.innerHTML = errorMessage;
     
